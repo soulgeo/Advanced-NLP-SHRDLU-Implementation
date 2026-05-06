@@ -1,0 +1,68 @@
+intent:
+    PICKUP,
+    PLACE,
+    INSPECT,
+    OPEN,
+    CLOSE
+
+action_args:
+    target:
+        any object id
+
+    destination (for PLACE only):
+        relation:
+            INSIDE,
+            NEXT TO,
+            ON TOP OF,
+            UNDER,
+        reference:
+            any object id
+
+status:
+    RESOLVED,
+    AMBIGUOUS,
+    UNRECOGNIZED,
+
+status_args (for AMBIGUOUS or UNRECOGNIZED only):
+    target_candidates (for AMBIGUOUS only):
+        a list of objects ids
+    reference_candidates (for AMBIGUOUS PLACE only):
+        a list of object ids
+    message (for AMBIGUOUS or UNRECOGNIZED only):
+        a string prompt
+
+
+Examples:
+{
+  "intent": "PICKUP"
+  "action_args": {
+    "target": "obj_green_ball_2"
+  }
+  "status": "RESOLVED"
+}
+
+{
+  "intent": "PLACE",
+  "action_args": {
+    "target": "obj_red_block_1",
+    "destination": {
+      "relation": "INSIDE",
+      "reference": null
+    }
+  },
+  "status": "AMBIGUOUS",
+  "status_args": {
+    "target_candidates": [],
+    "reference_candidates": ["obj_box_1", "obj_box_2"],
+    "message": "Which box do you mean? The wooden one or the metal one?"
+  }
+}
+
+{
+  "intent": null
+  "action_args": null
+  "status": "UNRECOGNIZED"
+  "status_args": {
+    "message": "I don't understand that command."
+  }
+}
