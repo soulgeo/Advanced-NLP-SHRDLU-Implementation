@@ -31,7 +31,10 @@ def find_objects(
     size: Optional[str] = None, 
     material: Optional[str] = None, 
     state: Optional[str] = None, # open or closed
-    location_id: Optional[str] = None # One of the two locations (table or floor)
+    location_id: Optional[str] = None, # One of the two locations (table or floor)
+    # For when querying in relation to an object (e.g. "inside the green box", "on the big cube")
+    relation: Optional[str] = None,
+    reference_object_id: Optional[str] = None
 ) -> list[str]: # returns a list of matching object ids
 ```
 *   **Rule 1:** If no arguments are passed, it returns all objects.
