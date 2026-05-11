@@ -8,9 +8,7 @@ except LookupError:
 # ===============================
 # LEXICON
 # ===============================
-COLORS = ["red", "green", "blue", "yellow", "orange", "brown", "white", "black"]
 SHAPES = ["cube", "pyramid", "box", "sphere", "block"]
-MATERIALS = ["wooden", "metal", "plastic", "rubber"]
 ZONES = ["table", "floor"]
 
 # Verbs
@@ -32,6 +30,8 @@ SIZE_MEDIUM = ["medium", "average", "regular"]
 SIZE_SMALL = ["small", "tiny", "little"]
 STATE_OPEN = ["open", "unlocked"]
 STATE_CLOSED = ["closed", "shut", "locked"]
+COLORS = ["red", "green", "blue", "yellow", "orange", "brown", "white", "black"]
+MATERIALS = ["wooden", "metal", "plastic", "rubber"]
 
 # ===============================
 # GRAMMAR GENERATION
@@ -51,17 +51,19 @@ def make_rules(vocab_list):
 
 grammar_string = f"""
     # --- SYNTAX ---
-    S -> ACT TARGET | PLACE TARGET DEST
-    ACT -> PICKUP | PLACE | OPEN | CLOSE | INSPECT
+    S -> ACT TARGET | PLACE TARGET | PLACE TARGET DEST
+    ACT -> PICKUP | OPEN | CLOSE | INSPECT
     TARGET -> NP | NP REF
     REF -> REL NP | REL NP REF | REL ZONE | REL DET ZONE
     DEST -> REL NP | REL NP REF | REL ZONE | REL DET ZONE
     NP -> DET AP | DET OBJ_NAME | AP | OBJ_NAME
     AP -> ADJ AP | ADJ OBJ_NAME
     ADJ -> COLOR | SIZE | MATERIAL | STATE
+    OBJ_NAME -> SHAPE | OBJ_SYN
 
     # --- STATIC WORDS ---
     DET -> "the" | "a" | "an"
+    OBJ_SYN -> "object" | "thing"
 
     # --- VERB CATEGORIES ---
     PICKUP -> {make_rules(ACT_PICKUP)}
@@ -78,6 +80,9 @@ grammar_string = f"""
     REL_NEXT -> {make_rules(REL_NEXT)}
 
     # --- ATTRIBUTE CATEGORIES ---
+    SHAPE -> {make_rules(SHAPES)}
+    ZONE -> {make_rules(ZONES)}
+
     SIZE -> SIZE_LARGE | SIZE_MEDIUM | SIZE_SMALL
     SIZE_LARGE -> {make_rules(SIZE_LARGE)}
     SIZE_MEDIUM -> {make_rules(SIZE_MEDIUM)}
@@ -88,9 +93,7 @@ grammar_string = f"""
     STATE_CLOSED -> {make_rules(STATE_CLOSED)}
 
     COLOR -> {make_rules(COLORS)}
-    OBJ_NAME -> {make_rules(SHAPES)}
     MATERIAL -> {make_rules(MATERIALS)}
-    ZONE -> {make_rules(ZONES)}
 """
 
 # ===============================
