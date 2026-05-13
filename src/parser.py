@@ -104,6 +104,7 @@ parser = nltk.ChartParser(grammar)
 
 
 def get_attributes_of_np(np_tree):
+    """Scans the NP tree for attributes like color and size and returns them in a dictionary"""
     attributes = {}
     attribute_trees = list(
         np_tree.subtrees(
@@ -135,7 +136,9 @@ def get_attributes_of_np(np_tree):
     return attributes
 
 
-def find_objects_in_world(parse_tree, world):
+def resolve_reference(parse_tree, world):
+    """Recursively finds all object IDs that match descriptions and locations in the tree."""
+    # Setup
     np_trees = list(parse_tree.subtrees(lambda t: t.label() == "NP"))
     zone_trees = list(parse_tree.subtrees(lambda t: t.label() == "ZONE"))
 
@@ -170,7 +173,7 @@ def find_objects_in_world(parse_tree, world):
         "REL_NEXT": constants.REL_NEXT,
     }
     relation = relation_dict[relation_tree.label()]
-    ref_obj_list = find_objects_in_world(ref, world)
+    ref_obj_list = resolve_reference(ref, world)
 
     obj_list = []
     for obj in ref_obj_list:
@@ -193,7 +196,7 @@ def get_action_candidates(trees, world):
     intent = ""
 
     for i, tree in enumerate(trees):
-        # 1. Extract Intent (only need to do this on the first tree)
+        # Extract the intent (only need to do this once)
         if i == 0:
             for subtree in tree.subtrees():
                 label = subtree.label()
@@ -201,16 +204,16 @@ def get_action_candidates(trees, world):
                     intent = label
                     break
 
-        # 2. Extract and Ground Target
+        # Extract the target
         target_nodes = list(tree.subtrees(lambda t: t.label() == "TARGET"))
         if not target_nodes:
             continue
 
-        valid_target_objects = find_objects_in_world(target_nodes[0], world)
+        valid_target_objects = resolve_reference(target_nodes[0], world)
         if len(valid_target_objects) == 0:
             continue
 
-        # 3. Extract and Ground Destination (If PLACE)
+        # Extract the destination (if PLACE)
         valid_dest_objects = []
         relation = ""
         if intent == "PLACE":
@@ -221,7 +224,7 @@ def get_action_candidates(trees, world):
                 relation = constants.REL_ON
             else:
                 dest = dest_nodes[0]
-                valid_dest_objects = find_objects_in_world(dest, world)
+                valid_dest_objects = resolve_reference(dest, world)
                 if len(valid_dest_objects) == 0:
                     continue
 
@@ -240,7 +243,7 @@ def get_action_candidates(trees, world):
                 }
                 relation = relation_dict[relation_tree.label()]
 
-        # 4. Combinatorial Flattening
+        # Append all candidates
         for target_obj in valid_target_objects:
             if intent != "PLACE":
                 candidates.append({"target": target_obj})
@@ -271,6 +274,7 @@ def build_response(intent, candidates):
                 "message": "I couldn't find some of the mentioned objects in the world."
             },
         }
+
     elif len(candidates) > 1:
         return {
             "intent": intent,
@@ -281,6 +285,7 @@ def build_response(intent, candidates):
                 "candidates": candidates,
             },
         }
+
     else:  # Exactly 1 candidate
         return {
             "intent": intent,
