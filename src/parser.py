@@ -1,5 +1,3 @@
-import inspect
-
 import nltk
 
 import src.constants as constants
@@ -115,8 +113,9 @@ def get_attributes_of_np(np_tree):
     )
     for attr_tree in attribute_trees:
         label = attr_tree.label()
+        dict_key = label.lower()
         if label in ["COLOR", "SHAPE", "MATERIAL"]:
-            attributes[label] = attr_tree.leaves()[0]
+            attributes[dict_key] = attr_tree.leaves()[0]
         elif label == "SIZE":
             size_tree = list(attr_tree.subtrees(lambda t: t.height() == 2))[0]
             size_dict = {
@@ -124,14 +123,14 @@ def get_attributes_of_np(np_tree):
                 "SIZE_MEDIUM": constants.SIZE_MEDIUM,
                 "SIZE_SMALL": constants.SIZE_SMALL,
             }
-            attributes["SIZE"] = size_dict[size_tree.label()]
-        else:
+            attributes[dict_key] = size_dict[size_tree.label()]
+        else:  # STATE
             state_tree = list(attr_tree.subtrees(lambda t: t.height() == 2))[0]
             state_dict = {
                 "STATE_OPEN": constants.STATE_OPEN,
                 "STATE_CLOSED": constants.STATE_CLOSED,
             }
-            attributes["SIZE"] = state_dict[state_tree.label()]
+            attributes[dict_key] = state_dict[state_tree.label()]
 
     return attributes
 
@@ -151,21 +150,10 @@ def find_objects_in_world(parse_tree, world):
     # Termination condition
     if len(references) == 0:
         if not np:
-            # Zone
             zone = zone_trees[0].leaves()[0]
-            if zone == "table":
-                return [world.TABLE_ID]
-            else:
-                return [world.FLOOR_ID]
+            return [zone]
 
-        # NP
-        obj_list = world.find_objects(
-            shape=attributes["SHAPE"],
-            color=attributes["COLOR"],
-            size=attributes["SIZE"],
-            material=attributes["MATERIAL"],
-            state=attributes["STATE"],
-        )
+        obj_list = world.find_objects(**attributes)
         return obj_list
 
     # Recursion
@@ -186,63 +174,146 @@ def find_objects_in_world(parse_tree, world):
 
     obj_list = []
     for obj in ref_obj_list:
-        if obj == world.TABLE_ID or obj == world.FLOOR_ID:
-            objs = world.find_objects(
-                **attributes,
-                location_id=obj,
-            )
-
+        if obj in ["table", "floor"]:
+            ref_kwargs = {"location_id": obj}
         else:
-            objs = world.find_objects(
-                **attributes,
-                relation=relation,
-                reference_object_id=obj,
-            )
-
-        obj_list.append(objs)
+            ref_kwargs = {
+                "relation": relation,
+                "reference_object_id": obj,
+            }
+        objs = world.find_objects(**attributes, **ref_kwargs)
+        obj_list.extend(objs)
 
     return obj_list
 
 
-def parse_command(input: str, world):
+def get_action_candidates(trees, world):
+    """Loops through syntax trees, queries the world, and flattens all physical possibilities."""
+    candidates = []
+    intent = ""
+
+    for i, tree in enumerate(trees):
+        # 1. Extract Intent (only need to do this on the first tree)
+        if i == 0:
+            for subtree in tree.subtrees():
+                label = subtree.label()
+                if label in ["PICKUP", "PLACE", "OPEN", "CLOSE", "INSPECT"]:
+                    intent = label
+                    break
+
+        # 2. Extract and Ground Target
+        target_nodes = list(tree.subtrees(lambda t: t.label() == "TARGET"))
+        if not target_nodes:
+            continue
+
+        valid_target_objects = find_objects_in_world(target_nodes[0], world)
+        if len(valid_target_objects) == 0:
+            continue
+
+        # 3. Extract and Ground Destination (If PLACE)
+        valid_dest_objects = []
+        relation = ""
+        if intent == "PLACE":
+            dest_nodes = list(tree.subtrees(lambda t: t.label() == "DEST"))
+
+            if len(dest_nodes) == 0:
+                valid_dest_objects = ["floor"]
+                relation = constants.REL_ON
+            else:
+                dest = dest_nodes[0]
+                valid_dest_objects = find_objects_in_world(dest, world)
+                if len(valid_dest_objects) == 0:
+                    continue
+
+                relation_tree = list(
+                    dest.subtrees(
+                        lambda t: t.label()
+                        in ["REL_IN", "REL_ON", "REL_UNDER", "REL_NEXT"]
+                    )
+                )[0]
+
+                relation_dict = {
+                    "REL_IN": constants.REL_IN,
+                    "REL_ON": constants.REL_ON,
+                    "REL_UNDER": constants.REL_UNDER,
+                    "REL_NEXT": constants.REL_NEXT,
+                }
+                relation = relation_dict[relation_tree.label()]
+
+        # 4. Combinatorial Flattening
+        for target_obj in valid_target_objects:
+            if intent != "PLACE":
+                candidates.append({"target": target_obj})
+                continue
+
+            for dest_obj in valid_dest_objects:
+                candidates.append(
+                    {
+                        "target": target_obj,
+                        "destination": {
+                            "relation": relation,
+                            "reference": dest_obj,
+                        },
+                    }
+                )
+
+    return intent, candidates
+
+
+def build_response(intent, candidates):
+    """Formats the final API payload based on the list of valid candidates."""
+    if len(candidates) == 0:
+        return {
+            "intent": intent,
+            "action_args": None,
+            "status": "NOT_FOUND",
+            "status_args": {
+                "message": "I couldn't find some of the mentioned objects in the world."
+            },
+        }
+    elif len(candidates) > 1:
+        return {
+            "intent": intent,
+            "action_args": None,
+            "status": "AMBIGUOUS",
+            "status_args": {
+                "message": "I found multiple physical possibilities for that command. Which did you mean?",
+                "candidates": candidates,
+            },
+        }
+    else:  # Exactly 1 candidate
+        return {
+            "intent": intent,
+            "action_args": candidates[0],
+            "status": "RESOLVED",
+            "status_args": None,
+        }
+
+
+def parse_command(input: str, world) -> dict:
+    """Main orchestrator: tokenizes input, generates trees, and returns the API payload."""
     tokens = nltk.word_tokenize(input.lower())
     tokens = [t for t in tokens if t.isalnum()]
+
     try:
         trees = list(parser.parse(tokens))
     except ValueError as e:
-        return e
-
-    print(trees[0])
-
-    for subtree in trees[0].subtrees():
-        print(subtree)
-
-    out = {}
-
-    if len(trees) == 0:
-        out = {
+        return {
             "intent": None,
             "action_args": None,
-            "status": "UNRECOGNIZED",
-            "status_args": {"message": "Parse error. Please try again."},
+            "status": "PARSE_ERROR",
+            "status_args": {"message": str(e)},
         }
-        return out
 
-    for tree in trees:
-        intent = ""
-        for subtree in tree:
-            label = subtree.label()
-            if label in ["PICKUP", "PLACE", "OPEN", "CLOSE", "INSPECT"]:
-                intent = label
-                break
+    if len(trees) == 0:
+        return {
+            "intent": None,
+            "action_args": None,
+            "status": "PARSE_ERROR",
+            "status_args": {
+                "message": "Sorry, but I don't understand. Please try again."
+            },
+        }
 
-        target = list(tree.subtrees(lambda t: t.label() == "TARGET"))[0]
-        valid_target_objects = find_objects_in_world(target, world)
-
-        if len(valid_target_objects) == 0:
-            # This parse tree doesn't match our world. Ignore it
-            continue
-
-        if intent == "PLACE":
-            dest = list(tree.subtrees(lambda t: t.label() == "DEST"))[0]
-            valid_dest_objects = find_objects_in_world(dest, world)
+    intent, candidates = get_action_candidates(trees, world)
+    return build_response(intent, candidates)
