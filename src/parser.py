@@ -33,7 +33,7 @@ STATE_CLOSED = ["closed", "shut", "locked"]
 
 
 # ===============================
-# GRAMMAR GENERATION
+# GRAMMAR DEFINITION
 # ===============================
 def make_rules(vocab_list):
     """
