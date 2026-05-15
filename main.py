@@ -39,15 +39,9 @@ def main():
                 args = payload["status_args"]
                 print(args["message"])
                 candidates = args["candidates"]
-                for i, candidate in enumerate(candidates):
-                    target = candidate.get("target")
-                    destination = candidate.get("destination")
-                    candidate_msg = f"{i+1}. {payload["intent"]} {target}"
-
-                    if destination:
-                        candidate_msg += f"{destination["relation"]} {destination["reference"]}"
-
-                    print(candidate_msg)
+                
+                for i, candidate_msg in enumerate(args["candidate_strings"]):
+                    print(f"{i+1}. {candidate_msg}")
 
                 while True:
                     choice = int(
@@ -55,7 +49,7 @@ def main():
                             f"Choose one of the actions (1-{len(candidates)}) > "
                         )
                     )
-                    if choice < 0 or choice > len(candidates):
+                    if choice < 1 or choice > len(candidates):
                         print("Invalid choice. Try again.")
                         continue
                     payload["action_args"] = candidates[choice - 1]
@@ -65,7 +59,7 @@ def main():
             # RESOLVED state, or ambiguity solved.
             print(planner.execute(payload))
 
-    except:
+    except (EOFError, KeyboardInterrupt):
         print()
     finally:
         readline.write_history_file(hist_file)

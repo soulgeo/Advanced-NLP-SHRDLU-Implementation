@@ -263,6 +263,20 @@ def get_action_candidates(trees, world):
     return intent, candidates
 
 
+def format_candidate(intent, candidate):
+    """Returns a human-readable string for a single action candidate."""
+    target = candidate.get("target")
+    destination = candidate.get("destination")
+    
+    # Clean up intent for display (e.g., PICKUP -> pick up)
+    display_intent = intent.lower().replace("_", " ")
+    
+    msg = f"{display_intent} {target}"
+    if destination:
+        msg += f" {destination['relation']} {destination['reference']}"
+    return msg
+
+
 def build_response(intent, candidates):
     """Formats the final API payload based on the list of valid candidates."""
     if len(candidates) == 0:
@@ -283,6 +297,9 @@ def build_response(intent, candidates):
             "status_args": {
                 "message": "I found multiple physical possibilities for that command. Which did you mean?",
                 "candidates": candidates,
+                "candidate_strings": [
+                    format_candidate(intent, c) for c in candidates
+                ],
             },
         }
 
