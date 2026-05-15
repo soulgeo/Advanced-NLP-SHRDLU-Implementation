@@ -46,7 +46,7 @@ def main():
                 while True:
                     choice = int(
                         input(
-                            f"Choose one of the actions (1-{len(candidates)}) > "
+                            f"Choose one of the actions (1-{len(candidates)}): "
                         )
                     )
                     if choice < 1 or choice > len(candidates):
