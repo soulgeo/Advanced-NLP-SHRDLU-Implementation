@@ -10,7 +10,7 @@ class Parser():
         self.grammar = nltk.CFG.fromstring(grammar_string)
         self.parser = nltk.ChartParser(self.grammar)
 
-        self.latest_reference = None
+        self.saved_obj = None
 
 
     def _get_attributes_of_np(self, np_tree):
@@ -49,22 +49,26 @@ class Parser():
     def _resolve_reference(self, parse_tree, world):
         """Recursively finds all object IDs that match descriptions and locations in the tree."""
         # Setup
-        np_trees = list(parse_tree.subtrees(lambda t: t.label() == "NP"))
+        object_trees = list(parse_tree.subtrees(lambda t: t.label() in ["NP", "ANAPHORIC"]))
         zone_trees = list(parse_tree.subtrees(lambda t: t.label() == "ZONE"))
 
-        np = None
+        obj_tree = None
         attributes = {}
-        if len(np_trees) > 0:
-            np = np_trees[0]
-            attributes = self._get_attributes_of_np(np)
+        if len(object_trees) > 0:
+            obj_tree = object_trees[0]
+            if obj_tree.label() == "NP":
+                attributes = self._get_attributes_of_np(obj_tree)
 
         references = list(parse_tree.subtrees(lambda t: t.label() == "REF"))
 
         # Termination condition
         if len(references) == 0:
-            if not np:
+            if not obj_tree:
                 zone = zone_trees[0].leaves()[0]
                 return [zone]
+
+            if obj_tree.label() == "ANAPHORIC":
+                return [self.saved_obj] if self.saved_obj is not None else []
 
             obj_list = world.find_objects(**attributes)
             return obj_list
@@ -169,6 +173,10 @@ class Parser():
                             },
                         }
                     )
+
+            # Save the target object if only one
+            if len(valid_target_objects) == 1:
+                self.saved_obj = valid_target_objects[0]
 
         return intent, candidates
 

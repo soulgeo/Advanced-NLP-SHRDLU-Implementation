@@ -50,9 +50,9 @@ grammar_string = f"""
     # --- SYNTAX ---
     S -> ACT TARGET | PLACE TARGET | PLACE TARGET DEST
     ACT -> PICKUP | OPEN | CLOSE | INSPECT
-    TARGET -> NP | NP REF
-    REF -> REL NP | REL NP REF | REL ZONE | REL DET ZONE
-    DEST -> REL NP | REL NP REF | REL ZONE | REL DET ZONE
+    TARGET -> NP | NP REF | ANAPHORIC
+    REF -> REL NP | REL NP REF | REL ZONE | REL DET ZONE | REL ANAPHORIC
+    DEST -> REL NP | REL NP REF | REL ZONE | REL DET ZONE | REL ANAPHORIC
     NP -> DET AP | DET OBJ_NAME | AP | OBJ_NAME
     AP -> ADJ AP | ADJ OBJ_NAME
     ADJ -> COLOR | SIZE | MATERIAL | STATE
@@ -61,6 +61,7 @@ grammar_string = f"""
     # --- STATIC WORDS ---
     DET -> "the" | "a" | "an" | "that" | "this"
     OBJ_SYN -> "object" | "thing" | "stuff"
+    ANAPHORIC -> "it" | "that"
 
     # --- VERB CATEGORIES ---
     PICKUP -> {make_rules(ACT_PICKUP)}
