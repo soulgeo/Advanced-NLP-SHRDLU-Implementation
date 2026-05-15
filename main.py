@@ -21,7 +21,7 @@ def main():
 
     try:
         while True:
-            user_input = input("SHRDLU > ")
+            user_input = input("\033[93m{}\033[00m".format("SHRDLU > "))
             if user_input.lower() in ["exit", "quit"]:
                 break
             if user_input == "":
