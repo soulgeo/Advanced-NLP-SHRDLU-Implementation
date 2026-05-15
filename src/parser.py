@@ -173,7 +173,7 @@ def resolve_reference(parse_tree, world):
         "REL_NEXT": constants.REL_NEXT,
     }
     relation = relation_dict[relation_tree.label()]
-    ref_obj_list = resolve_reference(ref, world)
+    ref_obj_list = resolve_reference(ref[1], world)
 
     obj_list = []
     for obj in ref_obj_list:
