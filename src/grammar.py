@@ -10,7 +10,7 @@ except LookupError:
 # ------- LEXICON -------
 
 # Verbs
-ACT_PICKUP = ["pick", "pick up", "grab", "take", "lift", "lift up", "get"]
+ACT_PICKUP = ["pick", "pickup", "pick up", "grab", "take", "lift", "lift up", "get"]
 ACT_PLACE = ["place", "put", "drop", "leave"]
 ACT_OPEN = ["open", "unlock", "unblock", "unclose", "unlid"]
 ACT_CLOSE = ["close", "shut", "shut off", "lock", "block"]
@@ -49,6 +49,11 @@ def make_rules(vocab_list):
 grammar_string = f"""
     # --- SYNTAX ---
     S -> ACT TARGET | PLACE TARGET | PLACE TARGET DEST
+    # Phrasal Verb Splitting Rules
+    S -> PICKUP TARGET "up"
+    S -> CLOSE TARGET "off"
+    S -> INSPECT TARGET "out"
+
     ACT -> PICKUP | OPEN | CLOSE | INSPECT
     TARGET -> NP | NP REF | ANAPHORIC
     REF -> REL NP | REL NP REF | REL ZONE | REL DET ZONE | REL ANAPHORIC

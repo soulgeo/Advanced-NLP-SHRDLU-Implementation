@@ -66,7 +66,7 @@ def main():
                 continue
 
             # SHRDLU commands
-            payload = parser.parse_command(user_input, world)
+            payload = parser.run(user_input, world)
 
             if debug == True:
                 print(f"Debug: {payload["status"]}")
