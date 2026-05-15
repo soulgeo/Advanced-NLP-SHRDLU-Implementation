@@ -1,7 +1,7 @@
 import os
 import readline
 
-from src.parser import parse_command
+from src.parser import Parser
 from src.planner import Planner
 from src.world import World
 
@@ -18,6 +18,7 @@ if os.path.exists(hist_file):
 def main():
     world = World()
     planner = Planner(world)
+    parser = Parser()
 
     try:
         while True:
@@ -29,7 +30,7 @@ def main():
             if user_input == "/world":
                 continue
 
-            payload = parse_command(user_input, world)
+            payload = parser.parse_command(user_input, world)
 
             if payload["status"] in ["PARSE_ERROR", "NOT_FOUND"]:
                 print(payload["status_args"]["message"])
