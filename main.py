@@ -1,5 +1,6 @@
 import os
 import readline
+import inspect
 
 from src.parser import Parser
 from src.planner import Planner
@@ -11,26 +12,64 @@ hist_file = os.path.join(data_dir, "command_history.txt")
 if not os.path.exists(data_dir):
     os.makedirs(data_dir)
 
-# Load history safely
 if os.path.exists(hist_file):
     readline.read_history_file(hist_file)
 
+
 def main():
+    debug = False
+
     world = World()
     planner = Planner(world)
     parser = Parser()
 
+    print("SHRDLU Parser.")
+    print("Type \"/help\" for command syntax or \"/exit\" to quit.")
+
     try:
         while True:
             user_input = input("\033[93m{}\033[00m".format("SHRDLU > "))
-            if user_input.lower() in ["exit", "quit"]:
-                break
             if user_input == "":
                 continue
-            if user_input == "/world":
+
+            # Client commands
+            if user_input[0] == "/":
+                command = user_input[1:]
+                if command in ["exit", "quit"]:
+                    break
+
+                if command == "world":
+                    continue
+
+                if command == "debug":
+                    debug = not debug
+                    print(f"Debug mode {"on" if debug == True else "off"}.")
+                    continue
+
+                if command == "help":
+                    print(inspect.cleandoc("""
+                    AVAILABLE SHRDLU COMMANDS:
+                    - PICKUP [object]              (e.g., "pick up the red cube")
+                    - PLACE [obj] [relation] [ref] (e.g., "put the cube on the table")
+                    - OPEN/CLOSE [object]          (e.g., "open the wooden box")
+                    - INSPECT [object]             (e.g., "look at the blue sphere")
+
+                    OTHER COMMANDS:
+                    - /debug               Toggle debug mode.
+                    - /exit (or /quit)     Quit.
+                    - /help                Display available commands.
+                    - /world               Display the current state of each object in the world.
+                    """))
+                    continue
+
+                print("Command not recognized.")
                 continue
 
+            # SHRDLU commands
             payload = parser.parse_command(user_input, world)
+
+            if debug == True:
+                print(f"Debug: {payload["status"]}")
 
             if payload["status"] in ["PARSE_ERROR", "NOT_FOUND"]:
                 print(payload["status_args"]["message"])
