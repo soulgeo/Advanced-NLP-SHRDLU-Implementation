@@ -1,6 +1,7 @@
 from typing import Optional
-from world import World
+
 import src.constants as constants
+from src.world import World
 
 
 class Planner:
@@ -21,7 +22,9 @@ class Planner:
             return self._pickup(target_id)
         elif intent == constants.INTENT_PLACE:
             dest = args.get("destination") or {}
-            return self._place(target_id, dest.get("relation"), dest.get("reference"))
+            return self._place(
+                target_id, dest.get("relation"), dest.get("reference")
+            )
         elif intent == constants.INTENT_OPEN:
             return self._open(target_id)
         elif intent == constants.INTENT_CLOSE:
@@ -140,7 +143,9 @@ class Planner:
         if obj.shape != "box":
             return f"{obj_id} cannot be opened."
         if not self.world.is_clear(obj_id):
-            return f"{obj_id} cannot be opened, There is something on top of it."
+            return (
+                f"{obj_id} cannot be opened, There is something on top of it."
+            )
         if obj.state == constants.STATE_OPEN:
             return f"{obj_id} is already open."
 
@@ -190,6 +195,9 @@ class Planner:
         contains_info = ""
         if obj.shape == "box" and obj.state == constants.STATE_OPEN:
             items = self.world.contains.get(obj_id, [])
-            contains_info = f", Contains: {items}" if items else ", Contains: nothing"
+            contains_info = (
+                f", Contains: {items}" if items else ", Contains: nothing"
+            )
 
         return f"INSPECT {obj_id} -> [Color: {obj.color}, Size: {obj.size}, Material: {obj.material}{state_info}{location_info}{contains_info}]"
+
