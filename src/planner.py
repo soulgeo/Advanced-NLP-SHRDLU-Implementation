@@ -10,15 +10,10 @@ class Planner:
 
     # Gets the JSON payload from the parser.
     def execute(self, payload: dict) -> str:
-        if payload.get("status") != "RESOLVED":
-            return "The order is not fully understood (UNRESOLVED)."
 
         intent = payload.get("intent")
         args = payload.get("action_args") or {}
         target_id = args.get("target")
-
-        if not target_id or target_id not in self.world.objects:
-            return f"The object: '{target_id}' was not found in the world."
 
         # Routing
         if intent == constants.INTENT_PICKUP:
@@ -122,6 +117,18 @@ class Planner:
 
         obj.state = constants.STATE_CLOSED
         return f"{obj_id} has been closed."
+
+    # Unblocks an object by removing the item on top of it and moving it on a surface (table/floor)
+    def _clear_insurance(self, obj_id: str) -> str:
+        actions_taken = []
+        ontop_id = self.world.top_of(obj_id)
+        if ontop_id:
+            actions_taken.extend(self._clear_insurance(ontop_id))
+
+            current_srfc = self.world.objects[ontop_id].location_id
+            self.world.on[ontop_id] = None
+            actions_taken.append(f"The {ontop_id} has been moved to {current_srfc}.")
+            return actions_taken
 
     # Utility function. Returns a formatted string with the attributes, location, and contents of an object.
     def _inspect(self, obj_id: str) -> str:
