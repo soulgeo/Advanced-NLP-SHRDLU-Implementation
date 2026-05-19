@@ -49,6 +49,7 @@ class Parser():
     def _resolve_reference(self, parse_tree, world):
         """Recursively finds all object IDs that match descriptions and locations in the tree."""
         # Setup
+        # We only look at direct children to avoid picking up nested objects prematurely
         object_trees = list(parse_tree.subtrees(lambda t: t.label() in ["NP", "ANAPHORIC"]))
         zone_trees = list(parse_tree.subtrees(lambda t: t.label() == "ZONE"))
 
@@ -59,13 +60,17 @@ class Parser():
             if obj_tree.label() == "NP":
                 attributes = self._get_attributes_of_np(obj_tree)
 
-        references = list(parse_tree.subtrees(lambda t: t.label() == "REF"))
+        references = [
+            t for t in parse_tree if isinstance(t, nltk.Tree) and t.label() == "REF"
+        ]
 
         # Termination condition
         if len(references) == 0:
             if not obj_tree:
-                zone = zone_trees[0].leaves()[0]
-                return [zone]
+                if len(zone_trees) > 0:
+                    zone = zone_trees[0].leaves()[0]
+                    return [zone]
+                return []
 
             if obj_tree.label() == "ANAPHORIC":
                 return [self.saved_obj] if self.saved_obj is not None else []
@@ -87,7 +92,7 @@ class Parser():
             "REL_NEXT": constants.REL_NEXT,
         }
         relation = relation_dict[relation_tree.label()]
-        ref_obj_list = self._resolve_reference(ref[1], world)
+        ref_obj_list = self._resolve_reference(ref, world)
 
         obj_list = []
         for obj in ref_obj_list:
@@ -178,7 +183,18 @@ class Parser():
             if len(valid_target_objects) == 1:
                 self.saved_obj = valid_target_objects[0]
 
-        return intent, candidates
+        # Deduplicate candidates
+        unique_candidates = []
+        seen = set()
+        for c in candidates:
+            # Convert dict to a hashable representation for deduplication
+            # Using a simplified string representation since candidates are shallow
+            c_str = str(c)
+            if c_str not in seen:
+                unique_candidates.append(c)
+                seen.add(c_str)
+
+        return intent, unique_candidates
 
 
     def _format_candidate(self, intent, candidate):
