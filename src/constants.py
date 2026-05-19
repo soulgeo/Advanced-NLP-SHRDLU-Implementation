@@ -17,7 +17,7 @@ COLORS = [
     "white",
     "black",
 ]
-SHAPES = ["cube", "pyramid", "sphere", "cylinder", "cone", "box"]
+SHAPES = ["block", "pyramid", "sphere", "cylinder", "cone", "box"]
 MATERIALS = ["wooden", "metal", "plastic", "rubber", "paper"]
 ZONES = ["table", "floor"]
 
