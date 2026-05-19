@@ -39,6 +39,7 @@ def main():
                     break
 
                 if command == "world":
+                    print(world.describe())
                     continue
 
                 if command == "debug":
