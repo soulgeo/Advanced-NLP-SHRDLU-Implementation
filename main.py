@@ -1,6 +1,6 @@
+import inspect
 import os
 import readline
-import inspect
 
 from src.parser import Parser
 from src.planner import Planner
@@ -79,22 +79,39 @@ def main():
                 args = payload["status_args"]
                 print(args["message"])
                 candidates = args["candidates"]
-                
+
                 for i, candidate_msg in enumerate(args["candidate_strings"]):
                     print(f"{i+1}. {candidate_msg}")
 
-                while True:
-                    choice = int(
-                        input(
-                            f"Choose one of the actions (1-{len(candidates)}): "
+                readline.set_auto_history(False)
+                try:
+                    while True:
+                        choice = input(
+                            f"Choose one of the actions (1-{len(candidates)} or \"c\" to cancel): "
                         )
-                    )
-                    if choice < 1 or choice > len(candidates):
-                        print("Invalid choice. Try again.")
-                        continue
-                    payload["action_args"] = candidates[choice - 1]
-                    payload["status"] = "RESOLVED"
-                    break
+                        if choice.lower() in ["c", "cancel"]:
+                            payload["status"] = "CANCELED"
+                            break
+
+                        try:
+                            choice = int(choice)
+                        except ValueError:
+                            print("Invalid input. Please enter a number or 'c'.")
+                            continue
+
+                        if choice < 1 or choice > len(candidates):
+                            print("Choice out of bounds. Try again.")
+                            continue
+
+                        payload["action_args"] = candidates[choice - 1]
+                        payload["status"] = "RESOLVED"
+                        parser.saved_obj = payload["action_args"]["target"]
+                        break
+                finally:
+                    readline.set_auto_history(True)
+
+            if payload["status"] == "CANCELED":
+                continue
 
             # RESOLVED state, or ambiguity solved.
             print(planner.execute(payload))
