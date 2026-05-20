@@ -53,18 +53,20 @@ class Planner:
 
     # The object gets placed according to the rules
     def _place(self, obj_id: str, relation: str, ref_id: Optional[str]) -> str:
-        if self.world.holding != obj_id:
-            return f"{obj_id} is not being held. The object cannot be placed."
+        if self.current_holding != obj_id:
+            if self.current_holding is not None:
+                return f"I must drop {self.current_holding} before picking up and placing {obj_id}."
+            pickup_result = self._pickup(obj_id)
+            pickup_msg = f"Automatically picke up : {pickup_result}"
 
         if not relation:
             return "No destination was determined."
 
-        # Same target as destination gets denied
         if obj_id == ref_id:
             return f"Cannot place '{obj_id}' relative to itself!"
 
-        # PLaced on the table or the floor
         target_zone = None
+
         if ref_id in constants.ZONES:
             target_zone = ref_id
         elif relation in constants.ZONES:
@@ -75,7 +77,7 @@ class Planner:
             self.world.on[obj_id] = None
             self.world.holding = None
             self.current_holding = None
-            return f"{obj_id} placed on the {target_zone}."
+            return f"{pickup_msg}{obj_id} placed on the {target_zone}."
 
         if not ref_id or ref_id not in self.world.objects:
             return f"Unable to find '{ref_id}'."
@@ -108,7 +110,7 @@ class Planner:
             self.world.objects[obj_id].location_id = f"INSIDE_{ref_id}"
             self.world.holding = None
             self.current_holding = None
-            return f"The {obj_id} has been placed inside {ref_id}."
+            return f"{implicit_pickup_msg}The {obj_id} has been placed inside {ref_id}."
 
         elif relation == constants.REL_UNDER:
             if ref_obj.shape in ["pyramid", "sphere"]:
@@ -124,12 +126,12 @@ class Planner:
 
             self.world.on[ref_id] = obj_id
             self.world.holding = None
-
+            self.current_holding = None
 
             if unblock_actions:
-                prefix = f"Unblocking and lifting destination: " + ", " .join(unblock_actions)
+                prefix = f"[Unblocking and lifting destination: " + ", ".join(unblock_actions) + "] "
             else:
-                prefix = f"Lifting {ref_id} to make room"
+                prefix = f"Lifting {ref_id} to make room. "
             return f"{prefix}The {obj_id} has been placed under {ref_id}."
 
         return f"Unknown relation: '{relation}'."
