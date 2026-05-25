@@ -113,8 +113,6 @@ class Planner:
             return f"{implicit_pickup_msg}The {obj_id} has been placed inside {ref_id}."
 
         elif relation == constants.REL_UNDER:
-            if ref_obj.shape in ["pyramid", "sphere"]:
-                return f"Unable to place something under a {ref_obj.shape}."
 
             unblock_actions = self._clear_insurance(ref_id)
 
