@@ -115,7 +115,8 @@ def main():
                 continue
 
             # RESOLVED state, or ambiguity solved.
-            print(planner.execute(payload))
+            result = planner.execute(payload)
+            print(result["message"])
 
     except (EOFError, KeyboardInterrupt):
         print()

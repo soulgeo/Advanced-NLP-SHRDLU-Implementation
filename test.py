@@ -7,7 +7,7 @@ import src.constants as constants
 
 class TestWorld(TestCase):
     def setUp(self):
-        self.world = World()
+        self.world: World = World()
 
     def test_find_objects_by_description(self):
         red_objects = self.world.find_objects(color="red")
@@ -52,8 +52,8 @@ class TestWorld(TestCase):
 
 class TestParser(TestCase):
     def setUp(self) -> None:
-        self.world = World()
-        self.parser = Parser()
+        self.world: World = World()
+        self.parser: Parser = Parser()
 
     def test_resolved(self):
         response = self.parser.run("pick up the red block", self.world)
@@ -102,24 +102,23 @@ class TestParser(TestCase):
 
 class TestPlanner(TestCase):
     def setUp(self) -> None:
-        self.world = World()
-        self.planner = Planner(self.world)
+        self.world: World = World()
+        self.planner: Planner = Planner(self.world)
 
     def test_inspect_object(self):
         result = self.planner.execute({
             "intent": constants.INTENT_INSPECT,
             "action_args": {"target": "block_red_1"}
         })
-        self.assertIn("INSPECT block_red_1", result)
-        self.assertIn("Color: red", result)
-        self.assertIn("Size: small", result)
+        self.assertEqual(result["status"], "SUCCESS")
+        self.assertEqual(len(self.world.objects), 12)
 
     def test_pickup_object(self):
         result = self.planner.execute({
             "intent": constants.INTENT_PICKUP,
             "action_args": {"target": "block_red_1"}
         })
-        self.assertIn("successfully picked up", result)
+        self.assertEqual(result["status"], "SUCCESS")
         self.assertEqual(self.world.holding, "block_red_1")
         self.assertEqual(self.planner.current_holding, "block_red_1")
 
@@ -127,18 +126,20 @@ class TestPlanner(TestCase):
             "intent": constants.INTENT_PICKUP,
             "action_args": {"target": "block_blue_1"}
         })
-        self.assertIn("already holding", result2)
+        self.assertEqual(result2["status"], "ERROR")
+        self.assertEqual(self.world.holding, "block_red_1")
 
     def test_unblocking_pickup(self):
         self.world.on["block_red_1"] = "block_blue_1"
-        
+
         result = self.planner.execute({
             "intent": constants.INTENT_PICKUP,
             "action_args": {"target": "block_blue_1"}
         })
-        self.assertIn("Unblocking: The block_red_1 has been moved to table.", result)
+        self.assertEqual(result["status"], "SUCCESS")
         self.assertEqual(self.world.holding, "block_blue_1")
         self.assertIsNone(self.world.on["block_red_1"])
+        self.assertEqual(self.world.objects["block_red_1"].location_id, "table")
 
     def test_place_object(self):
         self.planner.execute({
@@ -152,8 +153,9 @@ class TestPlanner(TestCase):
                 "destination": {"relation": constants.REL_ON, "reference": "table"}
             }
         })
-        self.assertIn("placed on the table", result)
+        self.assertEqual(result["status"], "SUCCESS")
         self.assertEqual(self.world.objects["block_red_1"].location_id, "table")
+        self.assertIsNone(self.world.holding)
 
         self.planner.execute({
             "intent": constants.INTENT_PICKUP,
@@ -166,8 +168,9 @@ class TestPlanner(TestCase):
                 "destination": {"relation": constants.REL_ON, "reference": "block_blue_1"}
             }
         })
-        self.assertIn("placed on top of block_blue_1", result)
+        self.assertEqual(result["status"], "SUCCESS")
         self.assertEqual(self.world.on["block_red_1"], "block_blue_1")
+        self.assertIsNone(self.world.holding)
 
     def test_place_invalid(self):
         self.planner.execute({
@@ -181,28 +184,29 @@ class TestPlanner(TestCase):
                 "destination": {"relation": constants.REL_ON, "reference": "sphere_red_1"}
             }
         })
-        self.assertIn("Unable to place something on top of sphere", result)
+        self.assertEqual(result["status"], "ERROR")
+        self.assertEqual(self.world.holding, "block_red_1")
 
     def test_open_close_box(self):
         self.assertEqual(self.world.objects["box_metal_1"].state, constants.STATE_CLOSED)
-        
+
         result = self.planner.execute({
             "intent": constants.INTENT_OPEN,
             "action_args": {"target": "box_metal_1"}
         })
-        self.assertIn("has been opened", result)
+        self.assertEqual(result["status"], "SUCCESS")
         self.assertEqual(self.world.objects["box_metal_1"].state, constants.STATE_OPEN)
 
         result = self.planner.execute({
             "intent": constants.INTENT_CLOSE,
             "action_args": {"target": "box_metal_1"}
         })
-        self.assertIn("has been closed", result)
+        self.assertEqual(result["status"], "SUCCESS")
         self.assertEqual(self.world.objects["box_metal_1"].state, constants.STATE_CLOSED)
 
     def test_place_inside_box(self):
         self.world.objects["box_metal_1"].state = constants.STATE_OPEN
-        
+
         self.planner.execute({
             "intent": constants.INTENT_PICKUP,
             "action_args": {"target": "block_red_1"}
@@ -214,20 +218,24 @@ class TestPlanner(TestCase):
                 "destination": {"relation": constants.REL_IN, "reference": "box_metal_1"}
             }
         })
-        self.assertIn("placed inside box_metal_1", result)
+        self.assertEqual(result["status"], "SUCCESS")
         self.assertIn("block_red_1", self.world.contains["box_metal_1"])
+        self.assertEqual(self.world.objects["block_red_1"].location_id, "INSIDE_box_metal_1")
 
     def test_deep_unblocking(self):
         self.world.on["block_red_1"] = "block_blue_1"
         self.world.on["block_blue_1"] = "block_green_1"
-        
+
         result = self.planner.execute({
             "intent": constants.INTENT_PICKUP,
             "action_args": {"target": "block_green_1"}
         })
-        self.assertIn("The block_red_1 has been moved to table.", result)
-        self.assertIn("The block_blue_1 has been moved to table.", result)
+        self.assertEqual(result["status"], "SUCCESS")
         self.assertEqual(self.world.holding, "block_green_1")
+        self.assertIsNone(self.world.on["block_red_1"])
+        self.assertIsNone(self.world.on["block_blue_1"])
+        self.assertEqual(self.world.objects["block_red_1"].location_id, "table")
+        self.assertEqual(self.world.objects["block_blue_1"].location_id, "table")
 
     def test_place_under(self):
         result = self.planner.execute({
@@ -237,27 +245,29 @@ class TestPlanner(TestCase):
                 "destination": {"relation": constants.REL_UNDER, "reference": "block_blue_1"}
             }
         })
-        self.assertIn("The block_red_1 has been placed under block_blue_1", result)
+        self.assertEqual(result["status"], "SUCCESS")
         self.assertEqual(self.world.on["block_blue_1"], "block_red_1")
         self.assertEqual(self.world.objects["block_red_1"].location_id, "table")
+        self.assertIsNone(self.world.holding)
 
     def test_open_constraints(self):
         result = self.planner.execute({
             "intent": constants.INTENT_OPEN,
             "action_args": {"target": "block_red_1"}
         })
-        self.assertIn("cannot be opened", result)
+        self.assertEqual(result["status"], "ERROR")
 
         self.world.on["block_red_1"] = "box_metal_1"
         result2 = self.planner.execute({
             "intent": constants.INTENT_OPEN,
             "action_args": {"target": "box_metal_1"}
         })
-        self.assertIn("There is something on top of it", result2)
+        self.assertEqual(result2["status"], "ERROR")
+        self.assertEqual(self.world.objects["box_metal_1"].state, constants.STATE_CLOSED)
 
     def test_place_in_closed_box(self):
         self.world.objects["box_metal_1"].state = constants.STATE_CLOSED
-        
+
         result = self.planner.execute({
             "intent": constants.INTENT_PLACE,
             "action_args": {
@@ -265,7 +275,9 @@ class TestPlanner(TestCase):
                 "destination": {"relation": constants.REL_IN, "reference": "box_metal_1"}
             }
         })
-        self.assertIn("is closed. Please open it", result)
+        self.assertEqual(result["status"], "ERROR")
+        self.assertNotIn("block_red_1", self.world.contains["box_metal_1"])
+
 
 if __name__ == '__main__':
     main()

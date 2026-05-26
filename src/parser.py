@@ -1,3 +1,4 @@
+from typing import Dict, Any
 import nltk
 
 import src.constants as constants
@@ -246,7 +247,7 @@ class Parser():
             }
 
 
-    def run(self, input: str, world: World) -> dict:
+    def run(self, input: str, world: World) -> Dict[str, Any]:
         """Main orchestrator: tokenizes input, generates trees, and returns the API payload."""
         tokens = nltk.word_tokenize(input.lower())
         tokens = [t for t in tokens if t.isalnum()]
