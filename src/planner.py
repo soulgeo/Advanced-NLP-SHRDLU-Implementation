@@ -7,18 +7,14 @@ class Planner:
     # Planner gets initialized and connected to the World
     def __init__(self, world: World):
         self.world = world
+        self.current_holding = None
 
     # Gets the JSON payload from the parser.
     def execute(self, payload: dict) -> str:
-        if payload.get("status") != "RESOLVED":
-            return "The order is not fully understood (UNRESOLVED)."
 
         intent = payload.get("intent")
         args = payload.get("action_args") or {}
         target_id = args.get("target")
-
-        if not target_id or target_id not in self.world.objects:
-            return f"The object: '{target_id}' was not found in the world."
 
         # Routing
         if intent == constants.INTENT_PICKUP:
@@ -37,12 +33,15 @@ class Planner:
 
     # Object pick up: Checks whether the hand holds something else and if the object getting picked up does not have anything on top of it
     def _pickup(self, obj_id: str) -> str:
-        if self.world.holding is not None:
-            return "Another, object already being held"
-        if not self.world.is_clear(obj_id):
-            return f"Unable to pick-up {obj_id}. There is something on top of it."
+        if self.current_holding is not None:
+            return f"I am already holding {self.current_holding}."
+        unblock_object = self._clear_insurance(obj_id)
+        prefix = ""
+        if unblock_object:
+            prefix = "Unblocking: " + ", ".join(unblock_object) + " "
 
         self.world.holding = obj_id
+        self.current_holding = obj_id
         self.world.on[obj_id] = None
 
         for box_id, contents in self.world.contains.items():
@@ -50,22 +49,35 @@ class Planner:
                 contents.remove(obj_id)
                 break
 
-        return f"{obj_id} has been successfully picked up."
+        return f"{prefix}The {obj_id} has been successfully picked up."
 
     # The object gets placed according to the rules
     def _place(self, obj_id: str, relation: str, ref_id: Optional[str]) -> str:
-        if self.world.holding != obj_id:
-            return f"{obj_id} is not being held. The object cannot be placed."
+        if self.current_holding != obj_id:
+            if self.current_holding is not None:
+                return f"I must drop {self.current_holding} before picking up and placing {obj_id}."
+            pickup_result = self._pickup(obj_id)
+            pickup_msg = f"Automatically picke up : {pickup_result}"
 
         if not relation:
             return "No destination was determined."
 
-        # PLaced on the table or the floor
-        if relation in constants.ZONES:
-            self.world.objects[obj_id].location_id = relation
+        if obj_id == ref_id:
+            return f"Cannot place '{obj_id}' relative to itself!"
+
+        target_zone = None
+
+        if ref_id in constants.ZONES:
+            target_zone = ref_id
+        elif relation in constants.ZONES:
+            target_zone = relation
+
+        if target_zone:
+            self.world.objects[obj_id].location_id = target_zone
             self.world.on[obj_id] = None
             self.world.holding = None
-            return f"{obj_id} placed on the {relation}."
+            self.current_holding = None
+            return f"{pickup_msg}{obj_id} placed on the {target_zone}."
 
         if not ref_id or ref_id not in self.world.objects:
             return f"Unable to find '{ref_id}'."
@@ -73,15 +85,19 @@ class Planner:
         ref_obj = self.world.objects[ref_id]
 
         if relation == constants.REL_ON:
-            if not self.world.is_clear(ref_id):
-                return f"The {obj_id} cannot be placed on top of {ref_id}, it already has an object on top of it."
             if ref_obj.shape in ["pyramid", "sphere"]:
                 return f"Unable to place something on top of {ref_obj.shape}."
+
+            unblock_actions = self._clear_insurance(ref_id)
+            prefix = ""
+            if unblock_actions:
+                prefix = "[Unblocking destination: " + ", ".join(unblock_actions) + "] "
 
             self.world.on[obj_id] = ref_id
             self.world.objects[obj_id].location_id = ref_obj.location_id
             self.world.holding = None
-            return f"The {obj_id} has been placed on top of {ref_id}."
+            self.current_holding = None
+            return f"{prefix}The {obj_id} has been placed on top of {ref_id}."
 
         elif relation == constants.REL_IN:
             if ref_obj.shape != "box":
@@ -93,7 +109,28 @@ class Planner:
             self.world.on[obj_id] = None
             self.world.objects[obj_id].location_id = f"INSIDE_{ref_id}"
             self.world.holding = None
-            return f"The {obj_id} has been placed inside {ref_id}."
+            self.current_holding = None
+            return f"{implicit_pickup_msg}The {obj_id} has been placed inside {ref_id}."
+
+        elif relation == constants.REL_UNDER:
+
+            unblock_actions = self._clear_insurance(ref_id)
+
+            og_location = ref_obj.location_id
+            self.world.on[ref_id] = None
+
+            self.world.objects[obj_id].location_id = og_location
+            self.world.on[obj_id] = None
+
+            self.world.on[ref_id] = obj_id
+            self.world.holding = None
+            self.current_holding = None
+
+            if unblock_actions:
+                prefix = f"[Unblocking and lifting destination: " + ", ".join(unblock_actions) + "] "
+            else:
+                prefix = f"Lifting {ref_id} to make room. "
+            return f"{prefix}The {obj_id} has been placed under {ref_id}."
 
         return f"Unknown relation: '{relation}'."
 
@@ -122,6 +159,23 @@ class Planner:
 
         obj.state = constants.STATE_CLOSED
         return f"{obj_id} has been closed."
+
+    # Unblocks an object by removing the item on top of it and moving it on a surface (table/floor)
+    def _clear_insurance(self, obj_id: str) -> str:
+        actions_taken = []
+        ontop_id = self.world.top_of(obj_id)
+        if ontop_id:
+            above = self._clear_insurance(ontop_id)
+            if above:
+                actions_taken.extend(above)
+
+            current_srfc = self.world.objects[ontop_id].location_id
+
+            if "INSIDE_" in current_srfc:
+                current_srfc = "table"
+            self.world.on[ontop_id] = None
+            actions_taken.append(f"The {ontop_id} has been moved to {current_srfc}.")
+            return actions_taken
 
     # Utility function. Returns a formatted string with the attributes, location, and contents of an object.
     def _inspect(self, obj_id: str) -> str:

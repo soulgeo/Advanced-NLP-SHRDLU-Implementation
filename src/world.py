@@ -91,3 +91,28 @@ class World:
 
             matches.append(obj_id)
         return matches
+
+    def describe(self) -> str:
+        output = "World State:\n"
+        output += f"Holding: {self.holding}\n"
+
+        for obj_id, obj in self.objects.items():
+            if obj_id == self.holding:
+                continue
+
+            support = self.on.get(obj_id)
+            if support:
+                location = f"Sitting on top of '{support}'"
+            elif obj.location_id.startswith("INSIDE_"):
+                location = f"Inside {obj.location_id.replace('INSIDE_', '')}"
+            else:
+                location = f"On the '{obj.location_id}'"
+
+            state = f"{obj.state}" if obj.state else ""
+            output += f"{obj_id} is {location}{state}\n"
+
+        for box_id, items in self.contains.items():
+            if items:
+                output += f"{box_id} contains {items}\n"
+
+        return output.strip()
