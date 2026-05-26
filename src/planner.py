@@ -56,11 +56,12 @@ class Planner:
 
     # The object gets placed according to the rules
     def _place(self, obj_id: str, relation: str, ref_id: Optional[str]) -> str:
+        pickup_msg = ""
         if self.current_holding != obj_id:
             if self.current_holding is not None:
                 return f"I must drop {self.current_holding} before picking up and placing {obj_id}."
             pickup_result = self._pickup(obj_id)
-            pickup_msg = f"Automatically picke up : {pickup_result}"
+            pickup_msg = f"Automatically picked up: {pickup_result} "
 
         if not relation:
             return "No destination was determined."
@@ -113,7 +114,7 @@ class Planner:
             self.world.objects[obj_id].location_id = f"INSIDE_{ref_id}"
             self.world.holding = None
             self.current_holding = None
-            return f"{implicit_pickup_msg}The {obj_id} has been placed inside {ref_id}."
+            return f"{pickup_msg}The {obj_id} has been placed inside {ref_id}."
 
         elif relation == constants.REL_UNDER:
 
