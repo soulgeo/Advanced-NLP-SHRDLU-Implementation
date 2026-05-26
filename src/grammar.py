@@ -48,11 +48,12 @@ def make_rules(vocab_list):
 
 grammar_string = f"""
     # --- SYNTAX ---
-    S -> ACT TARGET | PLACE TARGET | PLACE TARGET DEST
-    # Phrasal Verb Splitting Rules
+    S -> ACT TARGET
+    S -> PLACE TARGET | PLACE TARGET DEST
     S -> PICKUP TARGET "up"
     S -> CLOSE TARGET "off"
     S -> INSPECT TARGET "out"
+    S -> PLACE TARGET "down" | PLACE TARGET "down" DEST
 
     ACT -> PICKUP | OPEN | CLOSE | INSPECT
     TARGET -> NP | NP REF | ANAPHORIC
