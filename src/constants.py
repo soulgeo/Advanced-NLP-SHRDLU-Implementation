@@ -2,9 +2,7 @@
 Shared vocabulary for the nlp system.
 """
 
-# ===============================
 # CORE ATTRIBUTES
-# ===============================
 COLORS = [
     "red",
     "green",
@@ -19,13 +17,11 @@ COLORS = [
     "white",
     "black",
 ]
-SHAPES = ["cube", "pyramid", "sphere", "cylinder", "cone", "box"]
+SHAPES = ["block", "pyramid", "sphere", "cylinder", "cone", "box"]
 MATERIALS = ["wooden", "metal", "plastic", "rubber", "paper"]
 ZONES = ["table", "floor"]
 
-# ===============================
 # STANDARDIZED CATEGORIES
-# ===============================
 # Sizes
 SIZE_LARGE = "large"
 SIZE_MEDIUM = "medium"
@@ -37,18 +33,14 @@ STATE_OPEN = "open"
 STATE_CLOSED = "closed"
 STATES = [STATE_OPEN, STATE_CLOSED]
 
-# ===============================
 # STANDARDIZED RELATIONS
-# ===============================
 # The planner only needs to know these canonical versions
 REL_IN = "in"
 REL_ON = "on"
 REL_UNDER = "under"
 REL_NEXT = "next to"
 
-# ===============================
 # INTENTS / ACTIONS
-# ===============================
 # Standardized action labels for the JSON contract
 INTENT_PICKUP = "PICKUP"
 INTENT_PLACE = "PLACE"
