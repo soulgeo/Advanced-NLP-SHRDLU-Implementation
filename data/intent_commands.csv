@@ -1,0 +1,601 @@
+command,intent
+shut a wooden box,CLOSE
+grab a small red wooden block,PICKUP
+retrieve a small green rubber sphere,PICKUP
+unlatch a large brown wooden box,OPEN
+place the small green rubber sphere into the small brown paper box,PLACE
+set the small blue plastic pyramid on top of the medium metal box,PLACE
+move the small red plastic cylinder underneath the medium yellow wooden pyramid,PLACE
+deposit the medium yellow wooden pyramid on the floor,PLACE
+collect the small blue plastic pyramid,PICKUP
+pick up the medium metal box,PICKUP
+grab the small red plastic cylinder,PICKUP
+check out the medium red plastic sphere,INSPECT
+fasten a small brown paper box,CLOSE
+check out a medium red plastic sphere,INSPECT
+unlatch a metal box,OPEN
+look at a small brown paper box,INSPECT
+close the wooden box,CLOSE
+unseal metal box,OPEN
+move the small green rubber sphere in the small brown paper box,PLACE
+collect the small red plastic cylinder,PICKUP
+unfasten a medium box,OPEN
+get the large brown wooden box,PICKUP
+seal metal box,CLOSE
+position the large metal cylinder inside the large brown wooden box,PLACE
+take a small red wooden block,PICKUP
+unlock large wooden box,OPEN
+get a medium yellow wooden pyramid,PICKUP
+unfasten brown paper box,OPEN
+check the medium red plastic sphere,INSPECT
+drop the large metal cylinder underneath the medium yellow wooden pyramid,PLACE
+open a wooden box,OPEN
+pick up a medium blue plastic block,PICKUP
+fetch the small brown paper box,PICKUP
+drop the large metal cylinder on the floor,PLACE
+check a large brown wooden box,INSPECT
+fetch a large metal cylinder,PICKUP
+unlock a paper box,OPEN
+examine a medium yellow wooden pyramid,INSPECT
+move the small green rubber sphere into the small brown paper box,PLACE
+lift up the medium yellow wooden pyramid,PICKUP
+unlock the large brown wooden box,OPEN
+shut the wooden box,CLOSE
+observe the medium yellow wooden pyramid,INSPECT
+seal the paper box,CLOSE
+pick the large metal cylinder,PICKUP
+inspect the small blue plastic pyramid,INSPECT
+shut the medium box,CLOSE
+lock a small brown paper box,CLOSE
+check the medium metal box,INSPECT
+set the small green rubber sphere on the large brown wooden box,PLACE
+unfasten the paper box,OPEN
+collect a medium blue plastic block,PICKUP
+close the paper box,CLOSE
+seal a medium metal box,CLOSE
+shut a small brown paper box,CLOSE
+close small paper box,CLOSE
+unlock brown paper box,OPEN
+retrieve the large green wooden block,PICKUP
+open a paper box,OPEN
+position the small red wooden block beneath the large metal cylinder,PLACE
+observe a small brown paper box,INSPECT
+retrieve the medium blue plastic block,PICKUP
+examine the large green wooden block,INSPECT
+place the large metal cylinder on the table,PLACE
+inspect the medium blue plastic block,INSPECT
+move the small green rubber sphere inside the small brown paper box,PLACE
+place the medium blue plastic block on top of the medium metal box,PLACE
+open metal box,OPEN
+look into the large brown wooden box,INSPECT
+seal small paper box,CLOSE
+unfasten a metal box,OPEN
+take a small red plastic cylinder,PICKUP
+fasten a medium box,CLOSE
+position the small blue plastic pyramid beneath the large metal cylinder,PLACE
+position the medium yellow wooden pyramid on top of the medium metal box,PLACE
+unseal a small brown paper box,OPEN
+unlatch a small box,OPEN
+position the small blue plastic pyramid into the large brown wooden box,PLACE
+observe a medium red plastic sphere,INSPECT
+move the small blue plastic pyramid underneath the medium yellow wooden pyramid,PLACE
+lock the wooden box,CLOSE
+move the medium red plastic sphere below the large green wooden block,PLACE
+unseal a paper box,OPEN
+unseal the paper box,OPEN
+open small paper box,OPEN
+fetch a medium red plastic sphere,PICKUP
+position the small blue plastic pyramid onto the table,PLACE
+unfasten the brown box,OPEN
+lift up a medium metal box,PICKUP
+lift up the medium red plastic sphere,PICKUP
+move the large metal cylinder inside the large brown wooden box,PLACE
+shut a medium box,CLOSE
+open the medium box,OPEN
+deposit the large green wooden block in the large brown wooden box,PLACE
+fasten the metal box,CLOSE
+open large wooden box,OPEN
+set the small blue plastic pyramid in the small brown paper box,PLACE
+put the large metal cylinder underneath the medium yellow wooden pyramid,PLACE
+observe the large metal cylinder,INSPECT
+seal the medium metal box,CLOSE
+unlock a small box,OPEN
+unlatch large wooden box,OPEN
+unfasten a wooden box,OPEN
+fasten the paper box,CLOSE
+unlock a medium box,OPEN
+put the large metal cylinder on the floor,PLACE
+put the medium yellow wooden pyramid onto the table,PLACE
+observe a medium yellow wooden pyramid,INSPECT
+unseal the large brown wooden box,OPEN
+get a small blue plastic pyramid,PICKUP
+look at a small green rubber sphere,INSPECT
+unlock medium metal box,OPEN
+open a metal box,OPEN
+seal medium metal box,CLOSE
+lock medium metal box,CLOSE
+position the medium yellow wooden pyramid under the medium blue plastic block,PLACE
+shut small paper box,CLOSE
+leave the medium blue plastic block underneath the medium yellow wooden pyramid,PLACE
+unlock the medium box,OPEN
+position the small red wooden block inside the small brown paper box,PLACE
+pick up a small blue plastic pyramid,PICKUP
+shut a small box,CLOSE
+shut brown wooden box,CLOSE
+move the large metal cylinder under the medium blue plastic block,PLACE
+view a small blue plastic pyramid,INSPECT
+lock a metal box,CLOSE
+unfasten medium metal box,OPEN
+study the large green wooden block,INSPECT
+leave the medium yellow wooden pyramid inside the large brown wooden box,PLACE
+set the medium blue plastic block into the large brown wooden box,PLACE
+look at the large brown wooden box,INSPECT
+unlatch small paper box,OPEN
+unlock the small box,OPEN
+grab a medium metal box,PICKUP
+check out a medium yellow wooden pyramid,INSPECT
+retrieve a medium blue plastic block,PICKUP
+lift the large brown wooden box,PICKUP
+lift the medium metal box,PICKUP
+close a brown box,CLOSE
+lock the medium box,CLOSE
+take the small blue plastic pyramid,PICKUP
+leave the small blue plastic pyramid on the large brown wooden box,PLACE
+fasten medium metal box,CLOSE
+shut a brown box,CLOSE
+study a small red wooden block,INSPECT
+inspect a large brown wooden box,INSPECT
+set the large green wooden block inside the large brown wooden box,PLACE
+shut a paper box,CLOSE
+shut the paper box,CLOSE
+check out the small blue plastic pyramid,INSPECT
+shut large wooden box,CLOSE
+look at the small brown paper box,INSPECT
+unseal large wooden box,OPEN
+seal the medium box,CLOSE
+examine the small red wooden block,INSPECT
+place the small green rubber sphere inside the small brown paper box,PLACE
+place the medium yellow wooden pyramid onto the floor,PLACE
+get the large metal cylinder,PICKUP
+take a small green rubber sphere,PICKUP
+pick a small brown paper box,PICKUP
+lift the small red plastic cylinder,PICKUP
+study a large metal cylinder,INSPECT
+open the paper box,OPEN
+lift the small red wooden block,PICKUP
+pick up a small red plastic cylinder,PICKUP
+check out a large metal cylinder,INSPECT
+lock a wooden box,CLOSE
+close a medium box,CLOSE
+lock brown paper box,CLOSE
+unlatch the small brown paper box,OPEN
+fasten a small box,CLOSE
+leave the small red plastic cylinder on the floor,PLACE
+unlock the brown box,OPEN
+unlock metal box,OPEN
+lock the medium metal box,CLOSE
+close the brown box,CLOSE
+observe the large green wooden block,INSPECT
+take a medium red plastic sphere,PICKUP
+grab the small red wooden block,PICKUP
+study a small red plastic cylinder,INSPECT
+lock the paper box,CLOSE
+check out a small red plastic cylinder,INSPECT
+examine a medium red plastic sphere,INSPECT
+study a large brown wooden box,INSPECT
+close brown paper box,CLOSE
+move the small green rubber sphere under the medium blue plastic block,PLACE
+study a medium yellow wooden pyramid,INSPECT
+observe a large green wooden block,INSPECT
+seal a metal box,CLOSE
+place the medium yellow wooden pyramid on top of the medium metal box,PLACE
+seal the wooden box,CLOSE
+study the small blue plastic pyramid,INSPECT
+seal a medium box,CLOSE
+pick a small green rubber sphere,PICKUP
+unlatch the wooden box,OPEN
+leave the large metal cylinder on top of the medium metal box,PLACE
+seal the metal box,CLOSE
+unlatch a wooden box,OPEN
+view the medium metal box,INSPECT
+examine a large green wooden block,INSPECT
+study the large metal cylinder,INSPECT
+view a medium metal box,INSPECT
+grab the small green rubber sphere,PICKUP
+check the large green wooden block,INSPECT
+put the small red plastic cylinder on the floor,PLACE
+drop the medium red plastic sphere on the floor,PLACE
+take the small red plastic cylinder,PICKUP
+seal a small box,CLOSE
+check out a large brown wooden box,INSPECT
+move the small red wooden block beneath the large metal cylinder,PLACE
+lock small paper box,CLOSE
+position the small red plastic cylinder inside the large brown wooden box,PLACE
+open brown wooden box,OPEN
+view the small brown paper box,INSPECT
+grab the small blue plastic pyramid,PICKUP
+close medium metal box,CLOSE
+unfasten a paper box,OPEN
+unlock the paper box,OPEN
+seal a wooden box,CLOSE
+fetch a small red plastic cylinder,PICKUP
+position the large metal cylinder below the large green wooden block,PLACE
+drop the small blue plastic pyramid beneath the large metal cylinder,PLACE
+take the medium yellow wooden pyramid,PICKUP
+check out the large green wooden block,INSPECT
+close the small brown paper box,CLOSE
+look at the large metal cylinder,INSPECT
+lift a medium yellow wooden pyramid,PICKUP
+pick the large green wooden block,PICKUP
+unseal the small brown paper box,OPEN
+unlatch the small box,OPEN
+unfasten small paper box,OPEN
+place the medium red plastic sphere underneath the medium yellow wooden pyramid,PLACE
+fetch the medium red plastic sphere,PICKUP
+unfasten the medium metal box,OPEN
+deposit the small green rubber sphere under the medium blue plastic block,PLACE
+fetch a large brown wooden box,PICKUP
+unfasten metal box,OPEN
+examine a small brown paper box,INSPECT
+seal a paper box,CLOSE
+set the large green wooden block on top of the medium metal box,PLACE
+collect a small red wooden block,PICKUP
+look into the small brown paper box,INSPECT
+open medium metal box,OPEN
+drop the small red wooden block in the large brown wooden box,PLACE
+fasten brown paper box,CLOSE
+leave the small green rubber sphere onto the table,PLACE
+observe a large brown wooden box,INSPECT
+leave the large metal cylinder underneath the medium yellow wooden pyramid,PLACE
+fasten small paper box,CLOSE
+check the small green rubber sphere,INSPECT
+shut a large brown wooden box,CLOSE
+deposit the small blue plastic pyramid into the large brown wooden box,PLACE
+deposit the large green wooden block onto the table,PLACE
+grab the large brown wooden box,PICKUP
+observe the small blue plastic pyramid,INSPECT
+observe the small green rubber sphere,INSPECT
+unlatch a medium metal box,OPEN
+shut a metal box,CLOSE
+unseal a medium metal box,OPEN
+fetch the medium yellow wooden pyramid,PICKUP
+leave the small blue plastic pyramid in the large brown wooden box,PLACE
+seal brown wooden box,CLOSE
+look at the medium blue plastic block,INSPECT
+set the medium yellow wooden pyramid on top of the medium metal box,PLACE
+position the small red plastic cylinder in the small brown paper box,PLACE
+check a medium yellow wooden pyramid,INSPECT
+examine the large brown wooden box,INSPECT
+shut the small brown paper box,CLOSE
+observe a small green rubber sphere,INSPECT
+lock the brown box,CLOSE
+close the medium box,CLOSE
+take the small green rubber sphere,PICKUP
+fasten the medium box,CLOSE
+move the small red plastic cylinder in the small brown paper box,PLACE
+view the small red wooden block,INSPECT
+place the medium red plastic sphere below the large green wooden block,PLACE
+position the small red plastic cylinder on the table,PLACE
+retrieve the large metal cylinder,PICKUP
+collect the large brown wooden box,PICKUP
+inspect a medium blue plastic block,INSPECT
+seal brown paper box,CLOSE
+unlatch the medium box,OPEN
+unlatch the brown box,OPEN
+unseal the medium metal box,OPEN
+fasten metal box,CLOSE
+fasten a brown box,CLOSE
+retrieve a small red plastic cylinder,PICKUP
+move the small red plastic cylinder on top of the medium metal box,PLACE
+examine the large metal cylinder,INSPECT
+open a brown box,OPEN
+drop the large green wooden block on the large brown wooden box,PLACE
+examine a large metal cylinder,INSPECT
+unlatch brown paper box,OPEN
+pick a large brown wooden box,PICKUP
+get the small blue plastic pyramid,PICKUP
+close the small box,CLOSE
+unseal a wooden box,OPEN
+lock the small brown paper box,CLOSE
+leave the large metal cylinder inside the large brown wooden box,PLACE
+lift a large brown wooden box,PICKUP
+drop the medium yellow wooden pyramid onto the floor,PLACE
+study the small brown paper box,INSPECT
+place the medium yellow wooden pyramid in the large brown wooden box,PLACE
+unlock brown wooden box,OPEN
+lift the medium yellow wooden pyramid,PICKUP
+unlock a large brown wooden box,OPEN
+position the large green wooden block on top of the medium metal box,PLACE
+seal a small brown paper box,CLOSE
+unlatch metal box,OPEN
+grab a large green wooden block,PICKUP
+lock the small box,CLOSE
+open the small brown paper box,OPEN
+lift a small brown paper box,PICKUP
+inspect a small blue plastic pyramid,INSPECT
+fasten the small box,CLOSE
+view the large brown wooden box,INSPECT
+put the medium blue plastic block below the large green wooden block,PLACE
+pick a small blue plastic pyramid,PICKUP
+check out the medium metal box,INSPECT
+seal the small brown paper box,CLOSE
+close the metal box,CLOSE
+move the small green rubber sphere below the large green wooden block,PLACE
+examine a small blue plastic pyramid,INSPECT
+unlock a small brown paper box,OPEN
+place the small red wooden block on the floor,PLACE
+check a small red wooden block,INSPECT
+leave the small red wooden block in the large brown wooden box,PLACE
+study a medium metal box,INSPECT
+unlock small paper box,OPEN
+position the small green rubber sphere inside the small brown paper box,PLACE
+inspect a small red plastic cylinder,INSPECT
+study the small green rubber sphere,INSPECT
+lift up the small brown paper box,PICKUP
+look at the small red wooden block,INSPECT
+place the medium blue plastic block on the table,PLACE
+unlatch a paper box,OPEN
+move the small red plastic cylinder in the large brown wooden box,PLACE
+grab a small blue plastic pyramid,PICKUP
+take the large brown wooden box,PICKUP
+unseal a large brown wooden box,OPEN
+lock a small box,CLOSE
+collect a small blue plastic pyramid,PICKUP
+move the medium blue plastic block beneath the large metal cylinder,PLACE
+close large wooden box,CLOSE
+look into a large brown wooden box,INSPECT
+move the large green wooden block on the floor,PLACE
+view a medium blue plastic block,INSPECT
+fasten large wooden box,CLOSE
+unseal the metal box,OPEN
+retrieve the small green rubber sphere,PICKUP
+deposit the large green wooden block on top of the medium metal box,PLACE
+lift the small blue plastic pyramid,PICKUP
+unfasten brown wooden box,OPEN
+fetch a small red wooden block,PICKUP
+pick up the small brown paper box,PICKUP
+unseal the brown box,OPEN
+close metal box,CLOSE
+look at the medium red plastic sphere,INSPECT
+grab a small brown paper box,PICKUP
+pick a large metal cylinder,PICKUP
+position the medium yellow wooden pyramid below the large green wooden block,PLACE
+shut the small box,CLOSE
+examine the small blue plastic pyramid,INSPECT
+lift up a small red wooden block,PICKUP
+seal the brown box,CLOSE
+position the small red wooden block underneath the medium yellow wooden pyramid,PLACE
+unlatch the metal box,OPEN
+move the medium blue plastic block on top of the medium metal box,PLACE
+grab a small green rubber sphere,PICKUP
+collect the small red wooden block,PICKUP
+fasten brown wooden box,CLOSE
+fasten a metal box,CLOSE
+unfasten the small brown paper box,OPEN
+view the large metal cylinder,INSPECT
+unfasten a large brown wooden box,OPEN
+look at a small red plastic cylinder,INSPECT
+lift up the small red wooden block,PICKUP
+unfasten a brown box,OPEN
+unfasten large wooden box,OPEN
+leave the large green wooden block in the large brown wooden box,PLACE
+unfasten the metal box,OPEN
+open the large brown wooden box,OPEN
+retrieve a medium metal box,PICKUP
+put the small blue plastic pyramid under the medium blue plastic block,PLACE
+leave the small green rubber sphere on the large brown wooden box,PLACE
+lift up the medium metal box,PICKUP
+fasten the brown box,CLOSE
+open a small box,OPEN
+get a large brown wooden box,PICKUP
+unlatch medium metal box,OPEN
+view the small red plastic cylinder,INSPECT
+lock a paper box,CLOSE
+pick up a small brown paper box,PICKUP
+retrieve the medium red plastic sphere,PICKUP
+lift up the large brown wooden box,PICKUP
+lift up a large brown wooden box,PICKUP
+close a metal box,CLOSE
+unfasten the medium box,OPEN
+open the small box,OPEN
+position the large green wooden block on the large brown wooden box,PLACE
+seal large wooden box,CLOSE
+position the medium red plastic sphere in the large brown wooden box,PLACE
+fasten a wooden box,CLOSE
+pick up a large metal cylinder,PICKUP
+study the small red plastic cylinder,INSPECT
+examine a medium blue plastic block,INSPECT
+collect a medium yellow wooden pyramid,PICKUP
+shut a medium metal box,CLOSE
+pick up a medium red plastic sphere,PICKUP
+view a medium yellow wooden pyramid,INSPECT
+unfasten a medium metal box,OPEN
+grab the medium red plastic sphere,PICKUP
+inspect the medium red plastic sphere,INSPECT
+shut the large brown wooden box,CLOSE
+position the small green rubber sphere in the large brown wooden box,PLACE
+fasten the small brown paper box,CLOSE
+open the metal box,OPEN
+deposit the small red wooden block in the large brown wooden box,PLACE
+pick a small red wooden block,PICKUP
+set the large green wooden block beneath the large metal cylinder,PLACE
+check a small green rubber sphere,INSPECT
+fasten the wooden box,CLOSE
+study the large brown wooden box,INSPECT
+lock a brown box,CLOSE
+get the medium yellow wooden pyramid,PICKUP
+observe a medium metal box,INSPECT
+close the large brown wooden box,CLOSE
+inspect a small brown paper box,INSPECT
+unlock a wooden box,OPEN
+check a medium blue plastic block,INSPECT
+position the small blue plastic pyramid in the small brown paper box,PLACE
+unseal small paper box,OPEN
+close a small box,CLOSE
+open brown paper box,OPEN
+seal a large brown wooden box,CLOSE
+lift up the small blue plastic pyramid,PICKUP
+pick a medium yellow wooden pyramid,PICKUP
+look into the medium metal box,INSPECT
+unlock the metal box,OPEN
+look at a large metal cylinder,INSPECT
+close a large brown wooden box,CLOSE
+open a medium metal box,OPEN
+position the small red plastic cylinder onto the table,PLACE
+unseal a metal box,OPEN
+deposit the small green rubber sphere onto the floor,PLACE
+grab the large green wooden block,PICKUP
+unlatch a small brown paper box,OPEN
+collect a large metal cylinder,PICKUP
+take a large green wooden block,PICKUP
+lift the small brown paper box,PICKUP
+pick a medium blue plastic block,PICKUP
+seal a brown box,CLOSE
+inspect the small red wooden block,INSPECT
+view the medium blue plastic block,INSPECT
+unseal a medium box,OPEN
+unfasten the large brown wooden box,OPEN
+check out a small red wooden block,INSPECT
+unlatch brown wooden box,OPEN
+collect the small green rubber sphere,PICKUP
+unseal the small box,OPEN
+close a small brown paper box,CLOSE
+close the medium metal box,CLOSE
+leave the small blue plastic pyramid below the large green wooden block,PLACE
+lock large wooden box,CLOSE
+set the medium red plastic sphere inside the large brown wooden box,PLACE
+close brown wooden box,CLOSE
+lift up a small green rubber sphere,PICKUP
+view the medium red plastic sphere,INSPECT
+unseal a brown box,OPEN
+open the brown box,OPEN
+shut medium metal box,CLOSE
+collect a small red plastic cylinder,PICKUP
+observe the small red plastic cylinder,INSPECT
+shut the medium metal box,CLOSE
+place the small green rubber sphere onto the floor,PLACE
+inspect a small red wooden block,INSPECT
+deposit the large green wooden block onto the floor,PLACE
+study the medium blue plastic block,INSPECT
+leave the medium red plastic sphere into the large brown wooden box,PLACE
+open a large brown wooden box,OPEN
+unfasten a small brown paper box,OPEN
+pick up the large brown wooden box,PICKUP
+check a small blue plastic pyramid,INSPECT
+place the medium blue plastic block on the large brown wooden box,PLACE
+fasten a medium metal box,CLOSE
+unseal a small box,OPEN
+put the large metal cylinder under the medium blue plastic block,PLACE
+unfasten a small box,OPEN
+pick the small blue plastic pyramid,PICKUP
+lift a small blue plastic pyramid,PICKUP
+leave the small red wooden block below the large green wooden block,PLACE
+place the small green rubber sphere in the small brown paper box,PLACE
+unlock the wooden box,OPEN
+shut metal box,CLOSE
+close a wooden box,CLOSE
+pick up a small red wooden block,PICKUP
+fetch the medium metal box,PICKUP
+shut the metal box,CLOSE
+deposit the small red plastic cylinder in the large brown wooden box,PLACE
+look at a medium blue plastic block,INSPECT
+position the small green rubber sphere below the large green wooden block,PLACE
+unlatch the large brown wooden box,OPEN
+examine a medium metal box,INSPECT
+shut the brown box,CLOSE
+fasten a paper box,CLOSE
+leave the medium red plastic sphere onto the floor,PLACE
+retrieve the small red plastic cylinder,PICKUP
+unseal the wooden box,OPEN
+put the medium red plastic sphere in the large brown wooden box,PLACE
+check out the small green rubber sphere,INSPECT
+study the small red wooden block,INSPECT
+check out a small green rubber sphere,INSPECT
+lock brown wooden box,CLOSE
+position the small red plastic cylinder inside the small brown paper box,PLACE
+grab a medium blue plastic block,PICKUP
+unlock a metal box,OPEN
+observe a large metal cylinder,INSPECT
+unlock the small brown paper box,OPEN
+take the medium red plastic sphere,PICKUP
+put the medium red plastic sphere on the table,PLACE
+get the large green wooden block,PICKUP
+fetch a large green wooden block,PICKUP
+fetch a medium metal box,PICKUP
+lock metal box,CLOSE
+deposit the small red wooden block beneath the large metal cylinder,PLACE
+pick a medium metal box,PICKUP
+unfasten the small box,OPEN
+examine the medium metal box,INSPECT
+deposit the medium yellow wooden pyramid on top of the medium metal box,PLACE
+unlatch the paper box,OPEN
+unlatch a medium box,OPEN
+check out the medium yellow wooden pyramid,INSPECT
+unlock the medium metal box,OPEN
+get a medium red plastic sphere,PICKUP
+lock a medium metal box,CLOSE
+fetch the small blue plastic pyramid,PICKUP
+fetch the small red plastic cylinder,PICKUP
+observe the small brown paper box,INSPECT
+unseal brown paper box,OPEN
+lock a large brown wooden box,CLOSE
+lock the metal box,CLOSE
+lock the large brown wooden box,CLOSE
+open the medium metal box,OPEN
+pick the large brown wooden box,PICKUP
+check out a medium metal box,INSPECT
+deposit the medium red plastic sphere onto the floor,PLACE
+place the small blue plastic pyramid on the floor,PLACE
+seal the small box,CLOSE
+pick up the small red wooden block,PICKUP
+drop the large metal cylinder inside the large brown wooden box,PLACE
+place the medium blue plastic block inside the large brown wooden box,PLACE
+seal the large brown wooden box,CLOSE
+observe a small blue plastic pyramid,INSPECT
+put the small green rubber sphere on top of the medium metal box,PLACE
+lock a medium box,CLOSE
+unlock a brown box,OPEN
+unseal the medium box,OPEN
+unseal medium metal box,OPEN
+move the small green rubber sphere onto the table,PLACE
+view a small green rubber sphere,INSPECT
+fasten a large brown wooden box,CLOSE
+unlatch a brown box,OPEN
+position the medium blue plastic block into the large brown wooden box,PLACE
+inspect the medium yellow wooden pyramid,INSPECT
+open a medium box,OPEN
+inspect the large green wooden block,INSPECT
+put the medium blue plastic block onto the floor,PLACE
+examine the medium red plastic sphere,INSPECT
+close a paper box,CLOSE
+check the small red wooden block,INSPECT
+unseal brown wooden box,OPEN
+look at the small green rubber sphere,INSPECT
+fasten the medium metal box,CLOSE
+check out the small brown paper box,INSPECT
+set the small red plastic cylinder on the floor,PLACE
+look at a medium metal box,INSPECT
+check a medium metal box,INSPECT
+take a small brown paper box,PICKUP
+move the small blue plastic pyramid under the medium blue plastic block,PLACE
+collect a small green rubber sphere,PICKUP
+open the wooden box,OPEN
+set the medium blue plastic block underneath the medium yellow wooden pyramid,PLACE
+shut brown paper box,CLOSE
+lift up a medium yellow wooden pyramid,PICKUP
+look at the medium metal box,INSPECT
+unlatch the medium metal box,OPEN
+fasten the large brown wooden box,CLOSE
+close a medium metal box,CLOSE
+get a medium blue plastic block,PICKUP
+study a medium blue plastic block,INSPECT
+unfasten the wooden box,OPEN
+unlock a medium metal box,OPEN
+drop the small green rubber sphere into the large brown wooden box,PLACE
+open a small brown paper box,OPEN
+study a small green rubber sphere,INSPECT
+check out a medium blue plastic block,INSPECT
+get the small green rubber sphere,PICKUP
+inspect a medium yellow wooden pyramid,INSPECT
+retrieve the medium yellow wooden pyramid,PICKUP
+deposit the medium red plastic sphere on the floor,PLACE
