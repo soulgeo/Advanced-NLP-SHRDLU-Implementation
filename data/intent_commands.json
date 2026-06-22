@@ -1,0 +1,11954 @@
+[
+  {
+    "text": "drop the small red wooden block below a large brown wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "the",
+      "small",
+      "red",
+      "wooden",
+      "block",
+      "below",
+      "a",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the medium box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab a large wooden box",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "a",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop the block in a brown paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "the",
+      "block",
+      "in",
+      "a",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve a red plastic sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "a",
+      "red",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve the block",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "the",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a small brown paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "set a large cylinder below a large box",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "a",
+      "large",
+      "cylinder",
+      "below",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "take a wooden large green block",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "a",
+      "wooden",
+      "large",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the small paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift a small sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "a",
+      "small",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the large box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a large box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open a large box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into a wooden small red block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "a",
+      "wooden",
+      "small",
+      "red",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe a red medium plastic sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "a",
+      "red",
+      "medium",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve the green large wooden block",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "the",
+      "green",
+      "large",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch a wooden large brown box",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put a yellow medium wooden pyramid in the wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "a",
+      "yellow",
+      "medium",
+      "wooden",
+      "pyramid",
+      "in",
+      "the",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "leave the green rubber sphere below a red small wooden block",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "the",
+      "green",
+      "rubber",
+      "sphere",
+      "below",
+      "a",
+      "red",
+      "small",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the metal medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the small red plastic cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "small",
+      "red",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a medium yellow wooden pyramid under the blue block",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "medium",
+      "yellow",
+      "wooden",
+      "pyramid",
+      "under",
+      "the",
+      "blue",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a brown paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve the red medium plastic sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "the",
+      "red",
+      "medium",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a large box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a small brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "place the small blue plastic pyramid inside a paper small brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "the",
+      "small",
+      "blue",
+      "plastic",
+      "pyramid",
+      "inside",
+      "a",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the red plastic sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "red",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a block into a paper small brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "block",
+      "into",
+      "a",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "check the wooden pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "the",
+      "wooden",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look at the blue plastic block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "at",
+      "the",
+      "blue",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open a small brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "set a plastic medium blue block below the block",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "a",
+      "plastic",
+      "medium",
+      "blue",
+      "block",
+      "below",
+      "the",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a medium metal box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into a red cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "a",
+      "red",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look at the large metal cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "at",
+      "the",
+      "large",
+      "metal",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out a large brown box",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "a",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss the large block inside the brown paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "the",
+      "large",
+      "block",
+      "inside",
+      "the",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "set the small red cylinder in a brown small paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "the",
+      "small",
+      "red",
+      "cylinder",
+      "in",
+      "a",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "get a red plastic sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "red",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a large wooden block under a wooden large brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "large",
+      "wooden",
+      "block",
+      "under",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "open the paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the small brown paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a medium box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the small brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out the brown wooden box",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a large brown wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a plastic medium red sphere below a plastic block",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "plastic",
+      "medium",
+      "red",
+      "sphere",
+      "below",
+      "a",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the medium plastic block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "medium",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "leave the green small rubber sphere under a small box",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "the",
+      "green",
+      "small",
+      "rubber",
+      "sphere",
+      "under",
+      "a",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch the large brown box",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe the wooden large brown box",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "the",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "take the small red cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "the",
+      "small",
+      "red",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out the brown paper box",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "the",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift the yellow medium wooden pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "the",
+      "yellow",
+      "medium",
+      "wooden",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the medium metal box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect the large wooden box",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "the",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the plastic pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view the wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "the",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect a green sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "a",
+      "green",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss the plastic sphere below the medium metal box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "the",
+      "plastic",
+      "sphere",
+      "below",
+      "the",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a small paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a large metal cylinder below the small brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "large",
+      "metal",
+      "cylinder",
+      "below",
+      "the",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the brown small paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check a red block",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "red",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe a plastic medium red sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "a",
+      "plastic",
+      "medium",
+      "red",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a brown small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a red cylinder under the small paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "red",
+      "cylinder",
+      "under",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "close the wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view a box",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "a",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up a medium yellow wooden pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "a",
+      "medium",
+      "yellow",
+      "wooden",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get the small wooden block",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "the",
+      "small",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a paper small brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put a blue block under a small red block",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "a",
+      "blue",
+      "block",
+      "under",
+      "a",
+      "small",
+      "red",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the small brown paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put the small sphere into the brown wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "the",
+      "small",
+      "sphere",
+      "into",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "view the small paper box",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "set a medium block below a large brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "a",
+      "medium",
+      "block",
+      "below",
+      "a",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve a medium plastic sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "a",
+      "medium",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect a small paper box",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "a",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the medium box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get a rubber small green sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "rubber",
+      "small",
+      "green",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the small box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe the green rubber sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "the",
+      "green",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe a large wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "a",
+      "large",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the large box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get the small paper box",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up a small green rubber sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "a",
+      "small",
+      "green",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the small green rubber sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "small",
+      "green",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop the wooden large green block inside a small brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "the",
+      "wooden",
+      "large",
+      "green",
+      "block",
+      "inside",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "examine a blue pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "a",
+      "blue",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect the metal box",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "the",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a metal box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the large green block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "large",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the medium plastic block",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "medium",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a plastic block into a metal medium box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "plastic",
+      "block",
+      "into",
+      "a",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "put the plastic medium blue block under the large cylinder",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "the",
+      "plastic",
+      "medium",
+      "blue",
+      "block",
+      "under",
+      "the",
+      "large",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "move a green rubber sphere into a wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "a",
+      "green",
+      "rubber",
+      "sphere",
+      "into",
+      "a",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "open a small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss the block inside the metal medium box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "the",
+      "block",
+      "inside",
+      "the",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a large brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a large green block below the medium blue plastic block",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "large",
+      "green",
+      "block",
+      "below",
+      "the",
+      "medium",
+      "blue",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "get the metal large cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "the",
+      "metal",
+      "large",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe a brown small paper box",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "a",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out a large metal cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "a",
+      "large",
+      "metal",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the small box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the medium metal box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a large brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move a blue block inside a medium metal box",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "a",
+      "blue",
+      "block",
+      "inside",
+      "a",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a large brown wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the large box",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the large box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a large box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "position a large wooden block under the small red plastic cylinder",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "large",
+      "wooden",
+      "block",
+      "under",
+      "the",
+      "small",
+      "red",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a small brown paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "position a medium sphere inside the brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "medium",
+      "sphere",
+      "inside",
+      "the",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a brown paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the metal medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss the plastic cylinder below the medium box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "the",
+      "plastic",
+      "cylinder",
+      "below",
+      "the",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get a large green wooden block",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "large",
+      "green",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check the small blue pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "the",
+      "small",
+      "blue",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the medium box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put a medium wooden pyramid into the brown small paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "a",
+      "medium",
+      "wooden",
+      "pyramid",
+      "into",
+      "the",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the green small rubber sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "green",
+      "small",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "take the small red block",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "the",
+      "small",
+      "red",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab a metal cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "a",
+      "metal",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "leave a blue medium plastic block below a small brown paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "a",
+      "blue",
+      "medium",
+      "plastic",
+      "block",
+      "below",
+      "a",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "collect a small block",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "a",
+      "small",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the blue small plastic pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "blue",
+      "small",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a metal medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put a blue medium plastic block under the red small wooden block",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "a",
+      "blue",
+      "medium",
+      "plastic",
+      "block",
+      "under",
+      "the",
+      "red",
+      "small",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the large box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the small pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "small",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a medium metal box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a small paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a medium box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the medium wooden pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "medium",
+      "wooden",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe the medium box",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "the",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect the medium sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "the",
+      "medium",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a wooden large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view the wooden medium yellow pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "the",
+      "wooden",
+      "medium",
+      "yellow",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the brown paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift a large block",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "a",
+      "large",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "place a pyramid below the large green wooden block",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "a",
+      "pyramid",
+      "below",
+      "the",
+      "large",
+      "green",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "leave the yellow medium wooden pyramid below the wooden block",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "the",
+      "yellow",
+      "medium",
+      "wooden",
+      "pyramid",
+      "below",
+      "the",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "move the green sphere under the large block",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "the",
+      "green",
+      "sphere",
+      "under",
+      "the",
+      "large",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the brown wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a paper small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the brown large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a metal medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view the small sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "the",
+      "small",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move the plastic block below the large green block",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "the",
+      "plastic",
+      "block",
+      "below",
+      "the",
+      "large",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "leave a medium yellow wooden pyramid below the medium blue block",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "a",
+      "medium",
+      "yellow",
+      "wooden",
+      "pyramid",
+      "below",
+      "the",
+      "medium",
+      "blue",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "open the metal box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab the large green block",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "the",
+      "large",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out a plastic pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "a",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the metal medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the brown large wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get a large box",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look at a cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "at",
+      "a",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move a green block inside the metal medium box",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "a",
+      "green",
+      "block",
+      "inside",
+      "the",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a metal medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a small brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine a medium red plastic sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "a",
+      "medium",
+      "red",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the large wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect a rubber sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "a",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the wooden large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the small red block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "small",
+      "red",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab the small green sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "the",
+      "small",
+      "green",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect a wooden large brown box",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the brown small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab a small block",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "a",
+      "small",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect the small rubber sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "the",
+      "small",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the plastic sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the wooden large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put the small cylinder into the box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "the",
+      "small",
+      "cylinder",
+      "into",
+      "the",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch a wooden medium yellow pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "a",
+      "wooden",
+      "medium",
+      "yellow",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift the large wooden block",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "the",
+      "large",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out the green small rubber sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "the",
+      "green",
+      "small",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a large box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine a plastic pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "a",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the large block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "large",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out a large green wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "a",
+      "large",
+      "green",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss the medium blue plastic block inside the brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "the",
+      "medium",
+      "blue",
+      "plastic",
+      "block",
+      "inside",
+      "the",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "position a plastic medium red sphere under a small brown paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "plastic",
+      "medium",
+      "red",
+      "sphere",
+      "under",
+      "a",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "get a red plastic cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "red",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab the small plastic cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "the",
+      "small",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the red plastic sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "red",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the wooden large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a medium sphere below the metal large cylinder",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "medium",
+      "sphere",
+      "below",
+      "the",
+      "metal",
+      "large",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect the small wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "the",
+      "small",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a brown large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open a brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view a medium sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "a",
+      "medium",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the blue block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "blue",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put the small block under a wooden large brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "the",
+      "small",
+      "block",
+      "under",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "move the large green block in a brown small paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "the",
+      "large",
+      "green",
+      "block",
+      "in",
+      "a",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the plastic sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a small box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve a medium box",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "a",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a small box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put the blue small plastic pyramid under the small paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "the",
+      "blue",
+      "small",
+      "plastic",
+      "pyramid",
+      "under",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the red plastic sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "red",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "position the sphere below the red wooden block",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "the",
+      "sphere",
+      "below",
+      "the",
+      "red",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "grab a plastic cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "a",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect the plastic small red cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "the",
+      "plastic",
+      "small",
+      "red",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get a blue small plastic pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "blue",
+      "small",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the wooden pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "wooden",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop the small cylinder in a small box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "the",
+      "small",
+      "cylinder",
+      "in",
+      "a",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect the small block",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "the",
+      "small",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "place the medium blue plastic block under the small box",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "the",
+      "medium",
+      "blue",
+      "plastic",
+      "block",
+      "under",
+      "the",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe a red small wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "a",
+      "red",
+      "small",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a small box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the brown large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch the plastic block",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "the",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the small brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a metal box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move a medium sphere under a brown large wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "a",
+      "medium",
+      "sphere",
+      "under",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "check out the metal cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "the",
+      "metal",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check the green sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "the",
+      "green",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a large wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab a small green sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "a",
+      "small",
+      "green",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the small cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "small",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the wooden large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "set a small red cylinder inside the medium metal box",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "a",
+      "small",
+      "red",
+      "cylinder",
+      "inside",
+      "the",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "grab a green wooden block",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "a",
+      "green",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect a brown small paper box",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "a",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get a blue plastic block",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "blue",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check a plastic medium red sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "plastic",
+      "medium",
+      "red",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch the small green rubber sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "the",
+      "small",
+      "green",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the plastic medium blue block",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "plastic",
+      "medium",
+      "blue",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out a large brown wooden box",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "a",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the large box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe the red wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "the",
+      "red",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open a brown small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a metal medium box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the large wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the brown large wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up a metal cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "a",
+      "metal",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "set the medium sphere inside a brown wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "the",
+      "medium",
+      "sphere",
+      "inside",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect the red small plastic cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "the",
+      "red",
+      "small",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a brown small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the brown paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "leave a plastic small blue pyramid into a paper small brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "a",
+      "plastic",
+      "small",
+      "blue",
+      "pyramid",
+      "into",
+      "a",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "take the plastic block",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "the",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the large brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "take the paper box",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch a red plastic sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "a",
+      "red",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out the large brown box",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "position a red block under a small brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "red",
+      "block",
+      "under",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a yellow medium wooden pyramid into a wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "yellow",
+      "medium",
+      "wooden",
+      "pyramid",
+      "into",
+      "a",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "set a small red wooden block below the metal box",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "a",
+      "small",
+      "red",
+      "wooden",
+      "block",
+      "below",
+      "the",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a metal box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check a green wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "green",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the red medium plastic sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "red",
+      "medium",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the brown large wooden box",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a medium metal box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a metal medium box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch a brown wooden box",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "leave a large cylinder into the brown paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "a",
+      "large",
+      "cylinder",
+      "into",
+      "the",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve a medium yellow pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "a",
+      "medium",
+      "yellow",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve the small pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "the",
+      "small",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the brown paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the paper small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect the small red block",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "the",
+      "small",
+      "red",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "take the medium red plastic sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "the",
+      "medium",
+      "red",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put a wooden block inside the metal medium box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "a",
+      "wooden",
+      "block",
+      "inside",
+      "the",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "place the metal large cylinder below a red small plastic cylinder",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "the",
+      "metal",
+      "large",
+      "cylinder",
+      "below",
+      "a",
+      "red",
+      "small",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a blue block below the large brown wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "blue",
+      "block",
+      "below",
+      "the",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a brown large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the paper small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss the red plastic cylinder below a paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "the",
+      "red",
+      "plastic",
+      "cylinder",
+      "below",
+      "a",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "get the red cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "the",
+      "red",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift the small brown paper box",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "the",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the medium yellow wooden pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "medium",
+      "yellow",
+      "wooden",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop the medium plastic block below a red small plastic cylinder",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "the",
+      "medium",
+      "plastic",
+      "block",
+      "below",
+      "a",
+      "red",
+      "small",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "position a small red wooden block below the green block",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "small",
+      "red",
+      "wooden",
+      "block",
+      "below",
+      "the",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "close a brown wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put the medium blue plastic block into a wooden large brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "the",
+      "medium",
+      "blue",
+      "plastic",
+      "block",
+      "into",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "open the large wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look at the large box",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "at",
+      "the",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the small brown box",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the small brown paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open a paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get a small red cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "small",
+      "red",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss the metal cylinder inside a brown wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "the",
+      "metal",
+      "cylinder",
+      "inside",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the small box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a brown large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up a blue small plastic pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "a",
+      "blue",
+      "small",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect the green wooden block",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "the",
+      "green",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the wooden large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out a red wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "a",
+      "red",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a medium metal box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look at the plastic cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "at",
+      "the",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put a small cylinder in a paper small brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "a",
+      "small",
+      "cylinder",
+      "in",
+      "a",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the small box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a plastic small red cylinder under the medium block",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "plastic",
+      "small",
+      "red",
+      "cylinder",
+      "under",
+      "the",
+      "medium",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "check out the large green block",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "the",
+      "large",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a large block below a plastic block",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "large",
+      "block",
+      "below",
+      "a",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the green sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "green",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "position a plastic medium blue block inside the small brown paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "plastic",
+      "medium",
+      "blue",
+      "block",
+      "inside",
+      "the",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "open the wooden large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift a large box",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a large box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out a blue plastic block",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "a",
+      "blue",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the red wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "red",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move the yellow wooden pyramid inside a brown large wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "the",
+      "yellow",
+      "wooden",
+      "pyramid",
+      "inside",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "position a plastic sphere below the paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "plastic",
+      "sphere",
+      "below",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the large metal cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "large",
+      "metal",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch the medium pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "the",
+      "medium",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "place the large metal cylinder in the large brown wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "the",
+      "large",
+      "metal",
+      "cylinder",
+      "in",
+      "the",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "grab the wooden large green block",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "the",
+      "wooden",
+      "large",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "place a red medium plastic sphere inside a wooden large brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "a",
+      "red",
+      "medium",
+      "plastic",
+      "sphere",
+      "inside",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "get the plastic block",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "the",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the medium plastic sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "medium",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check a medium plastic block",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "medium",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the small brown box",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect a red small wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "a",
+      "red",
+      "small",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a green block in the medium metal box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "green",
+      "block",
+      "in",
+      "the",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "lift a medium metal box",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "a",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a green rubber sphere below the large brown wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "green",
+      "rubber",
+      "sphere",
+      "below",
+      "the",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a red plastic cylinder below the paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "red",
+      "plastic",
+      "cylinder",
+      "below",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move a blue block under a red cylinder",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "a",
+      "blue",
+      "block",
+      "under",
+      "a",
+      "red",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "leave the metal large cylinder inside the small brown paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "the",
+      "metal",
+      "large",
+      "cylinder",
+      "inside",
+      "the",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "grab a block",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "a",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "take a yellow pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "a",
+      "yellow",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine a large green wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "a",
+      "large",
+      "green",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put a medium sphere under the large brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "a",
+      "medium",
+      "sphere",
+      "under",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "move a sphere below the green block",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "a",
+      "sphere",
+      "below",
+      "the",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the yellow pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "yellow",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "set the cylinder in a large brown wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "the",
+      "cylinder",
+      "in",
+      "a",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "open a brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine a small rubber sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "a",
+      "small",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "place a red plastic cylinder under the large brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "a",
+      "red",
+      "plastic",
+      "cylinder",
+      "under",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "check a green block",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move the pyramid under a red block",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "the",
+      "pyramid",
+      "under",
+      "a",
+      "red",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the large block",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "large",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move a medium plastic block below a small paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "a",
+      "medium",
+      "plastic",
+      "block",
+      "below",
+      "a",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a small box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view a wooden medium yellow pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "a",
+      "wooden",
+      "medium",
+      "yellow",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put a plastic sphere under a small brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "a",
+      "plastic",
+      "sphere",
+      "under",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the brown large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view a medium box",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "a",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the small box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put the medium pyramid under a large block",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "the",
+      "medium",
+      "pyramid",
+      "under",
+      "a",
+      "large",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "move a medium block below the brown large wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "a",
+      "medium",
+      "block",
+      "below",
+      "the",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the brown wooden box",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect the green rubber sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "the",
+      "green",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "take the blue pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "the",
+      "blue",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the brown paper box",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "take a plastic medium red sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "a",
+      "plastic",
+      "medium",
+      "red",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a small brown paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "place a small red cylinder under the brown wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "a",
+      "small",
+      "red",
+      "cylinder",
+      "under",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a wooden large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect the plastic cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "the",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "position a red block inside a large wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "red",
+      "block",
+      "inside",
+      "a",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "lift the medium red sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "the",
+      "medium",
+      "red",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look at a large green wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "at",
+      "a",
+      "large",
+      "green",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab the blue plastic pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "the",
+      "blue",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the small box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out the medium red plastic sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "the",
+      "medium",
+      "red",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open a paper small brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift the sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "the",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "position a large wooden block below a plastic cylinder",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "large",
+      "wooden",
+      "block",
+      "below",
+      "a",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look at the plastic block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "at",
+      "the",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a large box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a brown small paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the paper small brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine a small box",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "a",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a metal box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view a plastic medium red sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "a",
+      "plastic",
+      "medium",
+      "red",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the brown wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look at a wooden medium yellow pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "at",
+      "a",
+      "wooden",
+      "medium",
+      "yellow",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the large box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a wooden large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get the paper small brown box",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "the",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a metal medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move the small blue pyramid below the wooden large green block",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "the",
+      "small",
+      "blue",
+      "pyramid",
+      "below",
+      "the",
+      "wooden",
+      "large",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "position a plastic small red cylinder below a medium blue block",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "plastic",
+      "small",
+      "red",
+      "cylinder",
+      "below",
+      "a",
+      "medium",
+      "blue",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "collect a small brown box",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a red cylinder under a wooden large green block",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "red",
+      "cylinder",
+      "under",
+      "a",
+      "wooden",
+      "large",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve the green block",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "the",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect a green small rubber sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "a",
+      "green",
+      "small",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open a large brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the small box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect the red sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "the",
+      "red",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect a medium red sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "a",
+      "medium",
+      "red",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view the metal box",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "the",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect the medium blue block",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "the",
+      "medium",
+      "blue",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a brown small paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve the blue medium plastic block",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "the",
+      "blue",
+      "medium",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "drop the small green sphere under a green large wooden block",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "the",
+      "small",
+      "green",
+      "sphere",
+      "under",
+      "a",
+      "green",
+      "large",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "grab a plastic block",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "a",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock a brown large wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a wooden large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve the rubber sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "the",
+      "rubber",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check a metal cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "metal",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open a small brown paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check a medium red plastic sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "medium",
+      "red",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift the metal medium box",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "the",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a brown small paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "position the medium plastic block in a brown large wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "the",
+      "medium",
+      "plastic",
+      "block",
+      "in",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "view a paper box",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "a",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the small paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a metal box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "set the red plastic sphere in a brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "the",
+      "red",
+      "plastic",
+      "sphere",
+      "in",
+      "a",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "check the red block",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "the",
+      "red",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the small brown paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get a block",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check a medium plastic sphere",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "medium",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get a brown large wooden box",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move the blue small plastic pyramid under the metal medium box",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "the",
+      "blue",
+      "small",
+      "plastic",
+      "pyramid",
+      "under",
+      "the",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a blue small plastic pyramid in a large brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "blue",
+      "small",
+      "plastic",
+      "pyramid",
+      "in",
+      "a",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "place a plastic small red cylinder under a medium metal box",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "a",
+      "plastic",
+      "small",
+      "red",
+      "cylinder",
+      "under",
+      "a",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a small rubber sphere into the large brown wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "small",
+      "rubber",
+      "sphere",
+      "into",
+      "the",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect the box",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "the",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open a box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift the red block",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "the",
+      "red",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "leave a yellow medium wooden pyramid under a red small wooden block",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "a",
+      "yellow",
+      "medium",
+      "wooden",
+      "pyramid",
+      "under",
+      "a",
+      "red",
+      "small",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the paper small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a small brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect a green wooden block",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "a",
+      "green",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the medium metal box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "medium",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view the small brown box",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "the",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a paper small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a small box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a brown large wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the small brown paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "take the wooden block",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "the",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get the medium blue plastic block",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "the",
+      "medium",
+      "blue",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab the large metal cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "the",
+      "large",
+      "metal",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the large brown wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the small box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up a red block",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "a",
+      "red",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check a blue block",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "blue",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the brown wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a brown paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "move the medium red plastic sphere into a metal box",
+    "intent": "PLACE",
+    "tokens": [
+      "move",
+      "the",
+      "medium",
+      "red",
+      "plastic",
+      "sphere",
+      "into",
+      "a",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "set a red medium plastic sphere under a paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "a",
+      "red",
+      "medium",
+      "plastic",
+      "sphere",
+      "under",
+      "a",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a wooden large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up the large metal cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "the",
+      "large",
+      "metal",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put a large green wooden block below the medium blue plastic block",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "a",
+      "large",
+      "green",
+      "wooden",
+      "block",
+      "below",
+      "the",
+      "medium",
+      "blue",
+      "plastic",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "take a medium plastic sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "take",
+      "a",
+      "medium",
+      "plastic",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up a plastic cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "a",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss the small blue plastic pyramid under the large wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "the",
+      "small",
+      "blue",
+      "plastic",
+      "pyramid",
+      "under",
+      "the",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out the metal box",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "the",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up a small red wooden block",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "a",
+      "small",
+      "red",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the large brown wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the paper small brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the metal medium box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a brown paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe a block",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "a",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal a brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "a",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the brown box",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a brown wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look into the small red wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "into",
+      "the",
+      "small",
+      "red",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve the red small plastic cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "the",
+      "red",
+      "small",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open a wooden large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "a",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check out a large cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "out",
+      "a",
+      "large",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch a large box",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the medium box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "leave the small rubber sphere under the small red cylinder",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "the",
+      "small",
+      "rubber",
+      "sphere",
+      "under",
+      "the",
+      "small",
+      "red",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a wooden medium yellow pyramid below a small box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "wooden",
+      "medium",
+      "yellow",
+      "pyramid",
+      "below",
+      "a",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "look at a plastic medium blue block",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "at",
+      "a",
+      "plastic",
+      "medium",
+      "blue",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal a large brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "a",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get a small sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "small",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the metal box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "position the red cylinder under a small red wooden block",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "the",
+      "red",
+      "cylinder",
+      "under",
+      "a",
+      "small",
+      "red",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "view the blue block",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "the",
+      "blue",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "leave a green large wooden block into the paper small brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "a",
+      "green",
+      "large",
+      "wooden",
+      "block",
+      "into",
+      "the",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "open the large brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "large",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch the paper small brown box",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "the",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a brown large wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid a wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "a",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the metal box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab a small red plastic cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "a",
+      "small",
+      "red",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "look at the small red plastic cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "look",
+      "at",
+      "the",
+      "small",
+      "red",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect the brown box",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "the",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve the rubber small green sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "the",
+      "rubber",
+      "small",
+      "green",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view a medium wooden pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "a",
+      "medium",
+      "wooden",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "grab a wooden medium yellow pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "grab",
+      "a",
+      "wooden",
+      "medium",
+      "yellow",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "inspect the green wooden block",
+    "intent": "INSPECT",
+    "tokens": [
+      "inspect",
+      "the",
+      "green",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the small paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "retrieve the green sphere",
+    "intent": "PICKUP",
+    "tokens": [
+      "retrieve",
+      "the",
+      "green",
+      "sphere"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the brown wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "toss a green small rubber sphere under the large brown box",
+    "intent": "PLACE",
+    "tokens": [
+      "toss",
+      "a",
+      "green",
+      "small",
+      "rubber",
+      "sphere",
+      "under",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "view a red plastic cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "a",
+      "red",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "open the brown small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect a brown wooden box",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close a medium box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "a",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "get a brown paper box",
+    "intent": "PICKUP",
+    "tokens": [
+      "get",
+      "a",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "seal the wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "seal",
+      "the",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check the small plastic pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "the",
+      "small",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check a small box",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "small",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "leave the medium pyramid inside the small brown paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "the",
+      "medium",
+      "pyramid",
+      "inside",
+      "the",
+      "small",
+      "brown",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "place a yellow medium wooden pyramid inside the large wooden box",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "a",
+      "yellow",
+      "medium",
+      "wooden",
+      "pyramid",
+      "inside",
+      "the",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the brown wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a wooden box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the large box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock the wooden large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "the",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift the small wooden block",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "the",
+      "small",
+      "wooden",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view the small plastic pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "the",
+      "small",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect the metal cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "the",
+      "metal",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "pick up a brown wooden box",
+    "intent": "PICKUP",
+    "tokens": [
+      "pick",
+      "up",
+      "a",
+      "brown",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut the metal box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "the",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "collect the small blue plastic pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "collect",
+      "the",
+      "small",
+      "blue",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "check a metal medium box",
+    "intent": "INSPECT",
+    "tokens": [
+      "check",
+      "a",
+      "metal",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unseal the wooden large brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unseal",
+      "the",
+      "wooden",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "examine the blue pyramid",
+    "intent": "INSPECT",
+    "tokens": [
+      "examine",
+      "the",
+      "blue",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "leave a medium block under the paper box",
+    "intent": "PLACE",
+    "tokens": [
+      "leave",
+      "a",
+      "medium",
+      "block",
+      "under",
+      "the",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_MAT",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a metal box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "metal",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "observe a red plastic cylinder",
+    "intent": "INSPECT",
+    "tokens": [
+      "observe",
+      "a",
+      "red",
+      "plastic",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put the green wooden block under a blue block",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "the",
+      "green",
+      "wooden",
+      "block",
+      "under",
+      "a",
+      "blue",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "shut a small paper box",
+    "intent": "CLOSE",
+    "tokens": [
+      "shut",
+      "a",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "view a brown large wooden box",
+    "intent": "INSPECT",
+    "tokens": [
+      "view",
+      "a",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "place a wooden block under the medium block",
+    "intent": "PLACE",
+    "tokens": [
+      "place",
+      "a",
+      "wooden",
+      "block",
+      "under",
+      "the",
+      "medium",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "fetch the blue small plastic pyramid",
+    "intent": "PICKUP",
+    "tokens": [
+      "fetch",
+      "the",
+      "blue",
+      "small",
+      "plastic",
+      "pyramid"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlock the paper small brown box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlock",
+      "the",
+      "paper",
+      "small",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "unlid the brown small paper box",
+    "intent": "OPEN",
+    "tokens": [
+      "unlid",
+      "the",
+      "brown",
+      "small",
+      "paper",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "close the large brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "close",
+      "the",
+      "large",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lock a brown box",
+    "intent": "CLOSE",
+    "tokens": [
+      "lock",
+      "a",
+      "brown",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "put the medium red sphere into a large box",
+    "intent": "PLACE",
+    "tokens": [
+      "put",
+      "the",
+      "medium",
+      "red",
+      "sphere",
+      "into",
+      "a",
+      "large",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "drop a small red wooden block in the medium box",
+    "intent": "PLACE",
+    "tokens": [
+      "drop",
+      "a",
+      "small",
+      "red",
+      "wooden",
+      "block",
+      "in",
+      "the",
+      "medium",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "position a large green block into a box",
+    "intent": "PLACE",
+    "tokens": [
+      "position",
+      "a",
+      "large",
+      "green",
+      "block",
+      "into",
+      "a",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "open the brown large wooden box",
+    "intent": "OPEN",
+    "tokens": [
+      "open",
+      "the",
+      "brown",
+      "large",
+      "wooden",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_COLOR",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "lift the small cylinder",
+    "intent": "PICKUP",
+    "tokens": [
+      "lift",
+      "the",
+      "small",
+      "cylinder"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_SHAPE"
+    ]
+  },
+  {
+    "text": "set the plastic small red cylinder below the large green block",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "the",
+      "plastic",
+      "small",
+      "red",
+      "cylinder",
+      "below",
+      "the",
+      "large",
+      "green",
+      "block"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_MAT",
+      "B-T_SIZE",
+      "B-T_COLOR",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SIZE",
+      "B-D_COLOR",
+      "B-D_SHAPE"
+    ]
+  },
+  {
+    "text": "set a small plastic cylinder inside the box",
+    "intent": "PLACE",
+    "tokens": [
+      "set",
+      "a",
+      "small",
+      "plastic",
+      "cylinder",
+      "inside",
+      "the",
+      "box"
+    ],
+    "tags": [
+      "O",
+      "O",
+      "B-T_SIZE",
+      "B-T_MAT",
+      "B-T_SHAPE",
+      "B-REL",
+      "O",
+      "B-D_SHAPE"
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-import csv
+import json
 import math
 import re
 from collections import Counter, defaultdict
@@ -30,48 +30,71 @@ class IntentClassifier:
     def _tokenize(self, command: str) -> list:
         return re.findall(r"[a-z]+(?:'[a-z]+)?", command.lower())
 
-    # Loads the labeled command dataset
+    # Loads the labeled command dataset from JSON
     def load_dataset(self):
         project_root = Path(__file__).resolve().parent.parent
-        dataset_path = project_root / "data" / "intent_commands.csv"
+        dataset_path = project_root / "data" / "intent_commands.json"
 
         if not dataset_path.exists():
             raise FileNotFoundError(
                 f"Dataset not found: {dataset_path}"
             )
 
+        with open(dataset_path, "r", encoding="utf-8") as file:
+            dataset = json.load(file)
+
+        if not isinstance(dataset, list):
+            raise ValueError(
+                "Dataset must be a JSON list."
+            )
+
         commands = []
         intents = []
 
-        with open(dataset_path, "r", encoding="utf-8", newline="") as file:
-            reader = csv.DictReader(file)
+        for index, item in enumerate(dataset, start=1):
+            text = (item.get("text") or "").strip()
+            intent = (item.get("intent") or "").strip().upper()
+            tokens = item.get("tokens")
+            tags = item.get("tags")
 
-            required_columns = {"command", "intent"}
-
-            if (
-                not reader.fieldnames
-                or not required_columns.issubset(reader.fieldnames)
-            ):
+            if not text:
                 raise ValueError(
-                    "CSV must contain the columns: command,intent"
+                    f"Empty text found in dataset item {index}."
                 )
 
-            for row_number, row in enumerate(reader, start=2):
-                command = (row.get("command") or "").strip()
-                intent = (row.get("intent") or "").strip().upper()
+            if intent not in INTENTS:
+                raise ValueError(
+                    f"Invalid intent '{intent}' in dataset item {index}."
+                )
 
-                if not command:
-                    raise ValueError(
-                        f"Empty command found at row {row_number}."
-                    )
+            if not isinstance(tokens, list):
+                raise ValueError(
+                    f"Tokens must be a list in dataset item {index}."
+                )
 
-                if intent not in INTENTS:
-                    raise ValueError(
-                        f"Invalid intent '{intent}' at row {row_number}."
-                    )
+            if not isinstance(tags, list):
+                raise ValueError(
+                    f"Tags must be a list in dataset item {index}."
+                )
 
-                commands.append(command)
-                intents.append(intent)
+            if len(tokens) != len(tags):
+                raise ValueError(
+                    f"Tokens and tags have different lengths "
+                    f"in dataset item {index}."
+                )
+
+            if not tokens:
+                raise ValueError(
+                    f"Empty token list found in dataset item {index}."
+                )
+
+            commands.append(text)
+            intents.append(intent)
+
+        if not commands:
+            raise ValueError(
+                "Dataset contains no examples."
+            )
 
         return commands, intents
 
@@ -80,6 +103,11 @@ class IntentClassifier:
         if len(commands) != len(intents):
             raise ValueError(
                 "Commands and intents must have the same length."
+            )
+
+        if not commands:
+            raise ValueError(
+                "Cannot train with an empty dataset."
             )
 
         self.class_document_counts.clear()
@@ -91,10 +119,19 @@ class IntentClassifier:
         self.is_trained = False
 
         for command, intent in zip(commands, intents):
+            intent = intent.strip().upper()
+
+            if intent not in INTENTS:
+                raise ValueError(
+                    f"Invalid intent: {intent}"
+                )
+
             tokens = self._tokenize(command)
 
             if not tokens:
-                continue
+                raise ValueError(
+                    f"Command contains no valid words: {command}"
+                )
 
             self.class_document_counts[intent] += 1
             self.class_token_counts[intent].update(tokens)
@@ -116,6 +153,7 @@ class IntentClassifier:
         )
 
         vocabulary_size = len(self.vocabulary)
+
         denominator = (
             self.class_total_tokens[intent] + vocabulary_size
         )
