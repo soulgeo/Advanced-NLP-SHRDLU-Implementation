@@ -1,6 +1,7 @@
 import json
 import math
 import re
+import pickle
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -215,6 +216,40 @@ class IntentClassifier:
     def predict(self, command: str) -> str:
         scores = self.predict_scores(command)
         return next(iter(scores))
+
+    def save(self, filepath: str | Path):
+        """Saves the trained Naive Bayes parameters to a file."""
+        if not self.is_trained:
+            raise RuntimeError("Cannot save an untrained model.")
+            
+        # Collect all the learned counts and vocab into a dictionary
+        model_state = {
+            "class_document_counts": self.class_document_counts,
+            "class_token_counts": self.class_token_counts,
+            "class_total_tokens": self.class_total_tokens,
+            "vocabulary": self.vocabulary,
+            "total_documents": self.total_documents
+        }
+        
+        with open(filepath, "wb") as f:
+            pickle.dump(model_state, f)
+            
+        print(f"Intent model successfully saved to {filepath}")
+
+    def load(self, filepath: str | Path):
+        """Loads trained parameters from a file without needing the dataset."""
+        with open(filepath, "rb") as f:
+            model_state = pickle.load(f)
+            
+        # Restore the exact state of the classifier
+        self.class_document_counts = model_state["class_document_counts"]
+        self.class_token_counts = model_state["class_token_counts"]
+        self.class_total_tokens = model_state["class_total_tokens"]
+        self.vocabulary = model_state["vocabulary"]
+        self.total_documents = model_state["total_documents"]
+        
+        self.is_trained = True
+        print(f"Intent model successfully loaded from {filepath}")
 
 
 if __name__ == "__main__":

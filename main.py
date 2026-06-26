@@ -2,6 +2,10 @@ import inspect
 import os
 import readline
 
+from src.hybrid_parser import HybridParser
+from src.intent_classifier import IntentClassifier
+from src.sequence_model import SequenceWrapper
+from src.ml_parser import MLParser
 from src.parser import Parser
 from src.planner import Planner
 from src.world import World
@@ -21,7 +25,18 @@ def main():
 
     world = World()
     planner = Planner(world)
-    parser = Parser()
+
+    cfg_parser = Parser()
+
+    intent_model = IntentClassifier()
+    intent_model.load("models/intent_model.pkl")
+
+    sequence_model = SequenceWrapper()
+    sequence_model.load("models/sequence_model.pt")
+
+    ml_parser = MLParser(intent_model, sequence_model)
+
+    parser = HybridParser(cfg_parser, ml_parser)
 
     print("SHRDLU Parser.")
     print("Type \"/help\" for command syntax or \"/exit\" to quit.")
@@ -106,7 +121,7 @@ def main():
 
                         payload["action_args"] = candidates[choice - 1]
                         payload["status"] = "RESOLVED"
-                        parser.saved_obj = payload["action_args"]["target"]
+                        # parser.saved_obj = payload["action_args"]["target"]
                         break
                 finally:
                     readline.set_auto_history(True)
