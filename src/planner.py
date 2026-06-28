@@ -5,13 +5,13 @@ from src.world import World
 
 
 class Planner:
-    # Planner gets initialized and connected to the World
     def __init__(self, world: World):
+        """Initializes the planner and connects it to the world."""
         self.world = world
         self.current_holding = None
 
-    # Gets the JSON payload from the parser.
     def execute(self, payload: Dict[str, Any]) -> Dict[str, Any]:
+        """Executes the action specified by the parser payload."""
 
         intent = payload.get("intent")
         args = payload.get("action_args") or {}
@@ -22,8 +22,6 @@ class Planner:
                 "status": "ERROR",
                 "message": f"No target specified for {intent}."
             }
-
-        # Routing
         if intent == constants.INTENT_PICKUP:
             return self._pickup(target_id)  # type: ignore
         elif intent == constants.INTENT_PLACE:
@@ -43,8 +41,8 @@ class Planner:
                 "message": f"Unknown Intent '{intent}'."
             }
 
-    # Object pick up: Checks whether the hand holds something else and if the object getting picked up does not have anything on top of it
     def _pickup(self, obj_id: str) -> Dict[str, Any]:
+        """Picks up an object if the hand is empty and the object is clear."""
         if self.current_holding is not None:
             return {
                 "status": "ERROR",
@@ -69,8 +67,8 @@ class Planner:
             "message": f"{prefix}The {obj_id} has been successfully picked up."
         }
 
-    # The object gets placed according to the rules
     def _place(self, obj_id: str, relation: str, ref_id: Optional[str]) -> Dict[str, Any]:
+        """Places an object relative to a reference object or zone according to the rules."""
         pickup_msg = ""
         if self.current_holding != obj_id:
             if self.current_holding is not None:
@@ -191,8 +189,8 @@ class Planner:
             "message": f"Unknown relation: '{relation}'."
         }
 
-    # Opens a container checks if the object is a box and if there is anything on top of it
     def _open(self, obj_id: str) -> Dict[str, Any]:
+        """Opens a container after checking if it is a box and is clear."""
         obj = self.world.objects[obj_id]
         if obj.shape != "box":
             return {
@@ -216,8 +214,8 @@ class Planner:
             "message": f"{obj_id} has been opened."
         }
 
-    # Closes a container. Checks if it is box shaped and if there is anything on top of it.
     def _close(self, obj_id: str) -> Dict[str, Any]:
+        """Closes a container after checking if it is a box and is clear."""
         obj = self.world.objects[obj_id]
         if obj.shape != "box":
             return {
@@ -241,8 +239,8 @@ class Planner:
             "message": f"{obj_id} has been closed."
         }
 
-    # Unblocks an object by removing the item on top of it and moving it on a surface (table/floor)
     def _clear_insurance(self, obj_id: str) -> List[str]:
+        """Recursively clears any objects on top of the target object."""
         actions_taken = []
         ontop_id = self.world.top_of(obj_id)
         if ontop_id:
@@ -258,8 +256,8 @@ class Planner:
             actions_taken.append(f"The {ontop_id} has been moved to {current_srfc}.")
         return actions_taken
 
-    # Utility function. Returns a formatted string with the attributes, location, and contents of an object.
     def _inspect(self, obj_id: str) -> Dict[str, Any]:
+        """Inspects an object and returns its attributes, location, and contents."""
         obj = self.world.objects[obj_id]
         state_info = f", State: {obj.state}" if obj.state else ""
         location_info = f", Location: {obj.location_id}"

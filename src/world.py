@@ -15,8 +15,8 @@ class Obj:
 
 
 class World:
-    # Initializes the world state
     def __init__(self):
+        """Initializes the world state."""
         self.objects: Dict[str, Obj] = {}
         self.on: Dict[str, Optional[str]] = {}
         self.holding: Optional[str] = None
@@ -24,8 +24,8 @@ class World:
 
         self._initialize_world()
 
-    # Initializes the world with 12 objects
     def _initialize_world(self):
+        """Initializes the world with 12 predefined objects."""
         initial_objects = [
             Obj("box_wood_1", "box", "brown", "large", "wooden", state=constants.STATE_OPEN, location_id="floor"),
             Obj("box_metal_1", "box", "grey", "medium", "metal", state=constants.STATE_CLOSED, location_id="table"),
@@ -47,18 +47,17 @@ class World:
             if obj.shape == "box":
                 self.contains[obj.id] = []
 
-    # Checks if the object has something on top of it: Returns True if the object is clear
     def is_clear(self, obj_id: str) -> bool:
+        """Returns True if the object is clear (i.e. has nothing on top of it)."""
         return all(support != obj_id for support in self.on.values())
 
-    # Returns the ID of the object sitting on top of obj_id.
     def top_of(self, obj_id: str) -> Optional[str]:
+        """Returns the ID of the object sitting on top of the given object, if any."""
         for x, support in self.on.items():
             if support == obj_id:
                 return x
         return None
 
-    # Searches the world and returns a list with object ID's based on the Parser's request
     def find_objects(
             self,
             shape: Optional[str] = None,
@@ -70,7 +69,7 @@ class World:
             relation: Optional[str] = None,
             reference_object_id: Optional[str] = None
     ) -> list[str]:
-
+        """Finds and returns object IDs matching the specified attributes and relation constraints."""
         matches = []
         for obj_id, obj in self.objects.items():
 

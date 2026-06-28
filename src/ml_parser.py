@@ -7,12 +7,12 @@ class MLParser:
     def __init__(self, intent_model: IntentClassifier, sequence_model: SequenceWrapper):
         self.intent_classifier = intent_model
         self.sequence_tagger = sequence_model
-        self.last_resolved_target = None  # Track the historical reference object
+        self.last_resolved_target = None
 
     def reset_session(self):
         """Call this whenever a brand new conversation or command chain starts."""
-        self.sequence_tagger.reset_session()  # Wipes LSTM memory
-        self.last_resolved_target = None  # Wipes entity tracking memory
+        self.sequence_tagger.reset_session()
+        self.last_resolved_target = None
 
     def _extract_slots(self, tokens, tags):
         """Groups BIO tags into structured dictionary buckets."""
@@ -21,13 +21,12 @@ class MLParser:
             "t_rel": None, "d_rel": constants.REL_ON  # Default relation
         }
 
-        # Map our tag suffixes directly to the kwargs expected by world.find_objects()
         attr_map = {
             "COLOR": "color",
             "SHAPE": "shape",
             "SIZE": "size",
-            "MAT": "material",       # Fixes the 'mat' crash
-            "ZONE": "location_id"    # Fixes the 'zone' -> 'location_id' mapping
+            "MAT": "material",
+            "ZONE": "location_id"
         }
 
         for token, tag in zip(tokens, tags):
@@ -36,29 +35,22 @@ class MLParser:
             prefix, _, label = tag.partition("-")
             if not label: continue
 
-            # Target Slots
             if label.startswith("T_") and label not in ["T_REL", "T_PRON"]:
                 suffix = label.replace("T_", "")
                 if suffix in attr_map:
                     slots["target"][attr_map[suffix]] = token
-                    
             elif label == "T_PRON":
                 slots["target"]["pron"] = token
             elif label == "T_REL":
                 slots["t_rel"] = token
-                
-            # Target Reference (Anchor) Slots
             elif label.startswith("TR_"):
                 suffix = label.replace("TR_", "")
                 if suffix in attr_map:
                     slots["target_ref"][attr_map[suffix]] = token
-                
-            # Destination Slots
             elif label.startswith("D_") and label != "D_REL":
                 suffix = label.replace("D_", "")
                 if suffix in attr_map:
                     slots["dest"][attr_map[suffix]] = token
-                    
             elif label == "D_REL":
                 slots["d_rel"] = token
 
@@ -79,34 +71,25 @@ class MLParser:
         
         slots = self._extract_slots(tokens, tags)
 
-        # --- NEW: TAG REMAPPING HEURISTIC ---
-        # If the command isn't PLACE, but the LSTM found destination tags, 
-        # it confused the anchor for a destination. Remap them to target_ref!
         if intent != constants.INTENT_PLACE and slots["dest"]:
             slots["target_ref"].update(slots["dest"])
             if slots["d_rel"]:
                 slots["t_rel"] = slots["d_rel"]
-            
-            # Clear the destination so it doesn't cause issues later
             slots["dest"] = {}
             slots["d_rel"] = constants.REL_ON 
 
-        # --- STEP 1: RESOLVE TARGET ---
         valid_targets = []
         
-        # Case 1A: Pronoun ("it" / "that")
         if "pron" in slots["target"]:
             if self.last_resolved_target is not None:
                 valid_targets = [self.last_resolved_target]
             else:
                 return {"status": "NOT_FOUND", "status_args": {"message": "Referred to 'it', but no previous object exists in memory."}}
                 
-        # Case 1B: Relational Target ("sphere under green block")
         elif slots["target_ref"]:
             anchor_objs = world.find_objects(**slots["target_ref"])
             t_rel = self._normalize_relation(slots.get("t_rel"))
             
-            # Loop through ALL matching anchors until we find one that actually contains our target
             for anchor in anchor_objs:
                 valid_targets = world.find_objects(
                     **slots["target"], 
@@ -114,9 +97,8 @@ class MLParser:
                     reference_object_id=anchor
                 )
                 if valid_targets:
-                    break # We found the target! Stop looking through anchors.
+                    break
                 
-        # Case 1C: Standard Direct Target ("red block")
         else:
             valid_targets = world.find_objects(**slots["target"]) if slots["target"] else []
 
@@ -124,18 +106,15 @@ class MLParser:
             return {"status": "NOT_FOUND", "status_args": {"message": "Could not identify target."}}
 
         candidate = {"target": valid_targets[0]}
-        
-        # Update conversation history tracker
         self.last_resolved_target = valid_targets[0]
 
-        # --- STEP 2: RESOLVE DESTINATION (If PLACE) ---
         if intent == constants.INTENT_PLACE:
-            dest_ref = "table" # Fallback default
+            dest_ref = "table"
             d_rel = self._normalize_relation(slots.get("d_rel"))
             
             if slots["dest"]:
                 if "location_id" in slots["dest"]:
-                    dest_ref = slots["dest"]["location_id"] # Floor / Table zone
+                    dest_ref = slots["dest"]["location_id"]
                 else:
                     dest_objs = world.find_objects(**slots["dest"])
                     if dest_objs:

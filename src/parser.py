@@ -49,8 +49,6 @@ class Parser():
 
     def _resolve_reference(self, parse_tree, world):
         """Recursively finds all object IDs that match descriptions and locations in the tree."""
-        # Setup
-        # We only look at direct children to avoid picking up nested objects prematurely
         object_trees = list(parse_tree.subtrees(lambda t: t.label() in ["NP", "ANAPHORIC"]))
         zone_trees = list(parse_tree.subtrees(lambda t: t.label() == "ZONE"))
 
@@ -65,7 +63,6 @@ class Parser():
             t for t in parse_tree if isinstance(t, nltk.Tree) and t.label() == "REF"
         ]
 
-        # Termination condition
         if len(references) == 0:
             if not obj_tree:
                 if len(zone_trees) > 0:
@@ -79,7 +76,6 @@ class Parser():
             obj_list = world.find_objects(**attributes)
             return obj_list
 
-        # Recursion
         ref = references[0]
         relation_tree = list(
             ref.subtrees(
@@ -116,7 +112,6 @@ class Parser():
         intent = ""
 
         for i, tree in enumerate(trees):
-            # Extract the intent (only need to do this once)
             if i == 0:
                 for subtree in tree.subtrees():
                     label = subtree.label()
@@ -124,7 +119,6 @@ class Parser():
                         intent = label
                         break
 
-            # Extract the target
             target_nodes = list(tree.subtrees(lambda t: t.label() == "TARGET"))
             if not target_nodes:
                 continue
@@ -133,7 +127,6 @@ class Parser():
             if len(valid_target_objects) == 0:
                 continue
 
-            # Extract the destination (if PLACE)
             valid_dest_objects = []
             relation = ""
             if intent == "PLACE":
@@ -163,7 +156,6 @@ class Parser():
                     }
                     relation = relation_dict[relation_tree.label()]
 
-            # Append all candidates
             for target_obj in valid_target_objects:
                 if intent != "PLACE":
                     candidates.append({"target": target_obj})
@@ -180,16 +172,12 @@ class Parser():
                         }
                     )
 
-            # Save the target object if only one
             if len(valid_target_objects) == 1:
                 self.saved_obj = valid_target_objects[0]
 
-        # Deduplicate candidates
         unique_candidates = []
         seen = set()
         for c in candidates:
-            # Convert dict to a hashable representation for deduplication
-            # Using a simplified string representation since candidates are shallow
             c_str = str(c)
             if c_str not in seen:
                 unique_candidates.append(c)
@@ -203,7 +191,6 @@ class Parser():
         target = candidate.get("target")
         destination = candidate.get("destination")
         
-        # Clean up intent for display (e.g., PICKUP -> pick up)
         display_intent = intent.lower().replace("_", " ")
         
         msg = f"{display_intent} {target}"
@@ -238,7 +225,7 @@ class Parser():
                 },
             }
 
-        else:  # Exactly 1 candidate
+        else:
             return {
                 "intent": intent,
                 "action_args": candidates[0],

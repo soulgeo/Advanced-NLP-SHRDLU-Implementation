@@ -47,7 +47,6 @@ def main():
             if user_input == "":
                 continue
 
-            # Client commands
             if user_input[0] == "/":
                 command = user_input[1:]
                 if command in ["exit", "quit"]:
@@ -81,7 +80,6 @@ def main():
                 print("Command not recognized.")
                 continue
 
-            # SHRDLU commands
             payload = parser.run(user_input, world)
 
             if debug == True:
@@ -121,7 +119,6 @@ def main():
 
                         payload["action_args"] = candidates[choice - 1]
                         payload["status"] = "RESOLVED"
-                        # parser.saved_obj = payload["action_args"]["target"]
                         break
                 finally:
                     readline.set_auto_history(True)
@@ -129,7 +126,6 @@ def main():
             if payload["status"] == "CANCELED":
                 continue
 
-            # RESOLVED state, or ambiguity solved.
             result = planner.execute(payload)
             print(result["message"])
 
