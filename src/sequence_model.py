@@ -3,24 +3,32 @@ import torch.nn as nn
 
 
 class LSTMModel(nn.Module):
+
     def __init__(self, vocab_size, embedding_dim, hidden_dim, tagset_size):
         super(LSTMModel, self).__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
-        self.lstm = nn.LSTM(
-            embedding_dim, hidden_dim, bidirectional=True, batch_first=True
-        )
-        self.hidden2tag = nn.Linear(hidden_dim * 2, tagset_size)
 
-    def forward(self, sentence_tensor):
-        # 1. Convert integer indexes into dense vector embeddings
+        # CRITICAL CHANGE: We MUST switch to unidirectional (bidirectional=False).
+        # A bidirectional LSTM cannot carry states forward sequentially in a live session
+        # because the backward layer requires knowing the "future" end of the text.
+        self.lstm = nn.LSTM(
+            embedding_dim, hidden_dim, bidirectional=False, batch_first=True
+        )
+
+        # Changed from hidden_dim * 2 to hidden_dim because it's now unidirectional
+        self.hidden2tag = nn.Linear(hidden_dim, tagset_size)
+
+    def forward(self, sentence_tensor, hidden=None):
         embeds = self.embedding(sentence_tensor)
-        # 2. Pass through LSTM (We ignore the hidden states output here)
-        lstm_out, _ = self.lstm(embeds)
-        # 3. Project to tag space
+
+        # Pass the previous hidden state into the LSTM
+        lstm_out, hidden = self.lstm(embeds, hidden)
+
         tag_space = self.hidden2tag(lstm_out)
-        # 4. Convert to log probabilities
         tag_scores = torch.log_softmax(tag_space, dim=2)
-        return tag_scores
+
+        # Return BOTH the scores and the updated memory state
+        return tag_scores, hidden
 
 
 class SequenceWrapper:
@@ -74,22 +82,29 @@ class SequenceWrapper:
         for epoch in range(num_epochs):
             total_loss = 0
 
+            # Assume each element in training_data is a conversation session.
+            # To simulate memory, we keep the hidden state alive across sentences.
+            hidden = None
+
             for sentence, tags in training_data:
                 # Step A: Clear old gradients
                 self.model.zero_grad()
 
-                # Step B: Prepare inputs and targets as tensors. Add batch dimension: shape (1, seq_len)
+                # Step B: Prepare inputs
                 sentence_in = self._prepare_sequence(
                     sentence, self.word_to_ix
                 ).unsqueeze(0)
                 targets = self._prepare_sequence(tags, self.tag_to_ix)
 
-                # Step C: Run forward pass
-                tag_scores = self.model(sentence_in)
+                # Step C: Run forward pass, passing the current hidden state
+                tag_scores, hidden = self.model(sentence_in, hidden)
+
+                # CRITICAL: Detach the hidden state from history.
+                # This prevents PyTorch from trying to backpropagate all the way back
+                # to the beginning of the universe, which causes an Out-Of-Memory error.
+                hidden = (hidden[0].detach(), hidden[1].detach())
 
                 # Step D: Calculate Loss
-                # PyTorch loss functions expect the predictions to be 2D (N, C) and targets to be 1D (N)
-                # So we view/reshape tag_scores from (1, seq_len, num_tags) to (seq_len, num_tags)
                 loss = loss_function(
                     tag_scores.view(-1, len(self.tag_to_ix)), targets
                 )
@@ -100,38 +115,37 @@ class SequenceWrapper:
 
                 total_loss += loss.item()
 
-            if (epoch + 1) % 10 == 0:
-                print(
-                    f'Epoch [{epoch+1}/{num_epochs}], Loss: {total_loss/len(training_data):.4f}'
-                )
-
         self.is_trained = True
 
+    # Add an extra method to reset memory when a new interaction begins
+    def reset_session(self):
+        """Call this whenever a brand new conversation or command chain starts."""
+        self.current_hidden = None
+
+
     def predict_tags(self, sentence_tokens):
-        """Takes a list of words and returns a list of predicted tags."""
         if not self.is_trained or self.model is None:
             raise RuntimeError("Model is not trained yet!")
 
-        with torch.no_grad():  # Don't track gradients during prediction
-            # Convert words to tensor
+        # Initialize current_hidden if it doesn't exist yet
+        if not hasattr(self, "current_hidden"):
+            self.current_hidden = None
+
+        with torch.no_grad():
             inputs = self._prepare_sequence(
                 sentence_tokens, self.word_to_ix
             ).unsqueeze(0)
 
-            # Get predictions
-            tag_scores = self.model(inputs)
+            # Pass the persistent session memory into the model
+            tag_scores, self.current_hidden = self.model(inputs, self.current_hidden)
 
-            # Find the index of the highest probability tag for each word
-            # tag_scores shape is (1, seq_len, num_tags). max(dim=2) gets the best tag per word
             _, predicted_indices = torch.max(tag_scores, dim=2)
-
-            # Convert integers back to string tags
             predicted_tags = [
                 self.ix_to_tag[idx.item()] for idx in predicted_indices[0]
             ]
 
             return predicted_tags
-
+    
     def save(self, filepath):
         """Saves the architecture dimensions, vocabularies, and model weights."""
         if not self.is_trained or self.model is None:
