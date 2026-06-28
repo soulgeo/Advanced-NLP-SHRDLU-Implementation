@@ -9,50 +9,141 @@ class MLParser:
         self.sequence_tagger = sequence_model
         self.last_resolved_target = None  # Track the historical reference object
 
-    # def reset_session(self):
-    #     """Call this whenever a brand new conversation or command chain starts."""
-    #     self.sequence_tagger.reset_session()  # Wipes LSTM memory
-    #     self.last_resolved_target = None  # Wipes entity tracking memory
+    def reset_session(self):
+        """Call this whenever a brand new conversation or command chain starts."""
+        self.sequence_tagger.reset_session()  # Wipes LSTM memory
+        self.last_resolved_target = None  # Wipes entity tracking memory
+
+    def _extract_slots(self, tokens, tags):
+        """Groups BIO tags into structured dictionary buckets."""
+        slots = {
+            "target": {}, "target_ref": {}, "dest": {},
+            "t_rel": None, "d_rel": constants.REL_ON  # Default relation
+        }
+
+        # Map our tag suffixes directly to the kwargs expected by world.find_objects()
+        attr_map = {
+            "COLOR": "color",
+            "SHAPE": "shape",
+            "SIZE": "size",
+            "MAT": "material",       # Fixes the 'mat' crash
+            "ZONE": "location_id"    # Fixes the 'zone' -> 'location_id' mapping
+        }
+
+        for token, tag in zip(tokens, tags):
+            if tag == "O": continue
+            
+            prefix, _, label = tag.partition("-")
+            if not label: continue
+
+            # Target Slots
+            if label.startswith("T_") and label not in ["T_REL", "T_PRON"]:
+                suffix = label.replace("T_", "")
+                if suffix in attr_map:
+                    slots["target"][attr_map[suffix]] = token
+                    
+            elif label == "T_PRON":
+                slots["target"]["pron"] = token
+            elif label == "T_REL":
+                slots["t_rel"] = token
+                
+            # Target Reference (Anchor) Slots
+            elif label.startswith("TR_"):
+                suffix = label.replace("TR_", "")
+                if suffix in attr_map:
+                    slots["target_ref"][attr_map[suffix]] = token
+                
+            # Destination Slots
+            elif label.startswith("D_") and label != "D_REL":
+                suffix = label.replace("D_", "")
+                if suffix in attr_map:
+                    slots["dest"][attr_map[suffix]] = token
+                    
+            elif label == "D_REL":
+                slots["d_rel"] = token
+
+        return slots
+
+    def _normalize_relation(self, rel_str: str) -> str:
+        """Converts raw tokens like 'inside' or 'underneath' to planner constants."""
+        if not rel_str: return constants.REL_ON
+        if rel_str in ["in", "inside", "into"]: return constants.REL_IN
+        if rel_str in ["under", "below", "underneath", "beneath"]: return constants.REL_UNDER
+        if rel_str in ["next", "beside", "near"]: return constants.REL_NEXT
+        return constants.REL_ON
 
     def run(self, input_text: str, world) -> dict:
         intent = self.intent_classifier.predict(input_text)
         tokens = nltk.word_tokenize(input_text.lower())
         tags = self.sequence_tagger.predict_tags(tokens)
         
-        target_attrs = {}
-        dest_attrs = {}
-        relation = constants.REL_ON
-        
-        for token, tag in zip(tokens, tags):
-            if tag == 'B-T_COLOR': target_attrs['color'] = token
-            elif tag == 'B-T_SHAPE': target_attrs['shape'] = token
-            # ... rest of your tags ...
+        slots = self._extract_slots(tokens, tags)
 
-        # --- COREFERENCE RESOLUTION LOGIC ---
-        # If the word captured is a pronoun, substitute it with the historical target
-        if target_attrs.get('shape') == 'it' or target_attrs.get('color') == 'it':
+        # --- NEW: TAG REMAPPING HEURISTIC ---
+        # If the command isn't PLACE, but the LSTM found destination tags, 
+        # it confused the anchor for a destination. Remap them to target_ref!
+        if intent != constants.INTENT_PLACE and slots["dest"]:
+            slots["target_ref"].update(slots["dest"])
+            if slots["d_rel"]:
+                slots["t_rel"] = slots["d_rel"]
+            
+            # Clear the destination so it doesn't cause issues later
+            slots["dest"] = {}
+            slots["d_rel"] = constants.REL_ON 
+
+        # --- STEP 1: RESOLVE TARGET ---
+        valid_targets = []
+        
+        # Case 1A: Pronoun ("it" / "that")
+        if "pron" in slots["target"]:
             if self.last_resolved_target is not None:
-                # Bypass world lookup and use memory directly
                 valid_targets = [self.last_resolved_target]
             else:
-                return {"status": "NOT_FOUND", "status_args": {"message": "Referred to 'it', but no previous object exists."}}
+                return {"status": "NOT_FOUND", "status_args": {"message": "Referred to 'it', but no previous object exists in memory."}}
+                
+        # Case 1B: Relational Target ("sphere under green block")
+        elif slots["target_ref"]:
+            anchor_objs = world.find_objects(**slots["target_ref"])
+            t_rel = self._normalize_relation(slots.get("t_rel"))
+            
+            # Loop through ALL matching anchors until we find one that actually contains our target
+            for anchor in anchor_objs:
+                valid_targets = world.find_objects(
+                    **slots["target"], 
+                    relation=t_rel, 
+                    reference_object_id=anchor
+                )
+                if valid_targets:
+                    break # We found the target! Stop looking through anchors.
+                
+        # Case 1C: Standard Direct Target ("red block")
         else:
-            # Normal lookup
-            valid_targets = world.find_objects(**target_attrs) if target_attrs else []
-        
+            valid_targets = world.find_objects(**slots["target"]) if slots["target"] else []
+
         if not valid_targets:
             return {"status": "NOT_FOUND", "status_args": {"message": "Could not identify target."}}
 
         candidate = {"target": valid_targets[0]}
         
-        # Update your conversation history tracker
+        # Update conversation history tracker
         self.last_resolved_target = valid_targets[0]
 
+        # --- STEP 2: RESOLVE DESTINATION (If PLACE) ---
         if intent == constants.INTENT_PLACE:
-            valid_dests = world.find_objects(**dest_attrs) if dest_attrs else ["table"]
+            dest_ref = "table" # Fallback default
+            d_rel = self._normalize_relation(slots.get("d_rel"))
+            
+            if slots["dest"]:
+                if "location_id" in slots["dest"]:
+                    dest_ref = slots["dest"]["location_id"] # Floor / Table zone
+                else:
+                    dest_objs = world.find_objects(**slots["dest"])
+                    if dest_objs:
+                        dest_ref = dest_objs[0]
+
             candidate["destination"] = {
-                "relation": relation,
-                "reference": valid_dests[0]
+                "relation": d_rel,
+                "reference": dest_ref
             }
 
         return {
