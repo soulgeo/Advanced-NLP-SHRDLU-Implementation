@@ -2,6 +2,10 @@ import inspect
 import os
 import readline
 
+from src.hybrid_parser import HybridParser
+from src.intent_classifier import IntentClassifier
+from src.sequence_model import SequenceWrapper
+from src.ml_parser import MLParser
 from src.parser import Parser
 from src.planner import Planner
 from src.world import World
@@ -21,7 +25,18 @@ def main():
 
     world = World()
     planner = Planner(world)
-    parser = Parser()
+
+    cfg_parser = Parser()
+
+    intent_model = IntentClassifier()
+    intent_model.load("models/intent_model.pkl")
+
+    sequence_model = SequenceWrapper()
+    sequence_model.load("models/sequence_model.pt")
+
+    ml_parser = MLParser(intent_model, sequence_model)
+
+    parser = HybridParser(cfg_parser, ml_parser)
 
     print("SHRDLU Parser.")
     print("Type \"/help\" for command syntax or \"/exit\" to quit.")
@@ -32,7 +47,6 @@ def main():
             if user_input == "":
                 continue
 
-            # Client commands
             if user_input[0] == "/":
                 command = user_input[1:]
                 if command in ["exit", "quit"]:
@@ -66,7 +80,6 @@ def main():
                 print("Command not recognized.")
                 continue
 
-            # SHRDLU commands
             payload = parser.run(user_input, world)
 
             if debug == True:
@@ -106,7 +119,6 @@ def main():
 
                         payload["action_args"] = candidates[choice - 1]
                         payload["status"] = "RESOLVED"
-                        parser.saved_obj = payload["action_args"]["target"]
                         break
                 finally:
                     readline.set_auto_history(True)
@@ -114,7 +126,6 @@ def main():
             if payload["status"] == "CANCELED":
                 continue
 
-            # RESOLVED state, or ambiguity solved.
             result = planner.execute(payload)
             print(result["message"])
 

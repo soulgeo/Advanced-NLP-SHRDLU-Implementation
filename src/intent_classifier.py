@@ -1,6 +1,7 @@
 import json
 import math
 import re
+import pickle
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -17,7 +18,6 @@ INTENTS = {
 
 
 class IntentClassifier:
-    # Initializes the Naive Bayes classifier state
     def __init__(self):
         self.class_document_counts = Counter()
         self.class_token_counts = defaultdict(Counter)
@@ -26,12 +26,11 @@ class IntentClassifier:
         self.total_documents = 0
         self.is_trained = False
 
-    # Splits a command into lowercase word tokens
     def _tokenize(self, command: str) -> list:
         return re.findall(r"[a-z]+(?:'[a-z]+)?", command.lower())
 
-    # Loads the labeled command dataset from JSON
     def load_dataset(self):
+        """Loads the labeled command dataset from JSON."""
         project_root = Path(__file__).resolve().parent.parent
         dataset_path = project_root / "data" / "intent_commands.json"
 
@@ -98,8 +97,8 @@ class IntentClassifier:
 
         return commands, intents
 
-    # Trains the classifier using the labeled commands
     def train(self, commands: list, intents: list):
+        """Trains the classifier using the labeled commands."""
         if len(commands) != len(intents):
             raise ValueError(
                 "Commands and intents must have the same length."
@@ -141,8 +140,8 @@ class IntentClassifier:
 
         self.is_trained = True
 
-    # Calculates the Naive Bayes log probability for one intent
     def _get_log_probability(self, tokens: list, intent: str) -> float:
+        """Calculates the Naive Bayes log probability for one intent."""
         document_count = self.class_document_counts[intent]
 
         if document_count == 0:
@@ -167,8 +166,8 @@ class IntentClassifier:
 
         return score
 
-    # Returns confidence scores for every possible intent
     def predict_scores(self, command: str) -> dict:
+        """Returns confidence scores for every possible intent."""
         if not self.is_trained:
             raise RuntimeError(
                 "The classifier has not been trained yet."
@@ -211,10 +210,42 @@ class IntentClassifier:
             )
         )
 
-    # Returns the most likely intent for a command
     def predict(self, command: str) -> str:
+        """Returns the most likely intent for a command."""
         scores = self.predict_scores(command)
         return next(iter(scores))
+
+    def save(self, filepath: str | Path):
+        """Saves the trained Naive Bayes parameters to a file."""
+        if not self.is_trained:
+            raise RuntimeError("Cannot save an untrained model.")
+            
+        model_state = {
+            "class_document_counts": self.class_document_counts,
+            "class_token_counts": self.class_token_counts,
+            "class_total_tokens": self.class_total_tokens,
+            "vocabulary": self.vocabulary,
+            "total_documents": self.total_documents
+        }
+        
+        with open(filepath, "wb") as f:
+            pickle.dump(model_state, f)
+            
+        print(f"Intent model successfully saved to {filepath}")
+
+    def load(self, filepath: str | Path):
+        """Loads trained parameters from a file without needing the dataset."""
+        with open(filepath, "rb") as f:
+            model_state = pickle.load(f)
+            
+        self.class_document_counts = model_state["class_document_counts"]
+        self.class_token_counts = model_state["class_token_counts"]
+        self.class_total_tokens = model_state["class_total_tokens"]
+        self.vocabulary = model_state["vocabulary"]
+        self.total_documents = model_state["total_documents"]
+        
+        self.is_trained = True
+        print(f"Intent model successfully loaded from {filepath}")
 
 
 if __name__ == "__main__":
