@@ -1,4 +1,5 @@
 import inspect
+import json
 import os
 import readline
 
@@ -83,7 +84,8 @@ def main():
             payload = parser.run(user_input, world)
 
             if debug == True:
-                print(f"Debug: {payload["status"]}")
+                print("DEBUG: Parser payload:")
+                print(json.dumps(payload, indent=4))
 
             if payload["status"] in ["PARSE_ERROR", "NOT_FOUND"]:
                 print(payload["status_args"]["message"])
