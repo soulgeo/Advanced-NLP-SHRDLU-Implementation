@@ -6,12 +6,13 @@ class HybridParser:
         self.cfg_parser = cfg_parser
         self.ml_parser: MLParser = ml_parser
 
-    def run(self, user_input, world):
+    def run(self, user_input, world, debug=False):
         payload = self.cfg_parser.run(user_input, world)
         
         if payload["status"] == "PARSE_ERROR":
-            print("[System] CFG Parsing failed. Falling back to ML model...")
-            ml_payload = self.ml_parser.run(user_input, world)
+            if debug:
+                print("DEBUG: CFG Parsing failed. Falling back to ML model...")
+            ml_payload = self.ml_parser.run(user_input, world, debug=debug)
             return ml_payload
             
         return payload

@@ -85,7 +85,7 @@ def main():
                 print("Command not recognized.")
                 continue
 
-            payload = parser.run(user_input, world)
+            payload = parser.run(user_input, world, debug=debug)
 
             if debug == True:
                 print("DEBUG: Parser payload:")

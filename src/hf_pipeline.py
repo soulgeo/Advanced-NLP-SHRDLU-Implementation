@@ -27,7 +27,7 @@ class HuggingFaceGrounder:
         )
 
     def translate_oov_tokens(
-        self, tokens: list, vocab: dict, threshold: float = 0.50
+        self, tokens: list, vocab: dict, threshold: float = 0.50, debug: bool = False
     ) -> list:
         """Translates Out-Of-Vocabulary words into known ontology words."""
         translated_tokens = []
@@ -43,9 +43,10 @@ class HuggingFaceGrounder:
             best_idx = int(torch.argmax(similarities).item())
             best_score = similarities[best_idx].item()
 
-            print(
-                f"\033[96m[HF Grounder] OOV '{token}' -> nearest: '{self.flat_ontology[best_idx]}' (Score: {best_score:.2f})\033[00m"
-            )
+            if debug:
+                print(
+                    f"DEBUG: OOV '{token}' -> nearest: '{self.flat_ontology[best_idx]}' (Score: {best_score:.2f})"
+                )
 
             if best_score >= threshold:
                 translated_tokens.append(self.flat_ontology[best_idx])

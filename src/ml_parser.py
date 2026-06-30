@@ -112,13 +112,13 @@ class MLParser:
                 "status_args": None,
             }
 
-    def run(self, input_text: str, world) -> dict:
+    def run(self, input_text: str, world, debug: bool = False) -> dict:
         intent = self.intent_classifier.predict(input_text)
         tokens = nltk.word_tokenize(input_text.lower())
 
         if hasattr(self, "hf_grounder") and self.hf_grounder:
             vocab = self.sequence_tagger.word_to_ix
-            tokens = self.hf_grounder.translate_oov_tokens(tokens, vocab)
+            tokens = self.hf_grounder.translate_oov_tokens(tokens, vocab, debug=debug)
 
         tags = self.sequence_tagger.predict_tags(tokens)
         slots = self._extract_slots(tokens, tags)
