@@ -6,7 +6,7 @@ from src.grammar import grammar_string
 from src.world import World
 
 
-class Parser():
+class CFGParser():
     def __init__(self):
         self.grammar = nltk.CFG.fromstring(grammar_string)
         self.parser = nltk.ChartParser(self.grammar)

@@ -6,8 +6,9 @@ import readline
 from src.hybrid_parser import HybridParser
 from src.intent_classifier import IntentClassifier
 from src.sequence_model import SequenceWrapper
+from src.hf_pipeline import HuggingFaceGrounder
 from src.ml_parser import MLParser
-from src.parser import Parser
+from src.cfg_parser import CFGParser
 from src.planner import Planner
 from src.world import World
 
@@ -27,7 +28,7 @@ def main():
     world = World()
     planner = Planner(world)
 
-    cfg_parser = Parser()
+    cfg_parser = CFGParser()
 
     intent_model = IntentClassifier()
     intent_model.load("models/intent_model.pkl")
@@ -35,7 +36,10 @@ def main():
     sequence_model = SequenceWrapper()
     sequence_model.load("models/sequence_model.pt")
 
+    hf_grounder = HuggingFaceGrounder()
+
     ml_parser = MLParser(intent_model, sequence_model)
+    ml_parser.hf_grounder = hf_grounder
 
     parser = HybridParser(cfg_parser, ml_parser)
 
@@ -65,8 +69,8 @@ def main():
                 if command == "help":
                     print(inspect.cleandoc("""
                     AVAILABLE SHRDLU COMMANDS:
-                    - PICKUP [object]              (e.g., "pick up the red cube")
-                    - PLACE [obj] [relation] [ref] (e.g., "put the cube on the table")
+                    - PICKUP [object]              (e.g., "pick up the red block")
+                    - PLACE [obj] [relation] [ref] (e.g., "put the block on the table")
                     - OPEN/CLOSE [object]          (e.g., "open the wooden box")
                     - INSPECT [object]             (e.g., "look at the blue sphere")
 
@@ -81,7 +85,7 @@ def main():
                 print("Command not recognized.")
                 continue
 
-            payload = parser.run(user_input, world)
+            payload = parser.run(user_input, world, debug=debug)
 
             if debug == True:
                 print("DEBUG: Parser payload:")

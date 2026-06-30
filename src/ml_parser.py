@@ -1,4 +1,5 @@
 import nltk
+from src.hf_pipeline import HuggingFaceGrounder
 from src.intent_classifier import IntentClassifier
 from src.sequence_model import SequenceWrapper 
 import src.constants as constants
@@ -8,6 +9,7 @@ class MLParser:
         self.intent_classifier = intent_model
         self.sequence_tagger = sequence_model
         self.last_resolved_target = None
+        self.hf_grounder: HuggingFaceGrounder | None = None
 
     def reset_session(self):
         """Call this whenever a brand new conversation or command chain starts."""
@@ -64,11 +66,61 @@ class MLParser:
         if rel_str in ["next", "beside", "near"]: return constants.REL_NEXT
         return constants.REL_ON
 
-    def run(self, input_text: str, world) -> dict:
+    def _format_candidate(self, intent, candidate):
+        """Returns a human-readable string for a single action candidate."""
+        target = candidate.get("target")
+        destination = candidate.get("destination")
+        
+        display_intent = intent.lower().replace("_", " ")
+        
+        msg = f"{display_intent} {target}"
+        if destination:
+            msg += f" {destination['relation']} {destination['reference']}"
+        return msg
+
+    def _build_response(self, intent, candidates):
+        """Formats the final API payload based on the list of valid candidates."""
+        if len(candidates) == 0:
+            return {
+                "intent": intent,
+                "action_args": None,
+                "status": "NOT_FOUND",
+                "status_args": {
+                    "message": "I couldn't find some of the mentioned objects in the world."
+                },
+            }
+
+        elif len(candidates) > 1:
+            return {
+                "intent": intent,
+                "action_args": None,
+                "status": "AMBIGUOUS",
+                "status_args": {
+                    "message": "I found multiple physical possibilities for that command. Which did you mean?",
+                    "candidates": candidates,
+                    "candidate_strings": [
+                        self._format_candidate(intent, c) for c in candidates
+                    ],
+                },
+            }
+
+        else:
+            return {
+                "intent": intent,
+                "action_args": candidates[0],
+                "status": "RESOLVED",
+                "status_args": None,
+            }
+
+    def run(self, input_text: str, world, debug: bool = False) -> dict:
         intent = self.intent_classifier.predict(input_text)
         tokens = nltk.word_tokenize(input_text.lower())
+
+        if hasattr(self, "hf_grounder") and self.hf_grounder:
+            vocab = self.sequence_tagger.word_to_ix
+            tokens = self.hf_grounder.translate_oov_tokens(tokens, vocab, debug=debug)
+
         tags = self.sequence_tagger.predict_tags(tokens)
-        
         slots = self._extract_slots(tokens, tags)
 
         if intent != constants.INTENT_PLACE and slots["dest"]:
@@ -76,8 +128,9 @@ class MLParser:
             if slots["d_rel"]:
                 slots["t_rel"] = slots["d_rel"]
             slots["dest"] = {}
-            slots["d_rel"] = constants.REL_ON 
+            slots["d_rel"] = constants.REL_ON
 
+        # --- STEP 1: GATHER ALL VALID TARGETS ---
         valid_targets = []
         
         if "pron" in slots["target"]:
@@ -90,44 +143,55 @@ class MLParser:
             anchor_objs = world.find_objects(**slots["target_ref"])
             t_rel = self._normalize_relation(slots.get("t_rel"))
             
+            # ACCUMULATE all targets across all valid anchors instead of breaking early
             for anchor in anchor_objs:
-                valid_targets = world.find_objects(
+                found = world.find_objects(
                     **slots["target"], 
                     relation=t_rel, 
                     reference_object_id=anchor
                 )
-                if valid_targets:
-                    break
-                
+                valid_targets.extend(found)
         else:
             valid_targets = world.find_objects(**slots["target"]) if slots["target"] else []
 
-        if not valid_targets:
-            return {"status": "NOT_FOUND", "status_args": {"message": "Could not identify target."}}
+        # Deduplicate targets in case multiple identical objects were found
+        valid_targets = list(set(valid_targets))
 
-        candidate = {"target": valid_targets[0]}
-        self.last_resolved_target = valid_targets[0]
-
+        # --- STEP 2: GATHER ALL VALID DESTINATIONS ---
+        valid_dests = []
+        d_rel = constants.REL_ON
+        
         if intent == constants.INTENT_PLACE:
-            dest_ref = "table"
             d_rel = self._normalize_relation(slots.get("d_rel"))
             
             if slots["dest"]:
                 if "location_id" in slots["dest"]:
-                    dest_ref = slots["dest"]["location_id"]
+                    valid_dests = [slots["dest"]["location_id"]]
                 else:
-                    dest_objs = world.find_objects(**slots["dest"])
-                    if dest_objs:
-                        dest_ref = dest_objs[0]
+                    valid_dests = world.find_objects(**slots["dest"])
+            
+            # If the user omitted a destination or the lookup failed, fallback to the table
+            if not valid_dests:
+                valid_dests = ["table"]
 
-            candidate["destination"] = {
-                "relation": d_rel,
-                "reference": dest_ref
-            }
+        # --- STEP 3: BUILD THE CARTESIAN PRODUCT OF CANDIDATES ---
+        candidates = []
+        for target_id in valid_targets:
+            if intent != constants.INTENT_PLACE:
+                candidates.append({"target": target_id})
+            else:
+                for dest_id in valid_dests:
+                    candidates.append({
+                        "target": target_id,
+                        "destination": {
+                            "relation": d_rel,
+                            "reference": dest_id
+                        }
+                    })
 
-        return {
-            "intent": intent,
-            "action_args": candidate,
-            "status": "RESOLVED",
-            "status_args": None
-        }
+        # Update historical memory ONLY if the command is completely unambiguous
+        if len(candidates) == 1:
+            self.last_resolved_target = candidates[0].get("target")
+
+        # --- STEP 4: TRIGGER THE AMBIGUITY CHECKER ---
+        return self._build_response(intent, candidates)
