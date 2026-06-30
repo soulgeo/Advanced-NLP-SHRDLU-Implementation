@@ -49,7 +49,9 @@ class MLParser:
                 suffix = label.replace("TR_", "")
                 if suffix in attr_map:
                     slots["target_ref"][attr_map[suffix]] = token
-            elif label.startswith("D_") and label != "D_REL":
+            elif label == "D_PRON":
+                slots["dest"]["pron"] = token
+            elif label.startswith("D_") and label not in ["D_REL", "D_PRON"]:
                 suffix = label.replace("D_", "")
                 if suffix in attr_map:
                     slots["dest"][attr_map[suffix]] = token
@@ -121,6 +123,7 @@ class MLParser:
             tokens = self.hf_grounder.translate_oov_tokens(tokens, vocab, debug=debug)
 
         tags = self.sequence_tagger.predict_tags(tokens)
+        prev_target = self.last_resolved_target
         slots = self._extract_slots(tokens, tags)
 
         if intent != constants.INTENT_PLACE and slots["dest"]:
@@ -137,7 +140,12 @@ class MLParser:
             if self.last_resolved_target is not None:
                 valid_targets = [self.last_resolved_target]
             else:
-                return {"status": "NOT_FOUND", "status_args": {"message": "Referred to 'it', but no previous object exists in memory."}}
+                return {
+                    "intent": intent,
+                    "action_args": None,
+                    "status": "NOT_FOUND",
+                    "status_args": {"message": "Referred to 'it', but no previous object exists in memory."}
+                }
                 
         elif slots["target_ref"]:
             anchor_objs = world.find_objects(**slots["target_ref"])
@@ -154,8 +162,17 @@ class MLParser:
         else:
             valid_targets = world.find_objects(**slots["target"]) if slots["target"] else []
 
-        # Deduplicate targets in case multiple identical objects were found
         valid_targets = list(set(valid_targets))
+        if not valid_targets:
+            return {
+                "intent": intent,
+                "action_args": None,
+                "status": "NOT_FOUND",
+                "status_args": {"message": "Could not identify target."}
+            }
+
+        candidate = {"target": valid_targets[0]}
+        self.last_resolved_target = valid_targets[0]
 
         # --- STEP 2: GATHER ALL VALID DESTINATIONS ---
         valid_dests = []
@@ -167,6 +184,18 @@ class MLParser:
             if slots["dest"]:
                 if "location_id" in slots["dest"]:
                     valid_dests = [slots["dest"]["location_id"]]
+                if "pron" in slots["dest"]:
+                    if prev_target is not None:
+                        dest_ref = prev_target
+                    else:
+                        return {
+                            "intent": intent,
+                            "action_args": None,
+                            "status": "NOT_FOUND",
+                            "status_args": {"message": "Referred to 'it', but no previous object exists in memory."}
+                        }
+                elif "location_id" in slots["dest"]:
+                    dest_ref = slots["dest"]["location_id"]
                 else:
                     valid_dests = world.find_objects(**slots["dest"])
             
