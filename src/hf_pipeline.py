@@ -1,7 +1,7 @@
 from sentence_transformers import SentenceTransformer, util
 import torch
 
-import constants
+import src.constants as constants
 
 class HuggingFaceGrounder:
     def __init__(self, model_id: str = "sentence-transformers/all-MiniLM-L6-v2"):
@@ -12,7 +12,7 @@ class HuggingFaceGrounder:
             "color": constants.COLORS,
             "shape": constants.SHAPES,
             "material": constants.MATERIALS,
-            "size": ["large", "medium", "small"]
+            "size": constants.SIZES
         }
         
         self.ontology_embeds = {
@@ -32,8 +32,7 @@ class HuggingFaceGrounder:
         # Calculate cosine similarity using the built-in utility
         similarities = util.cos_sim(word_embed, target_embeds)[0]
         
-        # PyTorch handles finding the max value and index
-        best_idx = torch.argmax(similarities).item()
+        best_idx = int(torch.argmax(similarities).item())
         best_score = similarities[best_idx].item()
 
         if best_score >= threshold:

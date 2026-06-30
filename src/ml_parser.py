@@ -1,4 +1,5 @@
 import nltk
+from src.hf_pipeline import HuggingFaceGrounder
 from src.intent_classifier import IntentClassifier
 from src.sequence_model import SequenceWrapper 
 import src.constants as constants
@@ -8,6 +9,7 @@ class MLParser:
         self.intent_classifier = intent_model
         self.sequence_tagger = sequence_model
         self.last_resolved_target = None
+        self.hf_grounder: HuggingFaceGrounder | None = None
 
     def reset_session(self):
         """Call this whenever a brand new conversation or command chain starts."""
@@ -117,12 +119,12 @@ class MLParser:
         
         slots = self._extract_slots(tokens, tags)
 
-        # # 1. Hugging Face Semantic Grounding (From Stage 3)
-        # if hasattr(self, "hf_grounder") and self.hf_grounder:
-        #     for entity_bucket in [slots["target"], slots["target_ref"], slots["dest"]]:
-        #         for attr_key, raw_val in list(entity_bucket.items()):
-        #             if attr_key in ["color", "shape", "material", "size"]:
-        #                 entity_bucket[attr_key] = self.hf_grounder.ground_slot(raw_val, attr_key)
+        # 1. Hugging Face Semantic Grounding (From Stage 3)
+        if hasattr(self, "hf_grounder") and self.hf_grounder:
+            for entity_bucket in [slots["target"], slots["target_ref"], slots["dest"]]:
+                for attr_key, raw_val in list(entity_bucket.items()):
+                    if attr_key in ["color", "shape", "material", "size"]:
+                        entity_bucket[attr_key] = self.hf_grounder.ground_slot(raw_val, attr_key)
 
         # 2. Tag Remapping Heuristic for Intent-Mismatch Hallucinations
         if intent != constants.INTENT_PLACE and slots["dest"]:

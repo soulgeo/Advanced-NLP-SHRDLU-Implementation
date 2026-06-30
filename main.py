@@ -6,6 +6,7 @@ import readline
 from src.hybrid_parser import HybridParser
 from src.intent_classifier import IntentClassifier
 from src.sequence_model import SequenceWrapper
+from src.hf_pipeline import HuggingFaceGrounder
 from src.ml_parser import MLParser
 from src.cfg_parser import CFGParser
 from src.planner import Planner
@@ -35,7 +36,10 @@ def main():
     sequence_model = SequenceWrapper()
     sequence_model.load("models/sequence_model.pt")
 
+    hf_grounder = HuggingFaceGrounder()
+
     ml_parser = MLParser(intent_model, sequence_model)
+    ml_parser.hf_grounder = hf_grounder
 
     parser = HybridParser(cfg_parser, ml_parser)
 
