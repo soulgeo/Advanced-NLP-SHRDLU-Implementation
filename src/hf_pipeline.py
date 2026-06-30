@@ -1,41 +1,57 @@
-from sentence_transformers import SentenceTransformer, util
 import torch
+from sentence_transformers import SentenceTransformer, util
 
 import src.constants as constants
 
+
 class HuggingFaceGrounder:
-    def __init__(self, model_id: str = "sentence-transformers/all-MiniLM-L6-v2"):
+    def __init__(
+        self, model_id: str = "sentence-transformers/all-MiniLM-L6-v2"
+    ):
         print(f"Loading Hugging Face model [{model_id}]...")
         self.model = SentenceTransformer(model_id)
-        
+
         self.ontology = {
             "color": constants.COLORS,
             "shape": constants.SHAPES,
             "material": constants.MATERIALS,
-            "size": constants.SIZES
-        }
-        
-        self.ontology_embeds = {
-            category: self.model.encode(tokens, convert_to_tensor=True) 
-            for category, tokens in self.ontology.items()
+            "size": constants.SIZES,
         }
 
-    def ground_slot(self, messy_word: str, category: str, threshold: float = 0.52) -> str:
-        if not messy_word or category not in self.ontology:
-            return messy_word
+        self.flat_ontology = []
+        for tokens in self.ontology.values():
+            self.flat_ontology.extend(tokens)
 
-        word_embed = self.model.encode(messy_word, convert_to_tensor=True)
-        
-        target_embeds = self.ontology_embeds[category]
-        canonical_words = self.ontology[category]
-        
-        # Calculate cosine similarity using the built-in utility
-        similarities = util.cos_sim(word_embed, target_embeds)[0]
-        
-        best_idx = int(torch.argmax(similarities).item())
-        best_score = similarities[best_idx].item()
+        self.flat_embeds = self.model.encode(
+            self.flat_ontology, convert_to_tensor=True
+        )
 
-        if best_score >= threshold:
-            return canonical_words[best_idx]
-            
-        return messy_word
+    def translate_oov_tokens(
+        self, tokens: list, vocab: dict, threshold: float = 0.50
+    ) -> list:
+        """Translates Out-Of-Vocabulary words into known ontology words."""
+        translated_tokens = []
+
+        for token in tokens:
+            if token in vocab:
+                translated_tokens.append(token)
+                continue
+
+            token_embed = self.model.encode(token, convert_to_tensor=True)
+            similarities = util.cos_sim(token_embed, self.flat_embeds)[0]
+
+            best_idx = int(torch.argmax(similarities).item())
+            best_score = similarities[best_idx].item()
+
+            print(
+                f"\033[96m[HF Grounder] OOV '{token}' -> nearest: '{self.flat_ontology[best_idx]}' (Score: {best_score:.2f})\033[00m"
+            )
+
+            if best_score >= threshold:
+                translated_tokens.append(self.flat_ontology[best_idx])
+            else:
+                translated_tokens.append(
+                    token
+                )  # Unrelated word, leave it alone
+
+        return translated_tokens

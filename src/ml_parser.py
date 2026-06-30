@@ -115,24 +115,20 @@ class MLParser:
     def run(self, input_text: str, world) -> dict:
         intent = self.intent_classifier.predict(input_text)
         tokens = nltk.word_tokenize(input_text.lower())
+
+        if hasattr(self, "hf_grounder") and self.hf_grounder:
+            vocab = self.sequence_tagger.word_to_ix
+            tokens = self.hf_grounder.translate_oov_tokens(tokens, vocab)
+
         tags = self.sequence_tagger.predict_tags(tokens)
-        
         slots = self._extract_slots(tokens, tags)
 
-        # 1. Hugging Face Semantic Grounding (From Stage 3)
-        if hasattr(self, "hf_grounder") and self.hf_grounder:
-            for entity_bucket in [slots["target"], slots["target_ref"], slots["dest"]]:
-                for attr_key, raw_val in list(entity_bucket.items()):
-                    if attr_key in ["color", "shape", "material", "size"]:
-                        entity_bucket[attr_key] = self.hf_grounder.ground_slot(raw_val, attr_key)
-
-        # 2. Tag Remapping Heuristic for Intent-Mismatch Hallucinations
         if intent != constants.INTENT_PLACE and slots["dest"]:
             slots["target_ref"].update(slots["dest"])
             if slots["d_rel"]:
                 slots["t_rel"] = slots["d_rel"]
             slots["dest"] = {}
-            slots["d_rel"] = constants.REL_ON 
+            slots["d_rel"] = constants.REL_ON
 
         # --- STEP 1: GATHER ALL VALID TARGETS ---
         valid_targets = []
