@@ -1,6 +1,6 @@
 from unittest import TestCase, main
 
-from src.parser import Parser
+from src.cfg_parser import CFGParser as Parser
 from src.planner import Planner
 from src.world import World
 import src.constants as constants

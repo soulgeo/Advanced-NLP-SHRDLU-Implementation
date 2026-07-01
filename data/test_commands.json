@@ -1,0 +1,302 @@
+[
+  {
+    "text": "could you please hoist the red block and put it on the floor",
+    "intent": "PLACE",
+    "tokens": ["could", "you", "please", "hoist", "the", "red", "block", "and", "put", "it", "on", "the", "floor"],
+    "tags": ["O", "O", "O", "O", "O", "B-T_COLOR", "B-T_SHAPE", "O", "O", "O", "B-D_REL", "O", "B-D_ZONE"]
+  },
+  {
+    "text": "would you mind picking up the blue ball",
+    "intent": "PICKUP",
+    "tokens": ["would", "you", "mind", "picking", "up", "the", "blue", "ball"],
+    "tags": ["O", "O", "O", "O", "O", "O", "B-T_COLOR", "B-T_SHAPE"]
+  },
+  {
+    "text": "perform an inspection on the yellow wooden cube",
+    "intent": "INSPECT",
+    "tokens": ["perform", "an", "inspection", "on", "the", "yellow", "wooden", "cube"],
+    "tags": ["O", "O", "O", "O", "O", "B-T_COLOR", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "do the opening of the cardboard box",
+    "intent": "OPEN",
+    "tokens": ["do", "the", "opening", "of", "the", "cardboard", "box"],
+    "tags": ["O", "O", "O", "O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "shut that tin container",
+    "intent": "CLOSE",
+    "tokens": ["shut", "that", "tin", "container"],
+    "tags": ["O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "place the plastic green sphere inside of it",
+    "intent": "PLACE",
+    "tokens": ["place", "the", "plastic", "green", "sphere", "inside", "of", "it"],
+    "tags": ["O", "O", "B-T_MAT", "B-T_COLOR", "B-T_SHAPE", "B-D_REL", "B-D_REL", "B-D_PRON"]
+  },
+  {
+    "text": "put the block resting upon the table",
+    "intent": "PLACE",
+    "tokens": ["put", "the", "block", "resting", "upon", "the", "table"],
+    "tags": ["O", "O", "B-T_SHAPE", "B-D_REL", "B-D_REL", "O", "B-D_ZONE"]
+  },
+  {
+    "text": "now grab the cube that resides on the floor",
+    "intent": "PICKUP",
+    "tokens": ["now", "grab", "the", "cube", "that", "resides", "on", "the", "floor"],
+    "tags": ["O", "O", "O", "B-T_SHAPE", "O", "O", "B-T_REL", "O", "B-TR_ZONE"]
+  },
+  {
+    "text": "can you check the brick located underneath the sphere",
+    "intent": "INSPECT",
+    "tokens": ["can", "you", "check", "the", "brick", "located", "underneath", "the", "sphere"],
+    "tags": ["O", "O", "O", "O", "B-T_SHAPE", "O", "B-T_REL", "O", "B-TR_SHAPE"]
+  },
+  {
+    "text": "undertake the closing of that cardboard chest",
+    "intent": "CLOSE",
+    "tokens": ["undertake", "the", "closing", "of", "that", "cardboard", "chest"],
+    "tags": ["O", "O", "O", "O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "take the sphere and place it under it",
+    "intent": "PLACE",
+    "tokens": ["take", "the", "sphere", "and", "place", "it", "under", "it"],
+    "tags": ["O", "O", "B-T_SHAPE", "O", "O", "O", "B-D_REL", "B-D_PRON"]
+  },
+  {
+    "text": "now put it down",
+    "intent": "PLACE",
+    "tokens": ["now", "put", "it", "down"],
+    "tags": ["O", "O", "B-T_PRON", "O"]
+  },
+  {
+    "text": "would you please turn it off",
+    "intent": "CLOSE",
+    "tokens": ["would", "you", "please", "turn", "it", "off"],
+    "tags": ["O", "O", "O", "O", "B-T_PRON", "O"]
+  },
+  {
+    "text": "unseal the wooden container",
+    "intent": "OPEN",
+    "tokens": ["unseal", "the", "wooden", "container"],
+    "tags": ["O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "look into the box which is located on the table",
+    "intent": "INSPECT",
+    "tokens": ["look", "into", "the", "box", "which", "is", "located", "on", "the", "table"],
+    "tags": ["O", "O", "O", "B-T_SHAPE", "O", "O", "O", "B-T_REL", "O", "B-TR_ZONE"]
+  },
+  {
+    "text": "ok now pick it up",
+    "intent": "PICKUP",
+    "tokens": ["ok", "now", "pick", "it", "up"],
+    "tags": ["O", "O", "O", "B-T_PRON", "O"]
+  },
+  {
+    "text": "could you look at the blue brick",
+    "intent": "INSPECT",
+    "tokens": ["could", "you", "look", "at", "the", "blue", "brick"],
+    "tags": ["O", "O", "O", "O", "O", "B-T_COLOR", "B-T_SHAPE"]
+  },
+  {
+    "text": "drop the rubber sphere and position it adjacent to the wood box",
+    "intent": "PLACE",
+    "tokens": ["drop", "the", "rubber", "sphere", "and", "position", "it", "adjacent", "to", "the", "wood", "box"],
+    "tags": ["O", "O", "B-T_MAT", "B-T_SHAPE", "O", "O", "O", "B-D_REL", "B-D_REL", "O", "B-D_MAT", "B-D_SHAPE"]
+  },
+  {
+    "text": "i want you to check out the small ball",
+    "intent": "INSPECT",
+    "tokens": ["i", "want", "you", "to", "check", "out", "the", "small", "ball"],
+    "tags": ["O", "O", "O", "O", "O", "O", "O", "B-T_SIZE", "B-T_SHAPE"]
+  },
+  {
+    "text": "please lift the metal wedge and drop it onto the floor",
+    "intent": "PLACE",
+    "tokens": ["please", "lift", "the", "metal", "wedge", "and", "drop", "it", "onto", "the", "floor"],
+    "tags": ["O", "O", "O", "B-T_MAT", "B-T_SHAPE", "O", "O", "O", "B-D_REL", "O", "B-D_ZONE"]
+  },
+  {
+    "text": "describe the average yellow and plastic cone",
+    "intent": "INSPECT",
+    "tokens": ["describe", "the", "average", "yellow", "and", "plastic", "cone"],
+    "tags": ["O", "O", "B-T_SIZE", "B-T_COLOR", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "get the sphere that sits inside of the container",
+    "intent": "PICKUP",
+    "tokens": ["get", "the", "sphere", "that", "sits", "inside", "of", "the", "container"],
+    "tags": ["O", "O", "B-T_SHAPE", "O", "O", "B-T_REL", "B-T_REL", "O", "B-TR_SHAPE"]
+  },
+  {
+    "text": "shut it off",
+    "intent": "CLOSE",
+    "tokens": ["shut", "it", "off"],
+    "tags": ["O", "B-T_PRON", "O"]
+  },
+  {
+    "text": "unlid the carton",
+    "intent": "OPEN",
+    "tokens": ["unlid", "the", "carton"],
+    "tags": ["O", "O", "B-T_SHAPE"]
+  },
+  {
+    "text": "deposit the red cylinder beside it",
+    "intent": "PLACE",
+    "tokens": ["deposit", "the", "red", "cylinder", "beside", "it"],
+    "tags": ["O", "O", "B-T_COLOR", "B-T_SHAPE", "B-D_REL", "B-D_PRON"]
+  },
+  {
+    "text": "make a check on that plastic green globe",
+    "intent": "INSPECT",
+    "tokens": ["make", "a", "check", "on", "that", "plastic", "green", "globe"],
+    "tags": ["O", "O", "O", "O", "O", "B-T_MAT", "B-T_COLOR", "B-T_SHAPE"]
+  },
+  {
+    "text": "retrieve the cube resting upon the cardboard chest",
+    "intent": "PICKUP",
+    "tokens": ["retrieve", "the", "cube", "resting", "upon", "the", "cardboard", "chest"],
+    "tags": ["O", "O", "B-T_SHAPE", "B-T_REL", "B-T_REL", "O", "B-TR_MAT", "B-TR_SHAPE"]
+  },
+  {
+    "text": "shut that metal chest",
+    "intent": "CLOSE",
+    "tokens": ["shut", "that", "metal", "chest"],
+    "tags": ["O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "do a check on the triangular prism",
+    "intent": "INSPECT",
+    "tokens": ["do", "a", "check", "on", "the", "triangular", "prism"],
+    "tags": ["O", "O", "O", "O", "O", "B-T_SHAPE", "B-T_SHAPE"]
+  },
+  {
+    "text": "open the container",
+    "intent": "OPEN",
+    "tokens": ["open", "the", "container"],
+    "tags": ["O", "O", "B-T_SHAPE"]
+  },
+  {
+    "text": "hoist the wooden brick that resides on the table",
+    "intent": "PICKUP",
+    "tokens": ["hoist", "the", "wooden", "brick", "that", "resides", "on", "the", "table"],
+    "tags": ["O", "O", "B-T_MAT", "B-T_SHAPE", "O", "O", "B-T_REL", "O", "B-TR_ZONE"]
+  },
+  {
+    "text": "take a look at the plastic tube",
+    "intent": "INSPECT",
+    "tokens": ["take", "a", "look", "at", "the", "plastic", "tube"],
+    "tags": ["O", "O", "O", "O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "please put the ball on top of it",
+    "intent": "PLACE",
+    "tokens": ["please", "put", "the", "ball", "on", "top", "of", "it"],
+    "tags": ["O", "O", "O", "B-T_SHAPE", "B-D_REL", "B-D_REL", "B-D_REL", "B-D_PRON"]
+  },
+  {
+    "text": "examine that yellow spike",
+    "intent": "INSPECT",
+    "tokens": ["examine", "that", "yellow", "spike"],
+    "tags": ["O", "O", "B-T_COLOR", "B-T_SHAPE"]
+  },
+  {
+    "text": "arrange the cone resting upon the table",
+    "intent": "PLACE",
+    "tokens": ["arrange", "the", "cone", "resting", "upon", "the", "table"],
+    "tags": ["O", "O", "B-T_SHAPE", "B-D_REL", "B-D_REL", "O", "B-D_ZONE"]
+  },
+  {
+    "text": "could you open the wooden box",
+    "intent": "OPEN",
+    "tokens": ["could", "you", "open", "the", "wooden", "box"],
+    "tags": ["O", "O", "O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "shut it",
+    "intent": "CLOSE",
+    "tokens": ["shut", "it"],
+    "tags": ["O", "B-T_PRON"]
+  },
+  {
+    "text": "look at the globe resting upon the floor",
+    "intent": "INSPECT",
+    "tokens": ["look", "at", "the", "globe", "resting", "upon", "the", "floor"],
+    "tags": ["O", "O", "O", "B-T_SHAPE", "B-T_REL", "B-T_REL", "O", "B-TR_ZONE"]
+  },
+  {
+    "text": "take the small red sphere and drop it underneath it",
+    "intent": "PLACE",
+    "tokens": ["take", "the", "small", "red", "sphere", "and", "drop", "it", "underneath", "it"],
+    "tags": ["O", "O", "B-T_SIZE", "B-T_COLOR", "B-T_SHAPE", "O", "O", "O", "B-D_REL", "B-D_PRON"]
+  },
+  {
+    "text": "perform the opening of that carton adjacent to the block",
+    "intent": "OPEN",
+    "tokens": ["perform", "the", "opening", "of", "that", "carton", "adjacent", "to", "the", "block"],
+    "tags": ["O", "O", "O", "O", "O", "B-T_SHAPE", "B-T_REL", "B-T_REL", "O", "B-TR_SHAPE"]
+  },
+  {
+    "text": "grab the crimson block",
+    "intent": "PICKUP",
+    "tokens": ["grab", "the", "crimson", "block"],
+    "tags": ["O", "O", "B-T_COLOR", "B-T_SHAPE"]
+  },
+  {
+    "text": "look at the azure sphere",
+    "intent": "INSPECT",
+    "tokens": ["look", "at", "the", "azure", "sphere"],
+    "tags": ["O", "O", "O", "B-T_COLOR", "B-T_SHAPE"]
+  },
+  {
+    "text": "open the metallic container",
+    "intent": "OPEN",
+    "tokens": ["open", "the", "metallic", "container"],
+    "tags": ["O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "pick up the tiny cube",
+    "intent": "PICKUP",
+    "tokens": ["pick", "up", "the", "tiny", "cube"],
+    "tags": ["O", "O", "O", "B-T_SIZE", "B-T_SHAPE"]
+  },
+  {
+    "text": "put the emerald cylinder on the table",
+    "intent": "PLACE",
+    "tokens": ["put", "the", "emerald", "cylinder", "on", "the", "table"],
+    "tags": ["O", "O", "B-T_COLOR", "B-T_SHAPE", "B-D_REL", "O", "B-D_ZONE"]
+  },
+  {
+    "text": "close the huge box",
+    "intent": "CLOSE",
+    "tokens": ["close", "the", "huge", "box"],
+    "tags": ["O", "O", "B-T_SIZE", "B-T_SHAPE"]
+  },
+  {
+    "text": "grab that plastic blocklet",
+    "intent": "PICKUP",
+    "tokens": ["grab", "that", "plastic", "blocklet"],
+    "tags": ["O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "look closely at the sapphire cone",
+    "intent": "INSPECT",
+    "tokens": ["look", "closely", "at", "the", "sapphire", "cone"],
+    "tags": ["O", "O", "O", "O", "B-T_COLOR", "B-T_SHAPE"]
+  },
+  {
+    "text": "set it down right here",
+    "intent": "PLACE",
+    "tokens": ["set", "it", "down", "right", "here"],
+    "tags": ["O", "B-T_PRON", "O", "O", "O"]
+  },
+  {
+    "text": "now unclose the wooden carton",
+    "intent": "OPEN",
+    "tokens": ["now", "unclose", "the", "wooden", "carton"],
+    "tags": ["O", "O", "O", "B-T_MAT", "B-T_SHAPE"]
+  }
+]
