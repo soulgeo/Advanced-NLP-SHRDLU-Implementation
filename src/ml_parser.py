@@ -224,7 +224,9 @@ class MLParser:
 
         # Update historical memory ONLY if the command is completely unambiguous
         if len(candidates) == 1:
-            self.last_resolved_target = candidates[0].get("target")
+            has_pronoun = "it" in tokens or "that" in tokens
+            if not has_pronoun:
+                self.last_resolved_target = candidates[0].get("target")
 
         # --- STEP 4: TRIGGER THE AMBIGUITY CHECKER ---
         return self._build_response(intent, candidates)

@@ -80,6 +80,20 @@ class TestParser(TestCase):
         self.assertEqual(response["status"], "RESOLVED")
         self.assertEqual(response["action_args"]["target"], "block_red_1")
 
+    def test_pronoun_retention_after_place_with_pronoun(self):
+        self.parser.run("inspect the wooden box", self.world)
+        self.assertEqual(self.parser.saved_obj, "box_wood_1")
+
+        self.parser.run("close it", self.world)
+        self.assertEqual(self.parser.saved_obj, "box_wood_1")
+
+        self.parser.run("put the red block in it", self.world)
+        self.assertEqual(self.parser.saved_obj, "box_wood_1")
+
+        response = self.parser.run("open it", self.world)
+        self.assertEqual(response["status"], "RESOLVED")
+        self.assertEqual(response["action_args"]["target"], "box_wood_1")
+
     def test_phrasal_verbs(self):
         response = self.parser.run("pickup the red block", self.world)
         self.assertEqual(response["status"], "RESOLVED")
@@ -324,6 +338,19 @@ class TestLazyMLParserProxy(TestCase):
         payload2 = parser.run("close it", world)
         self.assertEqual(payload2["status"], "RESOLVED")
         self.assertEqual(payload2["action_args"]["target"], "box_wood_1")
+        self.assertEqual(ml_proxy.last_resolved_target, "box_wood_1")
+
+        # Step 4: Run 'put the red block in it'.
+        payload3 = parser.run("put the red block in it", world)
+        self.assertEqual(payload3["status"], "RESOLVED")
+        self.assertEqual(payload3["action_args"]["destination"]["reference"], "box_wood_1")
+        self.assertEqual(ml_proxy.last_resolved_target, "box_wood_1")
+
+        # Step 5: Run 'open it'.
+        payload4 = parser.run("open it", world)
+        self.assertEqual(payload4["status"], "RESOLVED")
+        self.assertEqual(payload4["action_args"]["target"], "box_wood_1")
+        self.assertEqual(ml_proxy.last_resolved_target, "box_wood_1")
 
 
 if __name__ == '__main__':
