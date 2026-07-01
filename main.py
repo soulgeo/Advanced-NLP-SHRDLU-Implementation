@@ -85,7 +85,7 @@ def main():
                     """))
                     continue
 
-                print("Command not recognized.")
+                print("\033[91mCommand not recognized.\033[00m")
                 continue
 
             payload = parser.run(user_input, world, debug=debug)
@@ -95,16 +95,16 @@ def main():
                 print(json.dumps(payload, indent=4))
 
             if payload["status"] in ["PARSE_ERROR", "NOT_FOUND"]:
-                print(payload["status_args"]["message"])
+                print(f"\033[91m{payload['status_args']['message']}\033[00m")
                 continue
 
             if payload["status"] == "AMBIGUOUS":
                 args = payload["status_args"]
-                print(args["message"])
+                print(f"\033[96m{args['message']}\033[00m")
                 candidates = args["candidates"]
 
                 for i, candidate_msg in enumerate(args["candidate_strings"]):
-                    print(f"{i+1}. {candidate_msg}")
+                    print(f"\033[96m{i+1}. {candidate_msg}\033[00m")
 
                 readline.set_auto_history(False)
                 try:
@@ -119,11 +119,11 @@ def main():
                         try:
                             choice = int(choice)
                         except ValueError:
-                            print("Invalid input. Please enter a number or 'c'.")
+                            print("\033[91mInvalid input. Please enter a number or 'c'.\033[00m")
                             continue
 
                         if choice < 1 or choice > len(candidates):
-                            print("Choice out of bounds. Try again.")
+                            print("\033[91mChoice out of bounds. Try again.\033[00m")
                             continue
 
                         payload["action_args"] = candidates[choice - 1]
@@ -136,7 +136,10 @@ def main():
                 continue
 
             result = planner.execute(payload)
-            print(result["message"])
+            if result.get("status") == "SUCCESS":
+                print(f"\033[92m{result['message']}\033[00m")
+            else:
+                print(f"\033[91m{result['message']}\033[00m")
 
     except (EOFError, KeyboardInterrupt):
         print()

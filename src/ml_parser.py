@@ -123,8 +123,21 @@ class MLParser:
             tokens = self.hf_grounder.translate_oov_tokens(tokens, vocab, debug=debug)
 
         tags = self.sequence_tagger.predict_tags(tokens)
+        
+        if debug:
+            print(f"DEBUG: Predicted Intent: {intent}")
+            print(f"DEBUG: Tagged Sentence: {list(zip(tokens, tags))}")
+
         prev_target = self.last_resolved_target
         slots = self._extract_slots(tokens, tags)
+
+        if hasattr(self, "hf_grounder") and self.hf_grounder:
+            for entity_bucket in [slots["target"], slots["target_ref"], slots["dest"]]:
+                for attr_key, raw_val in list(entity_bucket.items()):
+                    if attr_key in ["color", "shape", "material", "size"]:
+                        entity_bucket[attr_key] = self.hf_grounder.ground_slot(
+                            raw_val, attr_key, debug=debug
+                        )
 
         if intent != constants.INTENT_PLACE and slots["dest"]:
             slots["target_ref"].update(slots["dest"])
