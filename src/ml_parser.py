@@ -60,7 +60,7 @@ class MLParser:
 
         return slots
 
-    def _normalize_relation(self, rel_str: str) -> str:
+    def _normalize_relation(self, rel_str: str | None) -> str:
         """Converts raw tokens like 'inside' or 'underneath' to planner constants."""
         if not rel_str: return constants.REL_ON
         if rel_str in ["in", "inside", "into"]: return constants.REL_IN
