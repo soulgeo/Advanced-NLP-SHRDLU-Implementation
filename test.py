@@ -280,5 +280,51 @@ class TestPlanner(TestCase):
         self.assertNotIn("block_red_1", self.world.contains["box_metal_1"])
 
 
+class TestLazyMLParserProxy(TestCase):
+    def test_proxy_synchronization_during_load(self):
+        import threading
+        from main import LazyMLParserProxy
+        from src.world import World
+        from src.cfg_parser import CFGParser
+        from src.hybrid_parser import HybridParser
+
+        class FakeLoader:
+            def __init__(self):
+                self.ml_parser = None
+                self.loaded_event = threading.Event()
+
+            def get_ml_parser(self):
+                self.loaded_event.wait()
+                return self.ml_parser
+
+        class FakeMLParser:
+            def __init__(self):
+                self.last_resolved_target = None
+            def reset_session(self):
+                self.last_resolved_target = None
+            def run(self, user_input, world, debug=False):
+                return {"intent": "CLOSE", "action_args": None, "status": "NOT_FOUND"}
+
+        loader = FakeLoader()
+        ml_proxy = LazyMLParserProxy(loader)
+        world = World()
+        cfg_parser = CFGParser()
+        parser = HybridParser(cfg_parser, ml_proxy)
+
+        # Step 1: ML models are NOT loaded yet.
+        payload1 = parser.run("inspect the wooden box", world)
+        self.assertEqual(payload1["action_args"]["target"], "box_wood_1")
+        self.assertEqual(ml_proxy.last_resolved_target, "box_wood_1")
+
+        # Step 2: ML models finish loading.
+        loader.ml_parser = FakeMLParser()
+        loader.loaded_event.set()
+
+        # Step 3: Run 'close it'.
+        payload2 = parser.run("close it", world)
+        self.assertEqual(payload2["status"], "RESOLVED")
+        self.assertEqual(payload2["action_args"]["target"], "box_wood_1")
+
+
 if __name__ == '__main__':
     main()

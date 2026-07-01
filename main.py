@@ -84,7 +84,11 @@ class LazyMLParserProxy:
     @property
     def last_resolved_target(self):
         if self.loader.loaded_event.is_set():
-            return self.loader.get_ml_parser().last_resolved_target
+            real_parser = self.loader.get_ml_parser()
+            if self._last_resolved_target is not None and real_parser.last_resolved_target is None:
+                real_parser.last_resolved_target = self._last_resolved_target
+            elif real_parser.last_resolved_target is not None:
+                self._last_resolved_target = real_parser.last_resolved_target
         return self._last_resolved_target
 
     @last_resolved_target.setter
