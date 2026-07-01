@@ -228,5 +228,4 @@ class MLParser:
             if not has_pronoun:
                 self.last_resolved_target = candidates[0].get("target")
 
-        # --- STEP 4: TRIGGER THE AMBIGUITY CHECKER ---
         return self._build_response(intent, candidates)
