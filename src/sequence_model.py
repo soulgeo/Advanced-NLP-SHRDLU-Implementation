@@ -160,8 +160,6 @@ class SequenceWrapper:
         self.model.load_state_dict(state['model_state_dict'])
         self.model.eval() 
         self.is_trained = True
-        
-        print(f"Sequence model successfully loaded from {filepath}")
 
 
 if __name__ == "__main__":

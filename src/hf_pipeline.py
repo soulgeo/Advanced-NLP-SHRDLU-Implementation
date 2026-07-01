@@ -8,7 +8,6 @@ class HuggingFaceGrounder:
     def __init__(
         self, model_id: str = "sentence-transformers/all-MiniLM-L6-v2"
     ):
-        print(f"Loading Hugging Face model [{model_id}]...")
         self.model = SentenceTransformer(model_id)
 
         self.ontology = {

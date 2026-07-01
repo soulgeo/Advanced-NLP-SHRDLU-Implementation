@@ -245,7 +245,6 @@ class IntentClassifier:
         self.total_documents = model_state["total_documents"]
         
         self.is_trained = True
-        print(f"Intent model successfully loaded from {filepath}")
 
 
 if __name__ == "__main__":
