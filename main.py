@@ -43,6 +43,9 @@ def main():
 
     parser = HybridParser(cfg_parser, ml_parser)
 
+    # Clear the terminal (simulates Ctrl + L)
+    print('\033[H\033[2J', end='')
+
     print("SHRDLU Parser.")
     print("Type \"/help\" for command syntax or \"/exit\" to quit.")
 

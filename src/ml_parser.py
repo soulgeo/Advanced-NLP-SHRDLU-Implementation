@@ -34,7 +34,7 @@ class MLParser:
         for token, tag in zip(tokens, tags):
             if tag == "O": continue
             
-            prefix, _, label = tag.partition("-")
+            _, _, label = tag.partition("-")
             if not label: continue
 
             if label.startswith("T_") and label not in ["T_REL", "T_PRON"]:
@@ -133,7 +133,6 @@ class MLParser:
             slots["dest"] = {}
             slots["d_rel"] = constants.REL_ON
 
-        # --- STEP 1: GATHER ALL VALID TARGETS ---
         valid_targets = []
         
         if "pron" in slots["target"]:
@@ -151,7 +150,6 @@ class MLParser:
             anchor_objs = world.find_objects(**slots["target_ref"])
             t_rel = self._normalize_relation(slots.get("t_rel"))
             
-            # ACCUMULATE all targets across all valid anchors instead of breaking early
             for anchor in anchor_objs:
                 found = world.find_objects(
                     **slots["target"], 
@@ -171,10 +169,6 @@ class MLParser:
                 "status_args": {"message": "Could not identify target."}
             }
 
-        candidate = {"target": valid_targets[0]}
-        self.last_resolved_target = valid_targets[0]
-
-        # --- STEP 2: GATHER ALL VALID DESTINATIONS ---
         valid_dests = []
         d_rel = constants.REL_ON
         
@@ -182,11 +176,9 @@ class MLParser:
             d_rel = self._normalize_relation(slots.get("d_rel"))
             
             if slots["dest"]:
-                if "location_id" in slots["dest"]:
-                    valid_dests = [slots["dest"]["location_id"]]
                 if "pron" in slots["dest"]:
                     if prev_target is not None:
-                        dest_ref = prev_target
+                        valid_dests = [prev_target]
                     else:
                         return {
                             "intent": intent,
@@ -195,7 +187,7 @@ class MLParser:
                             "status_args": {"message": "Referred to 'it', but no previous object exists in memory."}
                         }
                 elif "location_id" in slots["dest"]:
-                    dest_ref = slots["dest"]["location_id"]
+                    valid_dests = [slots["dest"]["location_id"]]
                 else:
                     valid_dests = world.find_objects(**slots["dest"])
             
@@ -203,7 +195,6 @@ class MLParser:
             if not valid_dests:
                 valid_dests = ["table"]
 
-        # --- STEP 3: BUILD THE CARTESIAN PRODUCT OF CANDIDATES ---
         candidates = []
         for target_id in valid_targets:
             if intent != constants.INTENT_PLACE:
