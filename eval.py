@@ -90,7 +90,7 @@ def run_hybrid_parser_evaluation(hybrid_parser, test_data, world) -> dict:
     total = len(test_data)
     resolved_count = 0
     correct_intents = 0
-    
+    print('\033[H\033[2J', end='')
     for item in test_data:
         text = item["text"]
         expected_intent = item["intent"]
@@ -113,26 +113,25 @@ def run_hybrid_parser_evaluation(hybrid_parser, test_data, world) -> dict:
     }
 
 def print_evaluation_report(test_cases_count, cfg_res, ml_res_standard, ml_res_hf, hybrid_res):
-    print(f"\n================ EVALUATION REPORT ({test_cases_count} test cases) ================")
-    
-    print("\n--- NLTK CFG Parser Results ---")
+    print(f"================ EVALUATION REPORT ({test_cases_count} test cases) ================")
+    print("--- NLTK CFG Parser ---")
     print(f"CFG Parsing Success Rate (no syntax error): {cfg_res['parse_rate']:.2f}% ({cfg_res['parsed_successfully']}/{cfg_res['total']})")
     print(f"CFG Intent Accuracy (on successfully parsed sentences): {cfg_res['intent_acc']:.2f}%")
     
-    print("\n--- ML Sequence Tagger (Standard) Results ---")
+    print("\n--- ML Intent Classifier + Sequence Tagger (Standard) ---")
     print(f"Intent Classification Accuracy: {ml_res_standard['intent_acc']:.2f}%")
     print(f"Sequence Tag Token-Level Accuracy: {ml_res_standard['token_acc']:.2f}%")
     print(f"Sequence Tag Full-Sentence Match Accuracy: {ml_res_standard['sentence_acc']:.2f}%")
     
-    print("\n--- ML Sequence Tagger (with HF Grounding) Results ---")
+    print("\n--- ML Intent Classifier + Sequence Tagger (w/ HF Grounding) ---")
     print(f"Intent Classification Accuracy: {ml_res_hf['intent_acc']:.2f}%")
     print(f"Sequence Tag Token-Level Accuracy: {ml_res_hf['token_acc']:.2f}%")
     print(f"Sequence Tag Full-Sentence Match Accuracy: {ml_res_hf['sentence_acc']:.2f}%")
     
-    print("\n--- Hybrid Parser (Production) Results ---")
+    print("\n--- Final Hybrid Parser Results ---")
     print(f"Parse Success Rate (no syntax error): {hybrid_res['resolve_rate']:.2f}% ({hybrid_res['resolved_count']}/{hybrid_res['total']})")
     print(f"Intent Accuracy (overall): {hybrid_res['intent_acc']:.2f}%")
-    print("=================================================================")
+    print("===================================================================\n")
 
 def main():
     print("Loading models and initializing parsers...")
@@ -167,7 +166,6 @@ def main():
     print("Executing ML Models (Standard) evaluation...")
     ml_res_standard = run_ml_parser_evaluation(intent_model, sequence_model, test_data)
     
-    # Load HF Grounder and assign to parser (matching production main.py configuration)
     print("\nInitializing Hugging Face Grounder...")
     from src.hf_pipeline import HuggingFaceGrounder
     hf_grounder = HuggingFaceGrounder()
@@ -178,8 +176,10 @@ def main():
     
     print("Executing Hybrid Parser (Production) evaluation...")
     hybrid_res = run_hybrid_parser_evaluation(hybrid_parser, test_data, world)
-    
-    # Print the decoupled results report
+
+    # Clear the terminal and print the results report
+    print("")
+    print('\033[H\033[2J', end='')
     print_evaluation_report(len(test_data), cfg_res, ml_res_standard, ml_res_hf, hybrid_res)
 
 if __name__ == "__main__":
