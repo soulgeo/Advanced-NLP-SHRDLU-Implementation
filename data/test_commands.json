@@ -238,5 +238,65 @@
     "intent": "OPEN",
     "tokens": ["perform", "the", "opening", "of", "that", "carton", "adjacent", "to", "the", "block"],
     "tags": ["O", "O", "O", "O", "O", "B-T_SHAPE", "B-T_REL", "B-T_REL", "O", "B-TR_SHAPE"]
+  },
+  {
+    "text": "grab the crimson block",
+    "intent": "PICKUP",
+    "tokens": ["grab", "the", "crimson", "block"],
+    "tags": ["O", "O", "B-T_COLOR", "B-T_SHAPE"]
+  },
+  {
+    "text": "look at the azure sphere",
+    "intent": "INSPECT",
+    "tokens": ["look", "at", "the", "azure", "sphere"],
+    "tags": ["O", "O", "O", "B-T_COLOR", "B-T_SHAPE"]
+  },
+  {
+    "text": "open the metallic container",
+    "intent": "OPEN",
+    "tokens": ["open", "the", "metallic", "container"],
+    "tags": ["O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "pick up the tiny cube",
+    "intent": "PICKUP",
+    "tokens": ["pick", "up", "the", "tiny", "cube"],
+    "tags": ["O", "O", "O", "B-T_SIZE", "B-T_SHAPE"]
+  },
+  {
+    "text": "put the emerald cylinder on the table",
+    "intent": "PLACE",
+    "tokens": ["put", "the", "emerald", "cylinder", "on", "the", "table"],
+    "tags": ["O", "O", "B-T_COLOR", "B-T_SHAPE", "B-D_REL", "O", "B-D_ZONE"]
+  },
+  {
+    "text": "close the huge box",
+    "intent": "CLOSE",
+    "tokens": ["close", "the", "huge", "box"],
+    "tags": ["O", "O", "B-T_SIZE", "B-T_SHAPE"]
+  },
+  {
+    "text": "grab that plastic blocklet",
+    "intent": "PICKUP",
+    "tokens": ["grab", "that", "plastic", "blocklet"],
+    "tags": ["O", "O", "B-T_MAT", "B-T_SHAPE"]
+  },
+  {
+    "text": "look closely at the sapphire cone",
+    "intent": "INSPECT",
+    "tokens": ["look", "closely", "at", "the", "sapphire", "cone"],
+    "tags": ["O", "O", "O", "O", "B-T_COLOR", "B-T_SHAPE"]
+  },
+  {
+    "text": "set it down right here",
+    "intent": "PLACE",
+    "tokens": ["set", "it", "down", "right", "here"],
+    "tags": ["O", "B-T_PRON", "O", "O", "O"]
+  },
+  {
+    "text": "now unclose the wooden carton",
+    "intent": "OPEN",
+    "tokens": ["now", "unclose", "the", "wooden", "carton"],
+    "tags": ["O", "O", "O", "B-T_MAT", "B-T_SHAPE"]
   }
 ]
