@@ -45,10 +45,11 @@ class TestWorld(TestCase):
         self.assertEqual(matches, [])
 
     def test_describe(self):
-        description = self.world.describe()
-        self.assertIn("World State:", description)
-        self.assertIn("box_wood_1 is On the 'floor'open", description)
-        self.assertIn("block_red_1 is On the 'table'", description)
+        import re
+        description = re.sub(r'\x1b\[[0-9;]*m', '', self.world.describe())
+        self.assertIn("Holding:", description)
+        self.assertIn("box_wood_1 is on the floor open", description)
+        self.assertIn("block_red_1 is on the table", description)
 
 class TestParser(TestCase):
     def setUp(self) -> None:

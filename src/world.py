@@ -92,8 +92,8 @@ class World:
         return matches
 
     def describe(self) -> str:
-        output = "World State:\n"
-        output += f"Holding: {self.holding}\n"
+        holding_str = f"\033[95m{self.holding}\033[00m" if self.holding else "None"
+        output = f"Holding: {holding_str}\n"
 
         for obj_id, obj in self.objects.items():
             if obj_id == self.holding:
@@ -101,17 +101,19 @@ class World:
 
             support = self.on.get(obj_id)
             if support:
-                location = f"Sitting on top of '{support}'"
+                location_str = f"sitting on top of \033[95m{support}\033[00m"
             elif obj.location_id.startswith("INSIDE_"):
-                location = f"Inside {obj.location_id.replace('INSIDE_', '')}"
+                box_name = obj.location_id.replace("INSIDE_", "")
+                location_str = f"inside \033[95m{box_name}\033[00m"
             else:
-                location = f"On the '{obj.location_id}'"
+                location_str = f"on the \033[96m{obj.location_id}\033[00m"
 
-            state = f"{obj.state}" if obj.state else ""
-            output += f"{obj_id} is {location}{state}\n"
+            state = f" {obj.state}" if obj.state else ""
+            output += f"\033[95m{obj_id}\033[00m is {location_str}{state}\n"
 
         for box_id, items in self.contains.items():
             if items:
-                output += f"{box_id} contains {items}\n"
+                colored_items = ", ".join(f"'\033[95m{item}\033[00m'" for item in items)
+                output += f"\033[95m{box_id}\033[00m contains [{colored_items}]\n"
 
         return output.strip()
