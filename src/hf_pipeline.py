@@ -25,7 +25,6 @@ class HuggingFaceGrounder:
             self.flat_ontology, convert_to_tensor=True
         )
 
-        # Precompute embeds for attribute-specific grounding (Option A)
         self.ontology_embeds = {}
         for key, vals in self.ontology.items():
             self.ontology_embeds[key] = self.model.encode(vals, convert_to_tensor=True)
@@ -55,9 +54,7 @@ class HuggingFaceGrounder:
             if best_score >= threshold:
                 translated_tokens.append(self.flat_ontology[best_idx])
             else:
-                translated_tokens.append(
-                    token
-                )  # Unrelated word, leave it alone
+                translated_tokens.append(token)
 
         return translated_tokens
 
