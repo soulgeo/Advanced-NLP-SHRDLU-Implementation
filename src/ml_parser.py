@@ -60,7 +60,7 @@ class MLParser:
 
         return slots
 
-    def _normalize_relation(self, rel_str: str) -> str:
+    def _normalize_relation(self, rel_str: str | None) -> str:
         """Converts raw tokens like 'inside' or 'underneath' to planner constants."""
         if not rel_str: return constants.REL_ON
         if rel_str in ["in", "inside", "into"]: return constants.REL_IN
@@ -123,8 +123,21 @@ class MLParser:
             tokens = self.hf_grounder.translate_oov_tokens(tokens, vocab, debug=debug)
 
         tags = self.sequence_tagger.predict_tags(tokens)
+        
+        if debug:
+            print(f"DEBUG: Predicted Intent: {intent}")
+            print(f"DEBUG: Tagged Sentence: {list(zip(tokens, tags))}")
+
         prev_target = self.last_resolved_target
         slots = self._extract_slots(tokens, tags)
+
+        if hasattr(self, "hf_grounder") and self.hf_grounder:
+            for entity_bucket in [slots["target"], slots["target_ref"], slots["dest"]]:
+                for attr_key, raw_val in list(entity_bucket.items()):
+                    if attr_key in ["color", "shape", "material", "size"]:
+                        entity_bucket[attr_key] = self.hf_grounder.ground_slot(
+                            raw_val, attr_key, debug=debug
+                        )
 
         if intent != constants.INTENT_PLACE and slots["dest"]:
             slots["target_ref"].update(slots["dest"])
@@ -211,7 +224,8 @@ class MLParser:
 
         # Update historical memory ONLY if the command is completely unambiguous
         if len(candidates) == 1:
-            self.last_resolved_target = candidates[0].get("target")
+            has_pronoun = "it" in tokens or "that" in tokens
+            if not has_pronoun:
+                self.last_resolved_target = candidates[0].get("target")
 
-        # --- STEP 4: TRIGGER THE AMBIGUITY CHECKER ---
         return self._build_response(intent, candidates)

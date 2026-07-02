@@ -37,7 +37,6 @@ class SequenceWrapper:
 
     def _prepare_sequence(self, seq, to_ix):
         """Helper to convert a list of words/tags into a PyTorch tensor of integers"""
-        # Out-of-vocabulary words default to index 0.
         idxs = [to_ix.get(w, 0) for w in seq]
         return torch.tensor(idxs, dtype=torch.long)
 
@@ -160,8 +159,6 @@ class SequenceWrapper:
         self.model.load_state_dict(state['model_state_dict'])
         self.model.eval() 
         self.is_trained = True
-        
-        print(f"Sequence model successfully loaded from {filepath}")
 
 
 if __name__ == "__main__":

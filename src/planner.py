@@ -57,7 +57,7 @@ class Planner:
         self.current_holding = obj_id
         self.world.on[obj_id] = None
 
-        for box_id, contents in self.world.contains.items():
+        for _, contents in self.world.contains.items():
             if obj_id in contents:
                 contents.remove(obj_id)
                 break

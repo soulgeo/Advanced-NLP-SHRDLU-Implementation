@@ -172,7 +172,11 @@ class CFGParser():
                         }
                     )
 
-            if len(valid_target_objects) == 1:
+            has_anaphoric = any(
+                isinstance(t, nltk.Tree) and t.label() == "ANAPHORIC"
+                for t in tree.subtrees()
+            )
+            if len(valid_target_objects) == 1 and not has_anaphoric:
                 self.saved_obj = valid_target_objects[0]
 
         unique_candidates = []

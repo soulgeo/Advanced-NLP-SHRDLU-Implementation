@@ -45,10 +45,11 @@ class TestWorld(TestCase):
         self.assertEqual(matches, [])
 
     def test_describe(self):
-        description = self.world.describe()
-        self.assertIn("World State:", description)
-        self.assertIn("box_wood_1 is On the 'floor'open", description)
-        self.assertIn("block_red_1 is On the 'table'", description)
+        import re
+        description = re.sub(r'\x1b\[[0-9;]*m', '', self.world.describe())
+        self.assertIn("Holding:", description)
+        self.assertIn("box_wood_1 is on the floor open", description)
+        self.assertIn("block_red_1 is on the table", description)
 
 class TestParser(TestCase):
     def setUp(self) -> None:
@@ -78,6 +79,20 @@ class TestParser(TestCase):
         response = self.parser.run("put it on the floor", self.world)
         self.assertEqual(response["status"], "RESOLVED")
         self.assertEqual(response["action_args"]["target"], "block_red_1")
+
+    def test_pronoun_retention_after_place_with_pronoun(self):
+        self.parser.run("inspect the wooden box", self.world)
+        self.assertEqual(self.parser.saved_obj, "box_wood_1")
+
+        self.parser.run("close it", self.world)
+        self.assertEqual(self.parser.saved_obj, "box_wood_1")
+
+        self.parser.run("put the red block in it", self.world)
+        self.assertEqual(self.parser.saved_obj, "box_wood_1")
+
+        response = self.parser.run("open it", self.world)
+        self.assertEqual(response["status"], "RESOLVED")
+        self.assertEqual(response["action_args"]["target"], "box_wood_1")
 
     def test_phrasal_verbs(self):
         response = self.parser.run("pickup the red block", self.world)
@@ -277,6 +292,65 @@ class TestPlanner(TestCase):
         })
         self.assertEqual(result["status"], "ERROR")
         self.assertNotIn("block_red_1", self.world.contains["box_metal_1"])
+
+
+class TestLazyMLParserProxy(TestCase):
+    def test_proxy_synchronization_during_load(self):
+        import threading
+        from main import LazyMLParserProxy
+        from src.world import World
+        from src.cfg_parser import CFGParser
+        from src.hybrid_parser import HybridParser
+
+        class FakeLoader:
+            def __init__(self):
+                self.ml_parser = None
+                self.loaded_event = threading.Event()
+
+            def get_ml_parser(self):
+                self.loaded_event.wait()
+                return self.ml_parser
+
+        class FakeMLParser:
+            def __init__(self):
+                self.last_resolved_target = None
+            def reset_session(self):
+                self.last_resolved_target = None
+            def run(self, user_input, world, debug=False):
+                return {"intent": "CLOSE", "action_args": None, "status": "NOT_FOUND"}
+
+        loader = FakeLoader()
+        ml_proxy = LazyMLParserProxy(loader)
+        world = World()
+        cfg_parser = CFGParser()
+        parser = HybridParser(cfg_parser, ml_proxy)
+
+        # Step 1: ML models are NOT loaded yet.
+        payload1 = parser.run("inspect the wooden box", world)
+        self.assertEqual(payload1["action_args"]["target"], "box_wood_1")
+        self.assertEqual(ml_proxy.last_resolved_target, "box_wood_1")
+
+        # Step 2: ML models finish loading.
+        loader.ml_parser = FakeMLParser()
+        loader.loaded_event.set()
+
+        # Step 3: Run 'close it'.
+        payload2 = parser.run("close it", world)
+        self.assertEqual(payload2["status"], "RESOLVED")
+        self.assertEqual(payload2["action_args"]["target"], "box_wood_1")
+        self.assertEqual(ml_proxy.last_resolved_target, "box_wood_1")
+
+        # Step 4: Run 'put the red block in it'.
+        payload3 = parser.run("put the red block in it", world)
+        self.assertEqual(payload3["status"], "RESOLVED")
+        self.assertEqual(payload3["action_args"]["destination"]["reference"], "box_wood_1")
+        self.assertEqual(ml_proxy.last_resolved_target, "box_wood_1")
+
+        # Step 5: Run 'open it'.
+        payload4 = parser.run("open it", world)
+        self.assertEqual(payload4["status"], "RESOLVED")
+        self.assertEqual(payload4["action_args"]["target"], "box_wood_1")
+        self.assertEqual(ml_proxy.last_resolved_target, "box_wood_1")
 
 
 if __name__ == '__main__':

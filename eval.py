@@ -152,7 +152,7 @@ def main():
     hybrid_parser = HybridParser(cfg_parser, ml_parser)
     
     # Load Robustness Test Set
-    test_path = Path("data/test_commands.json")
+    test_path = Path("data/test_set.json")
     if not test_path.exists():
         print(f"Could not find robustness test set at {test_path}")
         return
