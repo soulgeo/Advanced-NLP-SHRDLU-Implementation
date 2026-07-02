@@ -32,7 +32,7 @@ class IntentClassifier:
     def load_dataset(self):
         """Loads the labeled command dataset from JSON."""
         project_root = Path(__file__).resolve().parent.parent
-        dataset_path = project_root / "data" / "intent_commands.json"
+        dataset_path = project_root / "data" / "train_set.json"
 
         if not dataset_path.exists():
             raise FileNotFoundError(

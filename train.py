@@ -6,7 +6,7 @@ from src.sequence_model import SequenceWrapper
 from src.intent_classifier import IntentClassifier 
 
 def load_and_split_dataset(val_ratio=0.15):
-    dataset_path = Path("data/intent_commands.json")
+    dataset_path = Path("data/train_set.json")
     if not dataset_path.exists():
         raise FileNotFoundError(f"Could not find dataset at {dataset_path}")
 
@@ -109,13 +109,13 @@ def main():
     evaluate_models(intent_classifier, sequence_wrapper, val_data, "Validation Set")
 
     # 4. Evaluate on Robustness Test set (from scratch)
-    test_path = Path("data/test_commands.json")
+    test_path = Path("data/test_set.json")
     if test_path.exists():
         with open(test_path, "r", encoding="utf-8") as f:
             test_data = json.load(f)
         evaluate_models(intent_classifier, sequence_wrapper, test_data, "Curated Robustness Test Set")
     else:
-        print("\nNo robustness test set found at data/test_commands.json")
+        print("\nNo robustness test set found at data/test_set.json")
 
 if __name__ == "__main__":
     main()
